@@ -90,6 +90,7 @@ const Dropdown: FunctionComponent<DropdownProps> = (props): ReactElement => {
         aria-errormessage={`${id}-error`}
         aria-invalid={errorMessage ? true : null}
         aria-required={isRequired}
+        aria-describedby={name}
         ref={forwardRef}
       >
         {options.map((option) => (
