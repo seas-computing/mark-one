@@ -11,7 +11,7 @@ import { fromTheme } from '../Theme';
 import ValidationErrorMessage from './ValidationErrorMessage';
 import InputLabel, { InputLabelPosition, POSITION } from './InputLabel';
 
-interface DropdownOptionProps {
+export interface DropdownOptionProps {
   /** The label of the dropdown option */
   label: string;
   /** The value of the dropdown option */
