@@ -157,7 +157,22 @@ describe('Modal', function () {
       beforeEach(function () {
         const { getByText } = render(<ModalOpener />);
         fireEvent.click(getByText('Toggle Modal'));
-        fireEvent.click(getByText('Contents'));
+        const modalContents = getByText('Contents');
+        fireEvent.mouseDown(modalContents);
+        fireEvent.mouseUp(modalContents);
+      });
+      it('Should not call the closeHandler', function () {
+        strictEqual(closeHandlerStub.callCount, 0);
+      });
+    });
+    context('When a mousedown event occurs on the modal and a mouseup event occurs on the backdrop', function () {
+      beforeEach(function () {
+        const { getByText } = render(<ModalOpener />);
+        fireEvent.click(getByText('Toggle Modal'));
+        const modalContents = getByText('Contents');
+        fireEvent.mouseDown(modalContents);
+        const backdrop = document.querySelector('.modal-fade-enter');
+        fireEvent.mouseUp(backdrop);
       });
       it('Should not call the closeHandler', function () {
         strictEqual(closeHandlerStub.callCount, 0);
