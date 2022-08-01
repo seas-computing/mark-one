@@ -171,6 +171,8 @@ const Modal: FunctionComponent<ModalProps> = ({
     };
   }, [finalForwardRef, focusables, isVisible]);
 
+  let mouseDownOnModal = false;
+
   return createPortal((
     <CSSTransition
       appear
@@ -181,8 +183,12 @@ const Modal: FunctionComponent<ModalProps> = ({
       <ModalBackdrop
         key="modal-backdrop"
         onClick={(evt): void => {
-          closeHandler();
+          // Don't close modal if user pressed down inside modal but released outside
+          if (!mouseDownOnModal) {
+            closeHandler();
+          }
           evt.stopPropagation();
+          mouseDownOnModal = false;
         }}
       >
         {isVisible && (
@@ -190,7 +196,9 @@ const Modal: FunctionComponent<ModalProps> = ({
             role="dialog"
             aria-labelledby={ariaLabelledBy}
             aria-modal="true"
-            onClick={(evt): void => { evt.stopPropagation(); }}
+            onMouseDown={(): void => {
+              mouseDownOnModal = true;
+            }}
             theme={theme}
             ref={finalForwardRef}
           >
