@@ -96,7 +96,6 @@
     "@openfonts/open-sans_all": "^1.43.0",
     "@openfonts/roboto-mono_all": "^1.43.0",
     "@testing-library/react-hooks": "^7.0.2",
-    "aria-query": "^4.0.2",
     "downshift": "^6.1.7",
     "polished": "^3.4.1",
     "react-transition-group": "^4.3.0"
