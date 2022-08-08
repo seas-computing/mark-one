@@ -199,6 +199,7 @@ const Modal: FunctionComponent<ModalProps> = ({
             onMouseDown={(): void => {
               mouseDownOnModal = true;
             }}
+            onClick={(evt): void => { evt.stopPropagation(); }}
             theme={theme}
             ref={finalForwardRef}
           >
