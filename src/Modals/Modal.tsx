@@ -6,6 +6,7 @@ import React, {
   ReactNode,
   useRef,
   RefObject,
+  useState,
 } from 'react';
 import { CSSTransition } from 'react-transition-group';
 import { createPortal } from 'react-dom';
@@ -171,7 +172,7 @@ const Modal: FunctionComponent<ModalProps> = ({
     };
   }, [finalForwardRef, focusables, isVisible]);
 
-  let mouseDownOnModal = false;
+  const [mouseDownOnModal, setMouseDownOnModal] = useState(false);
 
   return createPortal((
     <CSSTransition
@@ -188,7 +189,7 @@ const Modal: FunctionComponent<ModalProps> = ({
             closeHandler();
           }
           evt.stopPropagation();
-          mouseDownOnModal = false;
+          setMouseDownOnModal(false);
         }}
       >
         {isVisible && (
@@ -197,7 +198,7 @@ const Modal: FunctionComponent<ModalProps> = ({
             aria-labelledby={ariaLabelledBy}
             aria-modal="true"
             onMouseDown={(): void => {
-              mouseDownOnModal = true;
+              setMouseDownOnModal(true);
             }}
             onClick={(evt): void => { evt.stopPropagation(); }}
             theme={theme}
