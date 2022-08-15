@@ -29,7 +29,6 @@ const TabListItemWrapper = styled.li`
   margin-bottom: -1px;
   padding: 0 1em;
 `;
-
 const TabListItem:
 FunctionComponent<TabListItemProps> = (props): ReactElement => {
   const {
@@ -38,7 +37,7 @@ FunctionComponent<TabListItemProps> = (props): ReactElement => {
   } = props;
   const theme = useContext(ThemeContext);
   return (
-    <TabListItemWrapper>
+    <TabListItemWrapper aria-selected={isActive} role="tab">
       <TabListItemBox theme={theme} isActive={isActive}>
         {children}
       </TabListItemBox>
