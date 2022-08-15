@@ -1,15 +1,13 @@
 import React from 'react';
-import { render, GetByText, BoundFunction } from 'test-utils';
-import convert from 'color-convert';
+import { render, BoundFunction, AllByRole } from 'test-utils';
 import { strictEqual } from 'assert';
 import TabList from '../TabList';
 import TabListItem from '../TabListItem';
-import MarkOneTheme from '../../Theme/MarkOneTheme';
 
 describe('TabListItem Component', function () {
-  let getByText: BoundFunction<GetByText>;
+  let getAllByRole: BoundFunction<AllByRole>;
   beforeEach(function () {
-    ({ getByText } = render(
+    ({ getAllByRole } = render(
       <TabList>
         <TabListItem>Tab 1</TabListItem>
         <TabListItem isActive data-testid="activeTabItem">Tab 2</TabListItem>
@@ -19,18 +17,17 @@ describe('TabListItem Component', function () {
   });
   describe('Tab Item', function () {
     it('renders its children', function () {
-      getByText('Tab 1');
-      getByText('Tab 2');
-      getByText('Tab 3');
+      const tabItems = getAllByRole('tab');
+      strictEqual(tabItems.length, 3);
     });
-    it('renders a tab item with the light theme background color when isActive is true', function () {
-      const tabItem = getByText('Tab 2');
-      const style = window.getComputedStyle(tabItem);
-      const [red, green, blue] = convert.hex.rgb(
-        MarkOneTheme.color.background.light
-      );
-      const convertExpectedToRGB = `rgb(${red}, ${green}, ${blue})`;
-      strictEqual(style.backgroundColor, convertExpectedToRGB);
+    it('renders the tabs as being selected or unselected accordingly', function () {
+      const tabItems = getAllByRole('tab');
+      const tab1 = tabItems[0].getAttribute('aria-selected');
+      const tab2 = tabItems[1].getAttribute('aria-selected');
+      const tab3 = tabItems[2].getAttribute('aria-selected');
+      strictEqual(tab1, null);
+      strictEqual(tab2, 'true');
+      strictEqual(tab3, null);
     });
   });
 });
