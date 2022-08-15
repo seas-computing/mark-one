@@ -20,7 +20,7 @@ describe('TabListItem Component', function () {
       const tabItems = getAllByRole('tab');
       strictEqual(tabItems.length, 3);
     });
-    it('renders a tab item aria-selected is Active is true', function () {
+    it('renders the tabs as being selected or unselected accordingly', function () {
       const tabItems = getAllByRole('tab');
       const tab1 = tabItems[0].getAttribute('aria-selected');
       const tab2 = tabItems[1].getAttribute('aria-selected');
