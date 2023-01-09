@@ -19,7 +19,7 @@ const getFontColor = (shade, meaning) => {
   if (
     shade === 'accent'
     || (meaning === 'info'
-      && shade === 'dark')
+      && shade === 'medium')
   ) {
     return 'light';
   }

@@ -51,7 +51,7 @@ const ButtonContainer = styled.div`
 `;
 
 const StyledGlobalMessage = styled.div<StyledGlobalMessageProps>`
-  background: ${({ theme, variant }) => theme.color.background[variant].medium};
+  background: ${({ theme, variant }) => theme.color.background[variant].dark};
   color: ${({ theme, variant }) => (
     theme.color.text[variant === VARIANT.BASE ? 'dark' : 'light']
   )};
