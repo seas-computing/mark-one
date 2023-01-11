@@ -28,6 +28,7 @@ const StyledTableRowHeadingCell = styled.th<TableRowHeadingCellProps>`
   font-weight: ${fromTheme('font', 'data', 'weight')};
   font-size: ${fromTheme('font', 'data', 'size')};
   text-align: ${({ alignment }) => alignment};
+  padding: ${fromTheme('ws', 'xsmall')};
   vertical-align: ${({ verticalAlignment }) => verticalAlignment};
   background-color: ${({ backgroundColor }) => backgroundColor};
 `;

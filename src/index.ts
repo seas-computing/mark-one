@@ -9,5 +9,8 @@ export * from './Typography';
 export * from './Modals';
 export * from './Links';
 export * from './Lists';
+export * from './Popover';
 export * from './Spinners';
 export * from './const';
+export * from './Alerts';
+export * from './Hooks';
