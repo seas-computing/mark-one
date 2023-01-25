@@ -19,7 +19,7 @@ export interface FooterProps {
 /**
  * A full-width footer to be displayed at the bottom of the page
  */
-const Footer = styled.main<FooterProps>`
+const Footer = styled.footer<FooterProps>`
   align-items: baseline;
   background-color: ${({ background }) => background};
   display: flex;
