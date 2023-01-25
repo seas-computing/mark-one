@@ -10,7 +10,7 @@ describe('Footer', function () {
       <Footer>
         <span>{footerText}</span>
       </Footer>
-    ).getByRole('main');
+    ).getByRole('contentinfo');
 
     strictEqual(childElementCount, 1);
     strictEqual(textContent, footerText);
