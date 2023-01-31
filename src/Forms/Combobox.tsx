@@ -126,7 +126,7 @@ const ComboboxWrapper = styled(StyledInputLabel).attrs({
 const ComboboxLabel = styled(StyledInputLabelText).attrs({
   as: 'label',
 })`
-  grid-area: l; 
+  grid-area: l;
 `;
 
 /**
@@ -304,6 +304,7 @@ const Combobox: FunctionComponent<ComboboxProps> = (
             )}
         </ComboboxMenu>
         <ComboboxButton
+          type="button"
           alt={`Show all options for ${label}`}
           {...getToggleButtonProps({ refKey: 'forwardRef' })}
         >
