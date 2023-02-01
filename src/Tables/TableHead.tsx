@@ -9,7 +9,7 @@ export interface TableHeadProps {
 }
 
 const StyledTableHead = styled.thead<TableHeadProps>`
-  background-color: ${fromTheme('color', 'background', 'medium')};
+  background-color: red;
 `;
 
 /**
