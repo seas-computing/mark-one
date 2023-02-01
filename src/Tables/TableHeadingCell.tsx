@@ -23,9 +23,7 @@ export interface TableHeadingCellProps {
 }
 
 const StyledTableHeadingCell = styled.th<TableHeadingCellProps>`
-  background-color: ${({ theme, backgroundColor }) => (
-    backgroundColor || theme.color.background.medium
-  )};
+  backgroundColor: red;
   padding: ${fromTheme('ws', 'xsmall')};
   border: ${fromTheme('border', 'light')};
   font-weight: ${fromTheme('font', 'bold', 'weight')};
