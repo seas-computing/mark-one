@@ -10,6 +10,26 @@ export interface TableHeadProps {
 
 const StyledTableHead = styled.thead<TableHeadProps>`
   background-color: ${fromTheme('color', 'background', 'medium')};
+  position: sticky;
+  top: 0;
+  z-index: 1;
+
+ :after,
+ :before {
+  position: absolute;
+  width: 100%;
+ }
+
+ :before {
+   top: -1px;
+   border-top: 2px solid #c0c0c0;
+ }
+
+ :after {
+   bottom: -2px;
+   border-bottom: 2px solid #c0c0c0;
+ }
+
 `;
 
 /**
