@@ -171,7 +171,7 @@ import {
 } from 'mark-one';
 
 <Table>
-  <TableHead>
+  <TableHead isSticky={true}>
     <TableRow>
       <TableHeadingCell scope={'col'}>ID</TableHeadingCell>
       <TableHeadingCell scope={'col'}>First Name</TableHeadingCell>
