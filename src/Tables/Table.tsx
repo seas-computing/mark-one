@@ -13,7 +13,8 @@ export interface TableProps {
 }
 
 const StyledTable = styled.table<TableProps>`
-    border-collapse: collapse;
+    border-collapse: separate;
+    border-spacing: 0;
     padding: ${({ theme }) => (theme.ws.xsmall + ' ' + theme.ws.small)};
     width: 100%;
 `;
