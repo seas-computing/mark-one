@@ -12,9 +12,11 @@ export interface TableHeadProps {
 
 const StyledTableHead = styled.thead<TableHeadProps>`
   background-color: ${fromTheme('color', 'background', 'medium')};
-  position: ${({ isSticky }) => (isSticky ? 'sticky' : 'inherit')};
-  top: ${({ isSticky }) => (isSticky ? '0' : '1')};
-  z-index: 0;
+  ${({ isSticky }) => (isSticky && `
+    position: sticky;
+    top: 0;
+    z-index: 0;
+  `)}
 `;
 
 /**
