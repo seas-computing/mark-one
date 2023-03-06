@@ -15,7 +15,6 @@ const StyledTableHead = styled.thead<TableHeadProps>`
   position: ${({ isSticky }) => (isSticky ? 'sticky' : 'inherit')};
   top: ${({ isSticky }) => (isSticky ? '0' : '1')};
   z-index: 0;
-  padding: ${({ isSticky }) => (isSticky ? '2px 0' : '')};
 `;
 
 /**
