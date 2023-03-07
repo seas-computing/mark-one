@@ -171,7 +171,7 @@ import {
 } from 'mark-one';
 
 <Table>
-  <TableHead isSticky={true}>
+  <TableHead>
     <TableRow>
       <TableHeadingCell scope={'col'}>ID</TableHeadingCell>
       <TableHeadingCell scope={'col'}>First Name</TableHeadingCell>
@@ -196,6 +196,76 @@ import {
     </TableRow>
     <TableRow>
       <TableCell>4</TableCell>
+      <TableCell>Gabriela</TableCell>
+      <TableCell>Hines</TableCell>
+    </TableRow>
+  </TableBody>
+</Table>
+```
+The following example of the `Table` component is  where `isSticky` prop is set to make the TableHead position sticky.  In this case, when the page is scrolled, the TableHead will stick and the TableHead position defaults to `isSticky` property.
+
+```jsx
+import {
+  ALIGN,
+  Table,
+  TableCell,
+  TableBody,
+  TableRow,
+  TableHeadingCell,
+  TableHead,
+} from 'mark-one';
+
+<Table>
+  <TableHead isSticky>
+    <TableRow>
+      <TableHeadingCell scope={'col'}>ID</TableHeadingCell>
+      <TableHeadingCell scope={'col'}>First Name</TableHeadingCell>
+      <TableHeadingCell scope={'col'}>Last Name</TableHeadingCell>
+    </TableRow>
+  </TableHead>
+  <TableBody isScrollable={true}>
+    <TableRow isStriped={true}>
+      <TableCell>1</TableCell>
+      <TableCell>Kristin</TableCell>
+      <TableCell>Glenn</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>2</TableCell>
+      <TableCell>Jack</TableCell>
+      <TableCell>Thompson</TableCell>
+    </TableRow>
+    <TableRow isStriped={true}>
+      <TableCell>3</TableCell>
+      <TableCell>Lianne</TableCell>
+      <TableCell>Michaels</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>4</TableCell>
+      <TableCell>Gabriela</TableCell>
+      <TableCell>Hines</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>5</TableCell>
+      <TableCell>Hines</TableCell>
+      <TableCell>Gabriela</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>6</TableCell>
+      <TableCell>Michaels</TableCell>
+      <TableCell>Lianne</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>7</TableCell>
+      <TableCell>Thompson</TableCell>
+      <TableCell>Jack</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>8</TableCell>
+      <TableCell>Glenn</TableCell>
+      <TableCell>Kristin</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>9</TableCell>
       <TableCell>Gabriela</TableCell>
       <TableCell>Hines</TableCell>
     </TableRow>
