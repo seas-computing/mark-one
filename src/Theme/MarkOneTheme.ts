@@ -120,7 +120,7 @@ const MarkOneTheme: DefaultTheme = {
   },
   border: {
     hairline: `1px solid ${BLACK}`,
-    light: `1px solid ${lighten(0.5, BLACK)}`,
+    light: `2px solid ${lighten(0.5, BLACK)}`,
     heavy: `6px solid ${lighten(0.3, BLACK)}`,
   },
   ws: {
