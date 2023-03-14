@@ -13,7 +13,6 @@ export interface TableProps {
   | (TableHead | TableBody | HTMLTableColElement)[];
 }
 
-
 const StyledTable = styled.table<TableProps>`
     border-collapse: separate;
     border-spacing: 0;

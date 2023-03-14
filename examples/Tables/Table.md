@@ -214,33 +214,31 @@ import {
   TableHeadingCell,
   TableHead,
 } from 'mark-one';
+
 import styled from 'styled-components';
 const TableWrapper = styled.div`
   overflow: scroll;
   height:20rem;
 `;
  <TableWrapper>
- <Table>
-   <TableHead isSticky>
-     <TableRow>
-       <TableHeadingCell scope={'col'}>First Row</TableHeadingCell>
-       <TableHeadingCell scope={'col'}>Second Row</TableHeadingCell>
-       <TableHeadingCell scope={'col'}>Last Row</TableHeadingCell>
-     </TableRow>
-   </TableHead>
-   <TableBody isScrollable={true}>
-
-             {Array.from({length: 126}, (_, i) => (
-             <TableRow isStriped= {i%2===0}>
-
-             <TableCell>{i}</TableCell>
-              <TableCell>{i}</TableCell>
-              <TableCell>{i}</TableCell>
-              </TableRow>)
-              )}
-
-   </TableBody>
- </Table>
+<Table>
+  <TableHead isSticky>
+    <TableRow>
+      <TableHeadingCell scope={'col'}>First Row</TableHeadingCell>
+      <TableHeadingCell scope={'col'}>Second Row</TableHeadingCell>
+      <TableHeadingCell scope={'col'}>Last Row</TableHeadingCell>
+    </TableRow>
+  </TableHead>
+  <TableBody isScrollable={true}>
+    {Array.from({length: 126}, (_, i) => (
+    <TableRow isStriped= {i%2===0}>
+      <TableCell>{i}</TableCell>
+      <TableCell>{i}</TableCell>
+      <TableCell>{i}</TableCell>
+    </TableRow>)
+    )}
+  </TableBody>
+</Table>
 </TableWrapper>
 ```
 
