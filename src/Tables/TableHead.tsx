@@ -4,12 +4,19 @@ import { fromTheme } from '../Theme';
 import TableRow from './TableRow';
 
 export interface TableHeadProps {
+  /** Implements TableHeadingCell to stick while the tablebody is scrolled  */
+  isSticky?: boolean;
   /** Our TableRow functional component serves as the children for TableHead */
   children: TableRow | TableRow[];
 }
 
 const StyledTableHead = styled.thead<TableHeadProps>`
   background-color: ${fromTheme('color', 'background', 'medium')};
+  ${({ isSticky }) => (isSticky && `
+    position: sticky;
+    top: 0;
+    z-index: 0;
+  `)}
 `;
 
 /**
