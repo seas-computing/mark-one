@@ -21,7 +21,7 @@ export interface FooterProps {
  */
 const Footer = styled.footer<FooterProps>`
   align-items: baseline;
-  background: ${({ theme }) => theme.color.background.light };
+  background: ${({ theme }) => theme.color.background.light};
   display: flex;
   justify-content: ${({ justify }) => justify};
   padding: ${({ theme }) => `${theme.ws.medium} ${theme.ws.small}`};
