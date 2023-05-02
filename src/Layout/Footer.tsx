@@ -29,8 +29,8 @@ const Footer = styled.footer<FooterProps>`
   position: fixed;
   bottom: 0;
   height: 40px;
-  font-size: 0.9em;
-  font-weight: 400;
+  font-size: ${({ theme }) => `${theme.font.base.size}`};
+  font-weight: ${({ theme }) => `${theme.font.base.weight}`};
 `;
 
 Footer.defaultProps = {
