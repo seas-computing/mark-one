@@ -30,7 +30,6 @@ const Footer = styled.footer<FooterProps>`
   bottom: 0;
   width: 100%;
   height: 40px;
-  background: white;
   font-size: 0.9em;
   font-weight: 400;
 `;
