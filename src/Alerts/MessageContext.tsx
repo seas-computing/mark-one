@@ -10,24 +10,6 @@ export const MessageContext: Context<Function> = createContext(null);
  * handles queueing logic for the top-level app component
  */
 
-/**
- * Defines the state of the message reducer
- */
-
-export interface MessageReducerState {
-  queue: AppMessage[];
-  currentMessage: AppMessage;
-}
-
-/**
- * Defines that kinds of actions that can be accepted by the reducer
- */
-
-export interface MessageReducerAction {
-  type: MESSAGE_ACTION;
-  message?: AppMessage;
-}
-
 
 export const messageReducer:
 Reducer<MessageReducerState, MessageReducerAction> = (
@@ -36,7 +18,7 @@ Reducer<MessageReducerState, MessageReducerAction> = (
 ): MessageReducerState => {
   const { currentMessage, queue } = state;
   switch (action.type) {
-    case (MESSAGE_ACTION.PUSH): {
+    case (): {
       if (!currentMessage) {
         return ({
           ...state,
@@ -49,7 +31,7 @@ Reducer<MessageReducerState, MessageReducerAction> = (
         queue: newQueue,
       };
     }
-    case (MESSAGE_ACTION.CLEAR): {
+    case (''): {
       const nextQueue = [...queue];
       const nextMessage = nextQueue.shift();
       return {
