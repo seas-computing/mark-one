@@ -9,6 +9,7 @@ export interface PageBodyProps {
 
 const PageBody = styled.main<PageBodyProps>`
   margin: ${fromTheme('ws', 'small')};
+  padding-bottom: 40px;
 `;
 
 declare type PageBody = ReactElement<PageBodyProps>;
