@@ -5,13 +5,13 @@ import { fromTheme } from '../Theme';
 export interface PageBodyProps {
   /** Page contents */
   children?: ReactNode;
-  /** Bottom padding of the page body */
-  paddingBottom?: string;
+  /** Padding of the page body */
+  padding?: string;
 }
 
 const PageBody = styled.main<PageBodyProps>`
   margin: ${fromTheme('ws', 'small')};
-  padding-bottom: ${({ paddingBottom, theme }): string => (paddingBottom || theme.ws.xlarge)};
+  padding: ${({ padding, theme }): string => (padding || `0 0 ${theme.ws.xlarge}`)};
 `;
 
 declare type PageBody = ReactElement<PageBodyProps>;
