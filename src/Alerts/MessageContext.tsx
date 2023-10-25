@@ -48,10 +48,6 @@ export class AppMessage {
 }
 
 /**
- * handles queueing logic for the top-level app component
- */
-
-/**
  * Defines the state of the message reducer
  */
 
@@ -68,6 +64,10 @@ export interface MessageReducerAction {
   type: MESSAGE_ACTION;
   message?: AppMessage;
 }
+
+/**
+ * handles queueing logic for the top-level app component
+ */
 
 export const messageReducer:
 Reducer<MessageReducerState, MessageReducerAction> = (
