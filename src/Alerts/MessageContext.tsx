@@ -1,14 +1,13 @@
 import { createContext, Reducer } from 'react';
+
 /**
  * Global message provider
  */
-
 export const MessageContext = createContext(null);
 
 /**
  * Possible types of message to display to the user
  */
-
 export enum MESSAGE_TYPE {
   ERROR = 'ERROR',
   SUCCESS = 'SUCCESS',
@@ -18,7 +17,6 @@ export enum MESSAGE_TYPE {
 /**
  * Possible actions to take on the message queue
  */
-
 export enum MESSAGE_ACTION {
   PUSH = 'PUSH',
   CLEAR = 'CLEAR',
@@ -27,7 +25,6 @@ export enum MESSAGE_ACTION {
 /**
  * Used for displaying messages on the client
  */
-
 export class AppMessage {
   public readonly variant: MESSAGE_TYPE;
 
@@ -37,7 +34,6 @@ export class AppMessage {
    * Create a new application message. By default, sets the message priority to
    * "info", but alternativae values can be passed in as the second parameter.
    */
-
   public constructor(
     message: string,
     variant: MESSAGE_TYPE = MESSAGE_TYPE.INFO
@@ -50,7 +46,6 @@ export class AppMessage {
 /**
  * Defines the state of the message reducer
  */
-
 export interface MessageReducerState {
   queue: AppMessage[];
   currentMessage: AppMessage;
@@ -59,7 +54,6 @@ export interface MessageReducerState {
 /**
  * Defines that kinds of actions that can be accepted by the reducer
  */
-
 export interface MessageReducerAction {
   type: MESSAGE_ACTION;
   message?: AppMessage;
@@ -68,7 +62,6 @@ export interface MessageReducerAction {
 /**
  * handles queueing logic for the top-level app component
  */
-
 export const messageReducer:
 Reducer<MessageReducerState, MessageReducerAction> = (
   state,
