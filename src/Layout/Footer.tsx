@@ -26,6 +26,16 @@ const Footer = styled.footer<FooterProps>`
   justify-content: ${({ justify }) => justify};
   padding: ${({ theme }) => `${theme.ws.medium} ${theme.ws.small}`};
   width: 100%;
+  ul {
+    list-style: none;
+    display: flex;
+    li {
+      padding: 0 0.5rem;
+      border-right: 1px solid black;
+      &:last-of-type {
+        border: 0px;
+      }
+  };
 `;
 
 Footer.defaultProps = {
