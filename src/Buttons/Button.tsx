@@ -18,7 +18,7 @@ export interface ButtonProps extends MarkOneProps<HTMLButtonElement> {
   /** Text or components to be displayed on the button */
   children?: ReactNode;
   /** Function to call on click event */
-  onClick: MouseEventHandler;
+  onClick: MouseEventHandler | (() => Promise<void>);
   /** If true, button won't fire */
   disabled?: boolean;
   /** Allows you to pass in a variant property from the VARIANT enum */

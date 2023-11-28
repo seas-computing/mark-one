@@ -202,6 +202,45 @@ import {
   </TableBody>
 </Table>
 ```
+The following example of the `Table` component is  where `isSticky` prop is set to make the TableHead position sticky.  In this case, when the page is scrolled, the TableHead will stick and the TableHead position defaults to `isSticky` property.
+
+```jsx
+import {
+  ALIGN,
+  Table,
+  TableCell,
+  TableBody,
+  TableRow,
+  TableHeadingCell,
+  TableHead,
+} from 'mark-one';
+
+import styled from 'styled-components';
+const TableWrapper = styled.div`
+  overflow: scroll;
+  height:20rem;
+`;
+ <TableWrapper>
+<Table>
+  <TableHead isSticky>
+    <TableRow>
+      <TableHeadingCell scope={'col'}>First Row</TableHeadingCell>
+      <TableHeadingCell scope={'col'}>Second Row</TableHeadingCell>
+      <TableHeadingCell scope={'col'}>Last Row</TableHeadingCell>
+    </TableRow>
+  </TableHead>
+  <TableBody isScrollable={true}>
+    {Array.from({length: 126}, (_, i) => (
+    <TableRow isStriped= {i%2===0}>
+      <TableCell>{i}</TableCell>
+      <TableCell>{i}</TableCell>
+      <TableCell>{i}</TableCell>
+    </TableRow>)
+    )}
+  </TableBody>
+</Table>
+</TableWrapper>
+```
 
 ### More Complex Layouts
 
@@ -324,4 +363,3 @@ import {
   </TableBody>
 </Table>
 ```
-

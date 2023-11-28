@@ -21,11 +21,16 @@ export interface FooterProps {
  */
 const Footer = styled.footer<FooterProps>`
   align-items: baseline;
-  background-color: ${({ background }) => background};
+  background: ${({ theme }) => theme.color.background.light};
   display: flex;
   justify-content: ${({ justify }) => justify};
   padding: ${({ theme }) => `${theme.ws.medium} ${theme.ws.small}`};
   width: 100%;
+  position: fixed;
+  bottom: 0;
+  height: 40px;
+  font-size: ${({ theme }) => `${theme.font.base.size}`};
+  font-weight: ${({ theme }) => `${theme.font.base.weight}`};
   ul {
     list-style: none;
     display: flex;

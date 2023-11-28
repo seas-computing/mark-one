@@ -1,9 +1,14 @@
-import { createContext, Reducer } from 'react';
+import { createContext, Dispatch, Reducer } from 'react';
+
+/**
+ * A function that passes down a message to the queue
+ */
+export type DispatchMessage = Dispatch<MessageReducerAction>;
 
 /**
  * Global message provider
  */
-export const MessageContext = createContext(null);
+export const MessageContext = createContext<DispatchMessage>(null);
 
 /**
  * Possible types of message to display to the user
