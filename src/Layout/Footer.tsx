@@ -31,6 +31,16 @@ const Footer = styled.footer<FooterProps>`
   height: 40px;
   font-size: ${({ theme }) => `${theme.font.base.size}`};
   font-weight: ${({ theme }) => `${theme.font.base.weight}`};
+  ul {
+    list-style: none;
+    display: flex;
+    li {
+      padding: 0 0.5rem;
+      border-right: 1px solid black;
+      &:last-of-type {
+        border: 0px;
+      }
+  };
 `;
 
 Footer.defaultProps = {
