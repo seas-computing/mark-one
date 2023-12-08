@@ -34,8 +34,8 @@ const Footer = styled.footer<FooterProps>`
   width: 100%;
   position: ${({ position }) => position};
   bottom: 0;
-  font-size: ${({ theme }) => `${theme.font.base.size}`};
-  font-weight: ${({ theme }) => `${theme.font.base.weight}`};
+  font-size: ${({ theme }) => `${theme.font.footer.size}`};
+  font-weight: ${({ theme }) => `${theme.font.footer.weight}`};
   ul {
     list-style: none;
     display: flex;

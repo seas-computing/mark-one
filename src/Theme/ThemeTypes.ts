@@ -34,9 +34,10 @@ export type FontCategory = 'base' |
 'data' |
 'note' |
 'bold' |
-'title'|
+'title' |
 'heading' |
-'error';
+'error' |
+'footer';
 
 export type WhiteSpaceSize = 'zero' |
 'xsmall' |

@@ -112,6 +112,11 @@ const MarkOneTheme: DefaultTheme = {
       size: '0.7em',
       weight: WEIGHT.BOLD,
     },
+    footer: {
+      family: FONT.SANS,
+      size: '0.9em',
+      weight: WEIGHT.MEDIUM,
+    },
   },
   shadow: {
     xlight: '0 2px 4px rgba(0,0,0,0.24)',
