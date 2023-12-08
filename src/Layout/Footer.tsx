@@ -1,5 +1,6 @@
 import { ReactNode, ReactElement } from 'react';
 import styled, { withTheme } from 'styled-components';
+import CSS from 'csstype';
 
 export interface FooterProps {
   /**
@@ -13,7 +14,12 @@ export interface FooterProps {
    * Pass in a custom value for justify-content
    * @default space-between
    */
-  justify?: string;
+  justify?: CSS.Property.JustifyContent;
+  /**
+   * Pass in a custom value for position
+   * @default sticky
+   */
+  position?: CSS.Property.Position;
 }
 
 /**
@@ -26,11 +32,10 @@ const Footer = styled.footer<FooterProps>`
   justify-content: ${({ justify }) => justify};
   padding: ${({ theme }) => `${theme.ws.medium} ${theme.ws.small}`};
   width: 100%;
-  position: fixed;
+  position: ${({ position }) => position};
   bottom: 0;
-  height: 40px;
-  font-size: ${({ theme }) => `${theme.font.base.size}`};
-  font-weight: ${({ theme }) => `${theme.font.base.weight}`};
+  font-size: ${({ theme }) => `${theme.font.footer.size}`};
+  font-weight: ${({ theme }) => `${theme.font.footer.weight}`};
   ul {
     list-style: none;
     display: flex;
@@ -46,6 +51,7 @@ const Footer = styled.footer<FooterProps>`
 Footer.defaultProps = {
   background: 'transparent',
   justify: 'space-between',
+  position: 'sticky',
 };
 
 declare type Footer = ReactElement<FooterProps>;

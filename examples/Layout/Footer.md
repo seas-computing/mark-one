@@ -24,6 +24,19 @@ You can also pass in a custom `background` prop to replace the default transpare
 </Footer>
 ```
 
+The `position` prop can be used to control how the footer is positioned on the
+page. By default, the footer will be `sticky`, appearing `fixed` while
+scrolling the page, then `relative` when it reaches the bottom of the content.
+You can set it to always appear at the end of the content by setting position
+to `relative`."
+
+
+```jsx
+<Footer position="relative">
+  <div>Version 10.0</div>
+</Footer>
+```
+
 An unordered list can be provided to the `Footer`, and each list item will be spaced accordingly.
 ```jsx
 import { ExternalLink } from 'mark-one';
