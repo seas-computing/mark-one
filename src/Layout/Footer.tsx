@@ -14,7 +14,7 @@ export interface FooterProps {
    * Pass in a custom value for justify-content
    * @default space-between
    */
-  justify?: string;
+  justify?: CSS.Property.JustifyContent;
   /**
    * Pass in a custom value for position
    * @default sticky
