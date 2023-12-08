@@ -14,7 +14,7 @@ import {
 declare module 'styled-components' {
   export interface DefaultTheme {
     color: {
-      background:{
+      background: {
         [K in VARIANT | keyof ColorRange]:
         K extends VARIANT
           ? ColorRange
@@ -41,3 +41,5 @@ declare module 'styled-components' {
     };
   }
 }
+
+export {};
