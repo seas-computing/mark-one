@@ -107,3 +107,42 @@ const [notesValue, setNotesValue] = useState('');
   </Button>
 </Form>
 ```
+
+A `Form` component may also have an `onSubmit` handler too. This can be used to
+handle the semantic submission of a form, like so:
+
+```jsx
+import {
+  TextInput,
+  Button,
+  POSITION
+} from 'mark-one';
+import { useState } from 'react';
+
+const [text, setText] = useState('');
+const [items, setItems] = useState(['Eggs', 'Milk']);
+
+const submitHandler = () => {
+  setItems((prev) => prev.concat(text));
+  setText('');
+}
+
+<Form
+  label="Grocery List"
+  submitHandler={submitHandler}
+>
+  <TextInput
+    name="add-item"
+    value={text}
+    labelPosition={POSITION.TOP}
+    label="Add Item"
+    onChange={(event) => {
+      setText(event.target.value);
+    }}
+  />
+  <ul>
+    {items.map((item, index) => (<li key={item+index}>{item}</li>))}
+  </ul>
+  <Button>Submit</Button>
+</Form>
+```
