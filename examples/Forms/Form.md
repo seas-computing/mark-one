@@ -115,7 +115,8 @@ handle the semantic submission of a form, like so:
 import {
   TextInput,
   Button,
-  POSITION
+  POSITION,
+  VARIANT,
 } from 'mark-one';
 import { useState } from 'react';
 
@@ -143,6 +144,6 @@ const submitHandler = () => {
   <ul>
     {items.map((item, index) => (<li key={item+index}>{item}</li>))}
   </ul>
-  <Button>Submit</Button>
+  <Button variant={VARIANT.PRIMARY}>Submit</Button>
 </Form>
 ```
