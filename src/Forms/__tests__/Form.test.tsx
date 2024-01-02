@@ -1,40 +1,31 @@
-import { Button } from 'Buttons';
-import { Form, TextInput } from 'Forms';
+import { Form } from 'Forms';
+import { strictEqual } from 'assert';
 import React from 'react';
+import { SinonStub, stub } from 'sinon';
 import {
+  fireEvent,
   render,
-  BoundFunction,
-  GetByRole,
 } from 'test-utils';
-import { VARIANT } from 'Theme';
 
 describe('Form', function () {
-  let getByRole: BoundFunction<GetByRole>;
-  const formLabel = 'New Student Registration Form';
+  let form: HTMLFormElement;
+  let submitStub: SinonStub;
+
   beforeEach(function () {
-    ({ getByRole } = render(
+    submitStub = stub();
+    const renderResult = render(
       <Form
         id="testForm"
-        label={formLabel}
-      >
-        <TextInput
-          id="testSemester"
-          name="semester"
-          value="Spring"
-          errorMessage="Error: Please enter a valid ID"
-          label="semester"
-          onChange={() => {}}
-        />
-        <Button
-          onClick={() => {}}
-          variant={VARIANT.BASE}
-        >
-          Submit
-        </Button>
-      </Form>
-    ));
+        label="Test Form"
+        submitHandler={submitStub}
+      />
+    );
+    form = renderResult.getByRole('form') as HTMLFormElement;
   });
-  it('renders', function () {
-    getByRole('form');
+  describe('submitHandler', function () {
+    it('is called when the form is submitted', function () {
+      fireEvent.submit(form);
+      strictEqual(submitStub.called, true);
+    });
   });
 });
