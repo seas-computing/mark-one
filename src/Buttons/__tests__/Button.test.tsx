@@ -7,7 +7,7 @@ import {
   fireEvent,
   BoundFunction,
   GetByText,
-  wait,
+  waitFor,
 } from 'test-utils';
 import {
   spy,
@@ -99,7 +99,7 @@ describe('Button', function () {
       const initialButton = getByText('Focus the Other Button');
       initialButton.click();
       const basicButton = getByText('Basic Button');
-      await wait(() => document.activeElement === basicButton);
+      await waitFor(() => document.activeElement === basicButton);
       strictEqual(document.activeElement as HTMLElement, basicButton);
     });
   });
