@@ -93,7 +93,7 @@ const switchModal = (isOpen) => {
           forwardRef={inputRef}
           label="Enter text:"
           value={formValue}
-          changeHandler={(evt) => {
+          onChange={(evt) => {
             setFormValue(evt.target.value);
           }}
         />

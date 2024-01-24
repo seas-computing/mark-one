@@ -37,7 +37,7 @@ export interface MultiLineTextInputProps {
   placeholder: string;
 }
 
-export const StyledTextArea = styled.textarea<MultiLineTextInputProps>`
+export const StyledTextArea = styled.textarea<Omit<MultiLineTextInputProps, 'label'>>`
   border: ${fromTheme('border', 'hairline')};
   width: 100%;
   padding: ${fromTheme('ws', 'xsmall')};
@@ -87,7 +87,6 @@ ReactElement => {
         aria-disabled={isDisabled}
         ref={forwardRef}
         name={name}
-        label={label}
         placeholder={placeholder}
       />
       {errorMessage && (
