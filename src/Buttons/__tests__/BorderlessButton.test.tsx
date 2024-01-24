@@ -6,7 +6,7 @@ import {
   GetByBoundAttribute,
   GetByText,
   GetByRole,
-  wait,
+  waitFor,
 } from 'test-utils';
 import {
   spy,
@@ -105,7 +105,7 @@ describe('Borderless Button', function () {
       const initialButton = getByText('Focus the Borderless Button');
       initialButton.click();
       const borderlessButton = getByRole('button', { name: 'Borderless Button' });
-      await wait(() => document.activeElement === borderlessButton);
+      await waitFor(() => document.activeElement === borderlessButton);
       strictEqual(document.activeElement, borderlessButton);
     });
   });
