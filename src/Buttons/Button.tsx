@@ -85,6 +85,7 @@ const Button: FunctionComponent<ButtonProps> = (props): ReactElement => {
 Button.defaultProps = {
   children: '',
   className: null,
+  disabled: false,
 };
 
 export default Button;

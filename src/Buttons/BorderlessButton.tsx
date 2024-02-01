@@ -67,4 +67,8 @@ ReactElement => {
   );
 };
 
+BorderlessButton.defaultProps = {
+  disabled: false,
+};
+
 export default BorderlessButton;
