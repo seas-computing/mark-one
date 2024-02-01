@@ -140,6 +140,7 @@ CheckLabel.defaultProps = {
   isLabelVisible: true,
   disabled: false,
   hideError: false,
+  isRequired: false,
 };
 
 StyledCheckLabel.defaultProps = {

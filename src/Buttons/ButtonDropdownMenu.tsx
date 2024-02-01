@@ -85,7 +85,7 @@ const ButtonDropdownMenu: FunctionComponent<ButtonDropdownProps> = (props)
 };
 
 ButtonDropdownMenu.defaultProps = {
-  variant: VARIANT.BASE,
+  forwardRef: null,
 };
 
 export default ButtonDropdownMenu;
