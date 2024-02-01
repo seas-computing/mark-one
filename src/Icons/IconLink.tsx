@@ -51,4 +51,8 @@ const IconLink: FunctionComponent<IconLinkProps> = (props): ReactElement => {
   );
 };
 
+IconLink.defaultProps = {
+  href: '',
+};
+
 export default IconLink;

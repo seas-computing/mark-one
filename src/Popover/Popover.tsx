@@ -147,6 +147,9 @@ const Popover: FunctionComponent<PopoverProps> = ({
 Popover.defaultProps = {
   xOffset: '0',
   yOffset: '0',
+  className: '',
+  forwardRef: null,
+  title: '',
 };
 
 export default Popover;

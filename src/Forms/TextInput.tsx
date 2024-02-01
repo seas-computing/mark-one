@@ -119,6 +119,10 @@ TextInput.defaultProps = {
   labelPosition: POSITION.LEFT,
   isLabelVisible: true,
   hideError: false,
+  placeholder: '',
+  errorMessage: '',
+  isRequired: false,
+  forwardRef: null,
 };
 
 /** @component */

@@ -153,6 +153,7 @@ InputLabel.defaultProps = {
   isLabelVisible: true,
   disabled: false,
   hideError: false,
+  isRequired: false,
 };
 
 StyledInputLabel.defaultProps = {

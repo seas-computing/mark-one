@@ -79,4 +79,10 @@ const ModalHeader: FunctionComponent<ModalHeaderProps> = ({
     </StyledModalHeader>
   );
 };
+
+ModalHeader.defaultProps = {
+  forwardRef: null,
+  tabIndex: 0,
+};
+
 export default ModalHeader;

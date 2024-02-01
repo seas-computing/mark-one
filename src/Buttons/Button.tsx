@@ -86,6 +86,7 @@ Button.defaultProps = {
   children: '',
   className: null,
   disabled: false,
+  form: '',
 };
 
 export default Button;

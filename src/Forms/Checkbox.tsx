@@ -180,6 +180,11 @@ Checkbox.defaultProps = {
   labelPosition: POSITION.RIGHT,
   checked: false,
   hideError: false,
+  name: '',
+  value: '',
+  isRequired: false,
+  errorMessage: '',
+  forwardRef: null,
 };
 
 /** @component */

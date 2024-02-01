@@ -126,6 +126,12 @@ Dropdown.defaultProps = {
   labelPosition: POSITION.TOP,
   isLabelVisible: true,
   hideError: false,
+  isRequired: false,
+  errorMessage: '',
+  forwardRef: null,
+  disabled: false,
+  value: '',
+  defaultValue: '',
 };
 
 /** @component */

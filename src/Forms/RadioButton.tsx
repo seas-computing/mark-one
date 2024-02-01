@@ -167,6 +167,10 @@ ReactElement => {
 
 RadioButton.defaultProps = {
   labelPosition: POSITION.RIGHT,
+  disabled: false,
+  checked: false,
+  isRequired: false,
+  forwardRef: null,
 };
 
 /** @component */
