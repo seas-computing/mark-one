@@ -28,8 +28,6 @@ export interface TextInputProps {
   type?: string;
   /** The current value in the text input field */
   value: string;
-  /** Specifies the size of the font for the text in the input field */
-  fontSize?: string;
   /** The body of the error message, if applicable */
   errorMessage?: string;
   /** If true, text input field will be disabled */
