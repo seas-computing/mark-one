@@ -12,12 +12,10 @@ import { ARIA_LIVE_VARIANT } from '../const';
 import { fromTheme, VARIANT } from '../Theme';
 
 export interface GlobalMessageProps {
-  /** The id of the modal message */
-  id?: string;
   /** Text to be displayed */
   children: ReactNode;
   /** Allows you to pass in a variant property from the VARIANT enum */
-  variant: VARIANT;
+  variant?: VARIANT;
   /** The aria role of the message displayed. A list of the different role
    * values that should be used can be found in the w3 docs:
    * https://www.w3.org/TR/wai-aria-1.1/#live_region_roles
@@ -65,7 +63,6 @@ const StyledGlobalMessage = styled.div<StyledGlobalMessageProps>`
 const GlobalMessage: FunctionComponent<GlobalMessageProps> = (props)
 : ReactElement => {
   const {
-    id,
     children,
     variant,
     role,
@@ -79,7 +76,6 @@ const GlobalMessage: FunctionComponent<GlobalMessageProps> = (props)
   return (
     <>
       <StyledGlobalMessage
-        id={id}
         variant={variant}
         theme={theme}
         role={role}
@@ -105,6 +101,7 @@ GlobalMessage.defaultProps = {
   variant: VARIANT.BASE,
   role: 'alert',
   ariaLive: ARIA_LIVE_VARIANT.ASSERTIVE,
+  forwardRef: null,
 };
 
 export default GlobalMessage;
