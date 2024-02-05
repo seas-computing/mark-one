@@ -27,7 +27,8 @@ const [text, setText] = useState('');
   </div>
 
   <div>
-    <Button 
+    <Button
+      id="useConfirm-example-button-1"
       onClick={() => {
         if (confirmDiscard()) {
           markAsChanged(false);

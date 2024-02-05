@@ -11,7 +11,7 @@ import {
 
 export interface BorderlessButtonProps extends MarkOneProps<HTMLButtonElement> {
   /** The id of the button */
-  id?: string;
+  id: string;
   /** Specifies the Font Awesome Icon(s) */
   children: ReactElement<FontAwesomeIconProps>;
   /** Function to call on click event */

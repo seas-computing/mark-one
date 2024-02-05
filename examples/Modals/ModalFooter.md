@@ -13,13 +13,13 @@ const [modalVisible, setModalVisible] = useState(false);
 
 <>
   <Button
-    id="testButton"
+    id="modalFooter-example-button-1"
     onClick={() => {setModalVisible(true)}}
   >
     Open Modal
   </Button>
   <Modal
-    ariaLabelledBy="testButton"
+    ariaLabelledBy="modalFooter-example-button-1"
     closeHandler={() => {setModalVisible(false)}}
     isVisible={modalVisible}
   >
@@ -30,13 +30,22 @@ const [modalVisible, setModalVisible] = useState(false);
       </div>
     </ModalBody>
     <ModalFooter>
-      <Button onClick={() => setModalVisible(false)}>
+      <Button
+        id="modalFooter-example-button-2"
+        onClick={() => setModalVisible(false)}
+      >
         One
       </Button>
-      <Button onClick={() => setModalVisible(false)}>
+      <Button
+        id="modalFooter-example-button-3"
+        onClick={() => setModalVisible(false)}
+      >
         Two
       </Button>
-      <Button onClick={() => setModalVisible(false)}>
+      <Button
+        id="modalFooter-example-button-4"
+        onClick={() => setModalVisible(false)}
+      >
         Three
       </Button>
     </ModalFooter>

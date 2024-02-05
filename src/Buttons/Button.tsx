@@ -14,7 +14,7 @@ import {
 
 export interface ButtonProps extends MarkOneProps<HTMLButtonElement> {
   /** The id of the button */
-  id?: string;
+  id: string;
   /** Text or components to be displayed on the button */
   children?: ReactNode;
   /** Function to call on click event */

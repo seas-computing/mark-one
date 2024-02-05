@@ -8,20 +8,23 @@ const [modalVisible, setModalVisible] = useState(false);
 
 <>
   <Button
-    id="testButton"
+    id="modalBody-example-button-1"
     onClick={() => {setModalVisible(true)}}
   >
     Open Modal
   </Button>
   <Modal
-    ariaLabelledBy="testButton"
+    ariaLabelledBy="modalBody-example-button-1"
     closeHandler={() => {setModalVisible(false)}}
     isVisible={modalVisible}
   >
     <ModalBody>
       <p>Any content can be placed inside the Modal Body</p>
-      <Button onClick={() => setModalVisible(false)}>
-        Close Modal
+      <Button
+        id="modalBody-example-button-2"
+        onClick={() => setModalVisible(false)}
+      >
+          Close Modal
       </Button>
     </ModalBody>
   </Modal>
@@ -47,13 +50,13 @@ const [checkedValue, setCheckedValue] = useState('');
 
 <>
   <Button
-    id="overflowTestButton"
+    id="modalBody-example-button-3"
     onClick={() => {setModalVisible(true)}}
   >
     Open Modal
   </Button>
   <Modal
-    ariaLabelledBy="overflowTestButton"
+    ariaLabelledBy="modalBody-example-button-3"
     closeHandler={() => {setModalVisible(false)}}
     isVisible={modalVisible}
   >
@@ -140,12 +143,13 @@ const [checkedValue, setCheckedValue] = useState('');
           />
         </Fieldset>
       </>
-      <Button onClick={() => setModalVisible(false)}>
-        Close Modal
+      <Button
+        id="modalBody-example-button-4"
+        onClick={() => setModalVisible(false)}
+      >
+          Close Modal
       </Button>
     </ModalBody>
   </Modal>
 </>
 ```
-
-

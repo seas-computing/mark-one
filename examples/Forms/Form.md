@@ -98,6 +98,7 @@ const [notesValue, setNotesValue] = useState('');
   }}
   />
   <Button
+    id="form-example-button-1"
     onClick={() => {
       alert('You clicked the primary button')
     }}
@@ -144,6 +145,11 @@ const submitHandler = () => {
   <ul>
     {items.map((item, index) => (<li key={item+index}>{item}</li>))}
   </ul>
-  <Button variant={VARIANT.PRIMARY}>Submit</Button>
+  <Button
+    id="form-example-button-2"
+    variant={VARIANT.PRIMARY}
+  >
+    Submit
+  </Button>
 </Form>
 ```
