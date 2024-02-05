@@ -12,6 +12,8 @@ import { ARIA_LIVE_VARIANT } from '../const';
 import { fromTheme, VARIANT } from '../Theme';
 
 export interface GlobalMessageProps {
+  /** The id of the modal message */
+  id: string;
   /** Text to be displayed */
   children: ReactNode;
   /** Allows you to pass in a variant property from the VARIANT enum */
@@ -63,6 +65,7 @@ const StyledGlobalMessage = styled.div<StyledGlobalMessageProps>`
 const GlobalMessage: FunctionComponent<GlobalMessageProps> = (props)
 : ReactElement => {
   const {
+    id,
     children,
     variant,
     role,
@@ -76,6 +79,7 @@ const GlobalMessage: FunctionComponent<GlobalMessageProps> = (props)
   return (
     <>
       <StyledGlobalMessage
+        id={id}
         variant={variant}
         theme={theme}
         role={role}
@@ -84,6 +88,7 @@ const GlobalMessage: FunctionComponent<GlobalMessageProps> = (props)
         <TextContainer>{children}</TextContainer>
         <ButtonContainer>
           <Button
+            id={`${id} button`}
             alt={buttonAlt}
             onClick={onClick}
             variant={VARIANT.BASE}
