@@ -21,7 +21,7 @@ interface ModalHeaderProps {
    * A handler to pass to the close button. If omitted, no close button will be
    * rendered
    */
-  closeButtonHandler?: () => void;
+  closeButtonHandler: () => void;
   /** Specifies the ref of the Modal Header */
   forwardRef?: Ref<HTMLHeadingElement>;
   /** Corresponds to HTML attribute tabindex */
@@ -64,18 +64,16 @@ const ModalHeader: FunctionComponent<ModalHeaderProps> = ({
       <ModalTitle>
         {children}
       </ModalTitle>
-      {closeButtonHandler
-      && (
-        <BorderlessButton
-          variant={VARIANT.NEGATIVE}
-          onClick={closeButtonHandler}
-        >
-          <FontAwesomeIcon
-            title="Close Modal"
-            icon={faTimes}
-          />
-        </BorderlessButton>
-      )}
+      <BorderlessButton
+        id="modalCloseButton"
+        variant={VARIANT.NEGATIVE}
+        onClick={closeButtonHandler}
+      >
+        <FontAwesomeIcon
+          title="Close Modal"
+          icon={faTimes}
+        />
+      </BorderlessButton>
     </StyledModalHeader>
   );
 };
