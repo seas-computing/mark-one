@@ -4,6 +4,7 @@ import React, {
   useContext,
   ReactNode,
   MouseEventHandler,
+  Ref,
 } from 'react';
 import styled, { ThemeContext } from 'styled-components';
 import {
@@ -27,6 +28,8 @@ export interface ButtonProps extends MarkOneProps<HTMLButtonElement> {
   className?: string;
   /** Pass through the form to allow the button to bind with that form */
   form?: string;
+  /** Specifies the ref of the element */
+  forwardRef?: Ref<HTMLButtonElement>;
 }
 
 const StyledButton = styled.button<ButtonProps>`
@@ -87,6 +90,7 @@ Button.defaultProps = {
   className: null,
   disabled: false,
   form: '',
+  forwardRef: null,
 };
 
 export default Button;
