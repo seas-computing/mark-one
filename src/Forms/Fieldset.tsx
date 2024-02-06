@@ -124,7 +124,9 @@ const Fieldset: FunctionComponent<FieldsetProps> = (props): ReactElement => {
       { children }
       {errorMessage
         && (
-          <ValidationErrorMessage>
+          <ValidationErrorMessage
+            id={`${legend}-error`}
+          >
             {errorMessage}
           </ValidationErrorMessage>
         )}

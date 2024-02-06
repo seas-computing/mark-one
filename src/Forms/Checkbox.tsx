@@ -165,7 +165,9 @@ const Checkbox: FunctionComponent<CheckboxProps> = (props): ReactElement => {
         </CustomCheckbox>
         {errorMessage && !hideError
         && (
-          <ValidationErrorMessage>
+          <ValidationErrorMessage
+            id={`${id}-error`}
+          >
             {errorMessage}
           </ValidationErrorMessage>
         )}
