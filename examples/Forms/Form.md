@@ -55,6 +55,7 @@ const [notesValue, setNotesValue] = useState('');
     isLegendVisible={false}
   >
     <Checkbox
+      id="form-example-checkbox-1"
       checked={undergraduateCheckbox}
       label="Undergraduate"
       onChange={(event) => {

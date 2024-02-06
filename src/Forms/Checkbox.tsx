@@ -13,7 +13,7 @@ import ValidationErrorMessage from './ValidationErrorMessage';
 
 interface NativeCheckboxProps {
   /** The id of the label tied to the checkbox */
-  id?: string;
+  id: string;
   /** The name of the checkbox */
   name?: string;
   /** Represents the value of the checkbox */
@@ -23,7 +23,7 @@ interface NativeCheckboxProps {
   /** Specifies whether box is checked */
   checked?: boolean;
   /** Function to call on change event */
-  onChange?: ChangeEventHandler;
+  onChange: ChangeEventHandler;
 }
 
 export interface CheckboxProps extends NativeCheckboxProps {

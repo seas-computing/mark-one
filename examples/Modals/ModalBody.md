@@ -69,51 +69,61 @@ const [checkedValue, setCheckedValue] = useState('');
           isLegendVisible={false}
         >
           <Checkbox
+            id="modalBody-example-checkbox-1"
             label="Option 1"
             disabled
             checked
           />
           <Checkbox
+            id="modalBody-example-checkbox-2"
             label="Option 2"
             disabled
             checked
           />
           <Checkbox
+            id="modalBody-example-checkbox-3"
             label="Option 3"
             disabled
             checked
           />
           <Checkbox
+            id="modalBody-example-checkbox-4"
             label="Option 4"
             disabled
             checked
           />
           <Checkbox
+            id="modalBody-example-checkbox-5"
             label="Option 5"
             disabled
             checked
           />
           <Checkbox
+            id="modalBody-example-checkbox-6"
             label="Option 6"
             disabled
             checked
           />
           <Checkbox
+            id="modalBody-example-checkbox-7"
             label="Option 7"
             disabled
             checked
           />
           <Checkbox
+            id="modalBody-example-checkbox-8"
             label="Option 8"
             disabled
             checked
           />
           <Checkbox
+            id="modalBody-example-checkbox-9"
             label="Option 9"
             disabled
             checked
           />
           <Checkbox
+            id="modalBody-example-checkbox-10"
             label="Option 10"
             disabled
             checked
