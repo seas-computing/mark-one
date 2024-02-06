@@ -4,7 +4,6 @@ import React, {
   ChangeEventHandler,
   FunctionComponent,
   Ref,
-  MouseEventHandler,
 } from 'react';
 import styled, { ThemeContext } from 'styled-components';
 import { fromTheme } from '../Theme';
