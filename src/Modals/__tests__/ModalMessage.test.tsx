@@ -12,7 +12,10 @@ describe('Modal Message', function () {
   const errorMessage = 'Error: This entry may only contain numbers.';
   beforeEach(function () {
     ({ getByText } = render(
-      <ModalMessage variant={VARIANT.NEGATIVE}>
+      <ModalMessage
+        id="testModalMessage"
+        variant={VARIANT.NEGATIVE}
+      >
         {errorMessage}
       </ModalMessage>
     ));

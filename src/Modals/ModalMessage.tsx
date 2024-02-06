@@ -7,7 +7,7 @@ import { fromTheme, VARIANT } from '../Theme';
 
 export interface ModalMessageProps {
   /** The id of the modal message */
-  id?: string;
+  id: string;
   /** Text to be displayed */
   children: string;
   /** Allows you to pass in a variant property from the VARIANT enum */
