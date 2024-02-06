@@ -501,7 +501,6 @@ describe('Text input', function () {
   context('when onClick is present', function () {
     beforeEach(function () {
       changeSpy = spy();
-      clickSpy = spy();
       ({ getByText } = render(
         <TextInput
           id="semester"
@@ -511,7 +510,6 @@ describe('Text input', function () {
           errorMessage="Error: Please enter a valid ID"
           hideError
           onChange={changeSpy}
-          onClick={clickSpy}
         />
       ));
     });

@@ -25,8 +25,6 @@ export interface DropdownProps {
   id: string;
   /** Function to call on change event */
   onChange: ChangeEventHandler;
-  /** Function to call on click event */
-  onClick?: MouseEventHandler
   /** The name of the dropdown */
   name: string;
   /** An array of objects with the properties specified through DropdownOptions */
@@ -63,7 +61,6 @@ const Dropdown: FunctionComponent<DropdownProps> = (props): ReactElement => {
   const {
     id,
     onChange,
-    onClick,
     name,
     options,
     value,
@@ -90,7 +87,6 @@ const Dropdown: FunctionComponent<DropdownProps> = (props): ReactElement => {
       <StyledDropdown
         id={id}
         onChange={onChange}
-        onClick={onClick}
         theme={theme}
         name={name}
         value={value}

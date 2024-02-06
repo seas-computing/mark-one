@@ -18,8 +18,6 @@ export interface TextInputProps {
   label: string;
   /** Function to call on change event */
   onChange: ChangeEventHandler;
-  /** Function to call on click event */
-  onClick?: MouseEventHandler;
   /** The name of the text input field */
   name: string;
   /** The placeholder value of the input field */
@@ -60,7 +58,6 @@ const TextInput: FunctionComponent<TextInputProps> = (props): ReactElement => {
   const {
     id,
     onChange,
-    onClick,
     type,
     name,
     placeholder,
@@ -86,7 +83,6 @@ const TextInput: FunctionComponent<TextInputProps> = (props): ReactElement => {
     >
       <StyledTextInput
         onChange={onChange}
-        onClick={onClick}
         id={id}
         name={name}
         placeholder={placeholder}
