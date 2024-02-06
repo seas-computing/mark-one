@@ -28,6 +28,7 @@ const [notesValue, setNotesValue] = useState('');
     isLegendVisible
   >
     <RadioButton
+      id="form-example-radioButton-1"
       label="Morning"
       value="morning"
       name="visibleFieldsetTest"
@@ -35,6 +36,7 @@ const [notesValue, setNotesValue] = useState('');
       onChange={(event) => setRadioCheckedValue(event.target.value)}
     />
     <RadioButton
+      id="form-example-radioButton-2"
       label="Noon"
       value="noon"
       name="visibleFieldsetTest"
@@ -42,6 +44,7 @@ const [notesValue, setNotesValue] = useState('');
       onChange={(event) => setRadioCheckedValue(event.target.value)}
     />
     <RadioButton
+      id="form-example-radioButton-3"
       label="Evening"
       value="evening"
       name="visibleFieldsetTest"

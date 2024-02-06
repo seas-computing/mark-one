@@ -138,6 +138,7 @@ const [checkedValue, setCheckedValue] = useState('');
             onChange={() => {}}
           />
           <RadioButton
+            id="modalBody-example-radioButton-1"
             label="One"
             value="one"
             name="quantity"
@@ -145,6 +146,7 @@ const [checkedValue, setCheckedValue] = useState('');
             onChange={(event) => setCheckedValue(event.target.value)}
           />
           <RadioButton
+            id="modalBody-example-radioButton-2"
             label="Two"
             value="two"
             name="quantity"
