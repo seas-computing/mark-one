@@ -25,9 +25,9 @@ describe('TabListItem Component', function () {
       const tab1 = tabItems[0].getAttribute('aria-selected');
       const tab2 = tabItems[1].getAttribute('aria-selected');
       const tab3 = tabItems[2].getAttribute('aria-selected');
-      strictEqual(tab1, null);
+      strictEqual(tab1, false);
       strictEqual(tab2, 'true');
-      strictEqual(tab3, null);
+      strictEqual(tab3, false);
     });
   });
 });

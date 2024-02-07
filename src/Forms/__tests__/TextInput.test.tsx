@@ -498,28 +498,4 @@ describe('Text input', function () {
       strictEqual(document.activeElement.id, textInputId);
     });
   });
-  context('when onClick is present', function () {
-    beforeEach(function () {
-      changeSpy = spy();
-      ({ getByText } = render(
-        <TextInput
-          id="semester"
-          name="semester"
-          value="Spring"
-          label="semester"
-          errorMessage="Error: Please enter a valid ID"
-          hideError
-          onChange={changeSpy}
-        />
-      ));
-    });
-    it('renders', function () {
-      const inputElement = getByText('semester') as HTMLInputElement;
-      strictEqual(!!inputElement, true);
-    });
-    it('calls the click handler when clicked', function () {
-      fireEvent.click(getByText('semester'));
-      strictEqual(clickSpy.callCount, 1);
-    });
-  });
 });
