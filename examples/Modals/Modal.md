@@ -27,7 +27,11 @@ const [modalVisible, setModalVisible] = useState(false);
     closeHandler={() => {setModalVisible(false)}}
     isVisible={modalVisible}
   >
-    <ModalHeader>Modal Example 1</ModalHeader>
+    <ModalHeader
+      closeButtonHandler={() => setModalVisible(false)}
+    >
+      Modal Example 1
+    </ModalHeader>
     <ModalBody>
       <div>This can be any arbitrary content</div>
     </ModalBody>

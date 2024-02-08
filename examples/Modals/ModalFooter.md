@@ -23,7 +23,11 @@ const [modalVisible, setModalVisible] = useState(false);
     closeHandler={() => {setModalVisible(false)}}
     isVisible={modalVisible}
   >
-    <ModalHeader>Modal Footer Example</ModalHeader>
+    <ModalHeader
+      closeButtonHandler={() => setModalVisible(false)}
+    >
+      Modal Footer Example
+    </ModalHeader>
     <ModalBody>
       <div>
         This can be any arbitrary content

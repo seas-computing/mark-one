@@ -60,7 +60,11 @@ const [checkedValue, setCheckedValue] = useState('');
     closeHandler={() => {setModalVisible(false)}}
     isVisible={modalVisible}
   >
-    <ModalHeader>Overflow Example</ModalHeader>
+    <ModalHeader
+      closeButtonHandler={() => setModalVisible(false)}
+    >
+      Overflow Example
+    </ModalHeader>
     <ModalBody>
       <>
         <Fieldset
