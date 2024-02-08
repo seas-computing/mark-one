@@ -79,7 +79,7 @@
     "react-docgen-typescript": "^1.15.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.21.3",
-    "react-styleguidist": "^13.1.2",
+    "react-styleguidist": "^11.2.0",
     "sinon": "^7.5.0",
     "style-loader": "^1.0.0",
     "styled-components": "^5.1.1",
@@ -88,7 +88,7 @@
     "tsconfig-paths": "^3.9.0",
     "tsconfig-paths-webpack-plugin": "^3.2.0",
     "typescript": "^4.9.5",
-    "webpack": "^4.41.2"
+    "webpack": "^4.46.0"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.26",
