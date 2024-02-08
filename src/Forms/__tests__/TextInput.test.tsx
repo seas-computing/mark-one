@@ -25,7 +25,6 @@ describe('Text input', function () {
   let getByRole: BoundFunction<GetByRole>;
   let queryByText: BoundFunction<QueryByText>;
   let changeSpy: SinonSpy;
-  let clickSpy: SinonSpy;
   context('when errorMessage prop is present', function () {
     const inputId = 'semester';
     beforeEach(function () {
