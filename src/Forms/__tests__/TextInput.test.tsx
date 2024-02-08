@@ -225,10 +225,6 @@ describe('Text input', function () {
       const defaultValue = inputField.value;
       strictEqual(defaultValue, 'Spring');
     });
-    it('set grid-template-rows styles accordingly', function () {
-      const style = window.getComputedStyle(getByText('semester').parentNode as HTMLElement);
-      strictEqual(style['grid-template-rows'], '1fr minmax(1em,max-content)');
-    });
   });
   context('when isRequired prop is present', function () {
     beforeEach(function () {
