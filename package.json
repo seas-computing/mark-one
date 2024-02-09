@@ -48,7 +48,6 @@
     "@types/react-dom": "^18.2.18",
     "@types/react-transition-group": "^4.2.4",
     "@types/sinon": "^7.5.0",
-    "@types/styled-components": "^5.1.1",
     "@types/webpack": "^4.39.3",
     "@typescript-eslint/eslint-plugin": "^3.6.1",
     "@typescript-eslint/parser": "^3.0.0",
