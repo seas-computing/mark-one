@@ -19,7 +19,7 @@ export interface ListProps {
 * difference is important semantically
 */
 
-const List = styled.ol.attrs(
+const List = styled.ol.attrs<ListProps>(
   ({ ordered }: ListProps) => (
     {
       as: ordered ? 'ol' : 'ul',

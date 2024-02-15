@@ -15,7 +15,7 @@ export interface FormProps {
   submitHandler?: FormEventHandler<HTMLFormElement>
 }
 
-const Form: FunctionComponent<FormProps> = styled.form.attrs(
+const Form: FunctionComponent<FormProps> = styled.form.attrs<FormProps>(
   (props: FormProps) => ({
     id: props.id,
     'aria-label': props.label,
