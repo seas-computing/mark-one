@@ -1,14 +1,12 @@
-import { ReactElement, ReactNode } from 'react';
-import styled, { withTheme } from 'styled-components';
+import { PropsWithChildren, ReactElement } from 'react';
+import styled from 'styled-components';
 
-export interface HeaderProps {
+export interface HeaderProps extends PropsWithChildren {
   /**
    * Allows for applying a custom background color
    * @default "transparent"
    * */
   background?: string;
-  /** The elements to be displayed inside the Header */
-  children: ReactNode;
   /**
    * Pass in a custom value for justify-content
    * @default space-between
@@ -20,7 +18,7 @@ export interface HeaderProps {
  * A full-width header to be displayed at the top of the page
  */
 
-const Header = styled.header<HeaderProps>`
+const Header = styled.header<PropsWithChildren<HeaderProps>>`
   align-items: baseline;
   background-color: ${({ background }) => background};
   display: flex;
@@ -35,4 +33,4 @@ Header.defaultProps = {
 };
 
 declare type Header = ReactElement<HeaderProps>;
-export default withTheme(Header);
+export default Header;
