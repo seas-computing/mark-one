@@ -15,6 +15,7 @@ const [value, setValue] = useState('fall');
     isLegendVisible={false}
   >
     <RadioButton
+      id="checkLabel-example-radioButton-1"
       label="Foo"
       value="foo"
       name="nonVisibleFieldsetTest"
@@ -23,6 +24,7 @@ const [value, setValue] = useState('fall');
       labelPosition={POSITION.RIGHT}
     />
     <RadioButton
+      id="checkLabel-example-radioButton-2"
       label="Bar"
       value="bar"
       name="nonVisibleFieldsetTest"
@@ -74,6 +76,7 @@ const [value, setValue] = useState('fall');
     isLegendVisible={false}
   >
     <RadioButton
+      id="checkLabel-example-radioButton-3"
       label="Foo"
       value="foo"
       name="nonVisibleFieldsetTest"
@@ -82,6 +85,7 @@ const [value, setValue] = useState('fall');
       labelPosition={POSITION.LEFT}
     />
     <RadioButton
+      id="checkLabel-example-radioButton-4"
       label="Bar"
       value="bar"
       name="nonVisibleFieldsetTest"

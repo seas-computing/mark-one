@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import styled, { withTheme } from 'styled-components';
+import styled from 'styled-components';
 
 interface SectionHeadingProps {
   /**
@@ -21,4 +21,4 @@ const StyledSectionHeading = styled.h2<SectionHeadingProps>`
  * @component SectionHeading
  * Render a section heading based on the Mark One Heading styles
  */
-export default withTheme(StyledSectionHeading);
+export default StyledSectionHeading;

@@ -17,22 +17,29 @@ const [modalVisible, setModalVisible] = useState(false);
 
 <>
   <Button
-    id="testButton"
+    id="modal-example-button-1"
     onClick={() => {setModalVisible(true)}}
   >
     Open Modal
   </Button>
   <Modal
-    ariaLabelledBy="testButton"
+    ariaLabelledBy="modal-example-button-1"
     closeHandler={() => {setModalVisible(false)}}
     isVisible={modalVisible}
   >
-    <ModalHeader>Modal Example 1</ModalHeader>
+    <ModalHeader
+      closeButtonHandler={() => setModalVisible(false)}
+    >
+      Modal Example 1
+    </ModalHeader>
     <ModalBody>
       <div>This can be any arbitrary content</div>
     </ModalBody>
     <ModalFooter>
-      <Button onClick={() => setModalVisible(false)}>
+      <Button
+        id="modal-example-button-2"
+        onClick={() => setModalVisible(false)}
+      >
         Close Modal
       </Button>
     </ModalFooter>
@@ -69,13 +76,13 @@ const switchModal = (isOpen) => {
 
 <>
   <Button
-    id="testButton"
+    id="modal-example-button-3"
     onClick={() => { switchModal(true) }}
   >
     Open Modal
   </Button>
   <Modal
-    ariaLabelledBy="testButton"
+    ariaLabelledBy="modal-example-button-3"
     closeHandler={() => { switchModal(false) }}
     isVisible={modalVisible}
   >
@@ -100,7 +107,10 @@ const switchModal = (isOpen) => {
       </div>
     </ModalBody>
     <ModalFooter>
-      <Button onClick={() => { switchModal(false) }}>
+      <Button
+        id="modal-example-button-4"
+        onClick={() => { switchModal(false) }}
+      >
         Close Modal
       </Button>
     </ModalFooter>
@@ -139,13 +149,13 @@ const switchModal = (isOpen) => {
 
 <>
   <Button
-    id="testButton"
+    id="modal-example-button-5"
     onClick={() => { switchModal(true) }}
   >
     Open Modal
   </Button>
   <Modal
-    ariaLabelledBy="testButton"
+    ariaLabelledBy="modal-example-button-5"
     closeHandler={() => { 
       if (confirmDiscard()) {
         switchModal(false)
@@ -179,7 +189,8 @@ const switchModal = (isOpen) => {
       </div>
     </ModalBody>
     <ModalFooter>
-      <Button 
+      <Button
+        id="modal-example-button-6"
         onClick={() => { 
           if(confirmDiscard()) {
             switchModal(false)

@@ -44,4 +44,8 @@ ReactElement => {
   );
 };
 
+LoadSpinner.defaultProps = {
+  textColor: SPINNER_TEXT.DARK,
+};
+
 export default LoadSpinner;

@@ -276,6 +276,7 @@ const onButtonClick = () => {
 
 <>
   <Button
+    id="textInput-example-button-1"
     onClick={onButtonClick}
     variant={VARIANT.INFO}
   >
@@ -312,13 +313,14 @@ const onButtonClick = () => {
 
 <>
   <Button
+    id="textInput-example-button-2"
     onClick={onButtonClick}
     variant={VARIANT.INFO}
   >
     Focus the input
   </Button>
   <Modal
-    ariaLabelledBy="testButton"
+    ariaLabelledBy="textInput-example-button-2"
     closeHandler={() => {setModalVisible(false)}}
     isVisible={modalVisible}
   >
@@ -333,6 +335,7 @@ const onButtonClick = () => {
         forwardRef={ref}
       />
       <Button
+        id="textInput-example-button-3"
         onClick={() => setModalVisible(false)}
         variant={VARIANT.BASE}
       >

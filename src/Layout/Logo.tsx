@@ -1,5 +1,5 @@
 import { ReactElement } from 'react';
-import styled, { withTheme } from 'styled-components';
+import styled from 'styled-components';
 
 export interface LogoProps {
   /**
@@ -52,4 +52,4 @@ Logo.defaultProps = {
 };
 
 declare type Logo = ReactElement<LogoProps>;
-export default withTheme(Logo);
+export default Logo;

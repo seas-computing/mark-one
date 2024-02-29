@@ -14,11 +14,12 @@ const [value, setValue] = useState(false);
     isLegendVisible={false}
   >
     <Checkbox
-    checked={value}
-    label="Undergraduate"
-    onChange={(event) => {
-      setValue(!value);
-    }}
+      id="checkbox-example-checkbox-1"
+      checked={value}
+      label="Undergraduate"
+      onChange={(event) => {
+        setValue(!value);
+      }}
     />
   </Fieldset>
 </>
@@ -38,12 +39,13 @@ const [value, setValue] = useState(false);
     isLegendVisible={false}
   >
     <Checkbox
-    checked={value}
-    label="Undergraduate"
-    labelPosition={POSITION.LEFT}
-    onChange={(event) => {
-      setValue(!value);
-    }}
+      id="checkbox-example-checkbox-2"
+      checked={value}
+      label="Undergraduate"
+      labelPosition={POSITION.LEFT}
+      onChange={(event) => {
+        setValue(!value);
+      }}
     />
   </Fieldset>
 </>
@@ -63,13 +65,14 @@ const [value, setValue] = useState(false);
     isLegendVisible={false}
   >
     <Checkbox
-    checked={value}
-    label="I agree to the terms and conditions."
-    onChange={(event) => {
-      setValue(!value);
-    }}
-    errorMessage="Please select this checkbox before proceeding."
-    isRequired
+      id="checkbox-example-checkbox-3"
+      checked={value}
+      label="I agree to the terms and conditions."
+      onChange={(event) => {
+        setValue(!value);
+      }}
+      errorMessage="Please select this checkbox before proceeding."
+      isRequired
     />
   </Fieldset>
 </>
@@ -89,14 +92,15 @@ const [value, setValue] = useState(false);
     isLegendVisible={false}
   >
     <Checkbox
-    checked={value}
-    label="I agree to the terms and conditions."
-    labelPosition={POSITION.LEFT}
-    onChange={(event) => {
-      setValue(!value);
-    }}
-    errorMessage="Please select this checkbox before proceeding."
-    isRequired
+      id="checkbox-example-checkbox-4"
+      checked={value}
+      label="I agree to the terms and conditions."
+      labelPosition={POSITION.LEFT}
+      onChange={(event) => {
+        setValue(!value);
+      }}
+      errorMessage="Please select this checkbox before proceeding."
+      isRequired
     />
   </Fieldset>
 </>
@@ -114,8 +118,9 @@ import { Fieldset } from 'mark-one';
     isLegendVisible={false}
   >
     <Checkbox
-    label="Undergraduate"
-    disabled
+      id="checkbox-example-checkbox-5"
+      label="Undergraduate"
+      disabled
     />
   </Fieldset>
 </>
@@ -133,9 +138,10 @@ import { Fieldset } from 'mark-one';
     isLegendVisible={false}
   >
     <Checkbox
-    label="Undergraduate"
-    disabled
-    checked
+      id="checkbox-example-checkbox-6"
+      label="Undergraduate"
+      disabled
+      checked
     />
   </Fieldset>
 </>

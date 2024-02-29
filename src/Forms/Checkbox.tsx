@@ -13,7 +13,7 @@ import ValidationErrorMessage from './ValidationErrorMessage';
 
 interface NativeCheckboxProps {
   /** The id of the label tied to the checkbox */
-  id?: string;
+  id: string;
   /** The name of the checkbox */
   name?: string;
   /** Represents the value of the checkbox */
@@ -23,7 +23,7 @@ interface NativeCheckboxProps {
   /** Specifies whether box is checked */
   checked?: boolean;
   /** Function to call on change event */
-  onChange?: ChangeEventHandler;
+  onChange: ChangeEventHandler;
 }
 
 export interface CheckboxProps extends NativeCheckboxProps {
@@ -165,7 +165,9 @@ const Checkbox: FunctionComponent<CheckboxProps> = (props): ReactElement => {
         </CustomCheckbox>
         {errorMessage && !hideError
         && (
-          <ValidationErrorMessage>
+          <ValidationErrorMessage
+            id={`${id}-error`}
+          >
             {errorMessage}
           </ValidationErrorMessage>
         )}
@@ -180,6 +182,11 @@ Checkbox.defaultProps = {
   labelPosition: POSITION.RIGHT,
   checked: false,
   hideError: false,
+  name: '',
+  value: '',
+  isRequired: false,
+  errorMessage: '',
+  forwardRef: null,
 };
 
 /** @component */

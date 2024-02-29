@@ -29,6 +29,7 @@ describe('Borderless Button', function () {
       clickSpy = spy();
       ({ getByTestId } = render(
         <BorderlessButton
+          id="testBorderlessButton"
           onClick={clickSpy}
           variant={VARIANT.BASE}
         >
@@ -52,6 +53,7 @@ describe('Borderless Button', function () {
       clickSpy = spy();
       ({ getByTestId } = render(
         <BorderlessButton
+          id="testBorderlessButton"
           onClick={clickSpy}
           variant={VARIANT.BASE}
           disabled
@@ -74,19 +76,21 @@ describe('Borderless Button', function () {
   context('when forwardRef prop is present', function () {
     beforeEach(function () {
       const ButtonRefExample = () => {
-        const ref = useRef<HTMLInputElement>(null);
+        const ref = useRef<HTMLButtonElement>(null);
         const onButtonClick = () => {
           ref.current.focus();
         };
         return (
           <>
             <Button
+              id="testButton"
               onClick={onButtonClick}
               variant={VARIANT.PRIMARY}
             >
               Focus the Borderless Button
             </Button>
             <BorderlessButton
+              id="testBorderlessButton"
               onClick={() => {}}
               variant={VARIANT.DANGER}
               forwardRef={ref}

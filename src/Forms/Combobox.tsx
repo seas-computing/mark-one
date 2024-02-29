@@ -13,6 +13,7 @@ import {
   StyledInputLabelText,
   InputLabelPosition,
   RequiredSymbol,
+  POSITION,
 } from './InputLabel';
 import ValidationErrorMessage from './ValidationErrorMessage';
 import { StyledTextInput } from './TextInput';
@@ -332,6 +333,9 @@ Combobox.defaultProps = {
   isLabelVisible: true,
   isRequired: false,
   placeholder: '',
+  errorMessage: '',
+  forwardRef: null,
+  labelPosition: POSITION.TOP,
 };
 
 export default Combobox;

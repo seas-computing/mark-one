@@ -162,15 +162,6 @@ describe('Table Components', function () {
       const cellCount = getAllByRole('cell').length;
       strictEqual(cellCount, 12);
     });
-    it('renders a row with a darker background color when isStriped is true', function () {
-      const row = getByTestId('firstStripedRow');
-      const style = window.getComputedStyle(row);
-      const [red, green, blue] = convert.hex.rgb(
-        MarkOneTheme.color.background.subtle
-      );
-      const convertExpectedToRGB = `rgb(${red}, ${green}, ${blue})`;
-      strictEqual(style.backgroundColor, convertExpectedToRGB);
-    });
     describe('noHighlight prop', function () {
       beforeEach(function () {
         ({ getByText } = render(

@@ -28,6 +28,7 @@ const [notesValue, setNotesValue] = useState('');
     isLegendVisible
   >
     <RadioButton
+      id="form-example-radioButton-1"
       label="Morning"
       value="morning"
       name="visibleFieldsetTest"
@@ -35,6 +36,7 @@ const [notesValue, setNotesValue] = useState('');
       onChange={(event) => setRadioCheckedValue(event.target.value)}
     />
     <RadioButton
+      id="form-example-radioButton-2"
       label="Noon"
       value="noon"
       name="visibleFieldsetTest"
@@ -42,6 +44,7 @@ const [notesValue, setNotesValue] = useState('');
       onChange={(event) => setRadioCheckedValue(event.target.value)}
     />
     <RadioButton
+      id="form-example-radioButton-3"
       label="Evening"
       value="evening"
       name="visibleFieldsetTest"
@@ -55,6 +58,7 @@ const [notesValue, setNotesValue] = useState('');
     isLegendVisible={false}
   >
     <Checkbox
+      id="form-example-checkbox-1"
       checked={undergraduateCheckbox}
       label="Undergraduate"
       onChange={(event) => {
@@ -98,6 +102,7 @@ const [notesValue, setNotesValue] = useState('');
   }}
   />
   <Button
+    id="form-example-button-1"
     onClick={() => {
       alert('You clicked the primary button')
     }}
@@ -144,6 +149,11 @@ const submitHandler = () => {
   <ul>
     {items.map((item, index) => (<li key={item+index}>{item}</li>))}
   </ul>
-  <Button variant={VARIANT.PRIMARY}>Submit</Button>
+  <Button
+    id="form-example-button-2"
+    variant={VARIANT.PRIMARY}
+  >
+    Submit
+  </Button>
 </Form>
 ```

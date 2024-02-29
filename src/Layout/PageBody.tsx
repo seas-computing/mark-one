@@ -1,5 +1,5 @@
 import { ReactNode, ReactElement } from 'react';
-import styled, { withTheme } from 'styled-components';
+import styled from 'styled-components';
 import { fromTheme } from '../Theme';
 
 export interface PageBodyProps {
@@ -16,4 +16,4 @@ const PageBody = styled.main<PageBodyProps>`
 
 declare type PageBody = ReactElement<PageBodyProps>;
 
-export default withTheme(PageBody);
+export default PageBody;

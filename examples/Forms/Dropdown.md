@@ -399,6 +399,7 @@ const onButtonClick = () => {
 
 <>
   <Button
+    id="dropdown-example-button-1"
     onClick={onButtonClick}
     variant={VARIANT.INFO}
   >
@@ -450,6 +451,7 @@ const onButtonClick = () => {
 
 <>
   <Button
+    id="dropdown-example-button-2"
     onClick={onButtonClick}
     variant={VARIANT.INFO}
   >
@@ -487,6 +489,7 @@ const onButtonClick = () => {
         forwardRef={ref}
       />
       <Button
+        id="dropdown-example-button-3"
         onClick={() => setModalVisible(false)}
         variant={VARIANT.BASE}
       >

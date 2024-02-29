@@ -2,6 +2,7 @@ import React, {
   ReactElement,
   useContext,
   FunctionComponent,
+  ReactNode,
 } from 'react';
 import styled, { ThemeContext } from 'styled-components';
 import { hideFromDisplay } from '../const';
@@ -53,6 +54,8 @@ export interface InputLabelProps {
   disabled?: boolean;
   /** If true, hide the error Msg and change the style StyledLabelProps */
   hideError?: boolean;
+  /** The text input associated with the label along with the label, if any */
+  children: ReactNode | ReactNode[];
 }
 
 const generateGrid = (
@@ -150,6 +153,7 @@ InputLabel.defaultProps = {
   isLabelVisible: true,
   disabled: false,
   hideError: false,
+  isRequired: false,
 };
 
 StyledInputLabel.defaultProps = {

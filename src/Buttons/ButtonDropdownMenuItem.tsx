@@ -10,6 +10,8 @@ import { DropdownListItem } from '../Lists';
 export interface ButtonDropdownMenuItemProps {
   /** Function to call on click event */
   onClick: MouseEventHandler;
+  /** The label of the button dropdown menu item */
+  children: string;
 }
 
 const StyledMenuListItem = styled(DropdownListItem)`

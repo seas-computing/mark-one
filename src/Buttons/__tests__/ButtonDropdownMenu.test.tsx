@@ -42,6 +42,7 @@ describe('Button Dropdown Menu', function () {
     clickSpy = spy();
     ({ getByLabelText, getByText, queryByText } = render(
       <ButtonDropdownMenu
+        id="testButtonDropdownMenu"
         alt="Timeslot button dropdown"
         label={<FontAwesomeIcon icon={faClock} size="sm" />}
         variant={VARIANT.BASE}

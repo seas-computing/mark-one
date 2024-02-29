@@ -14,6 +14,7 @@ const [textValue, setTextValue] = useState('Some valid input');
     isLegendVisible={false}
   >
     <Checkbox
+      id="inputLabel-example-checkbox-1"
       checked={checkValue}
       label="Undergraduate"
       labelPosition={POSITION.RIGHT}
@@ -49,6 +50,7 @@ const [textValue, setTextValue] = useState('Some valid input');
     isLegendVisible={false}
   >
     <Checkbox
+      id="inputLabel-example-checkbox-2"
       checked={checkValue}
       label="Undergraduate"
       labelPosition={POSITION.LEFT}

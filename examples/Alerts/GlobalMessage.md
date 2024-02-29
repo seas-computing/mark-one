@@ -3,6 +3,7 @@ The following is an example of a global message in which the `variant` property 
 import { VARIANT } from 'mark-one';
 
 <GlobalMessage
+  id="negativeMessage"
   variant={VARIANT.NEGATIVE}
   onClick={function() {
     alert('You clicked the "Close" button.')
@@ -19,6 +20,7 @@ The following is an example of a global message in which the `variant` property 
 import { VARIANT } from 'mark-one';
 
 <GlobalMessage
+  id="primaryMessage"
   variant={VARIANT.PRIMARY}
   onClick={function() {
     alert('You clicked the "Close" button.')
@@ -35,6 +37,7 @@ The following is an example of a global message in which the `variant` property 
 import { VARIANT } from 'mark-one';
 
 <GlobalMessage
+  id="infoMessage"
   variant={VARIANT.INFO}
   onClick={function() {
     alert('You clicked the "Close" button.')

@@ -1,15 +1,16 @@
-import { ReactNode, ReactElement } from 'react';
-import styled, { withTheme } from 'styled-components';
+import {
+  PropsWithChildren,
+  ReactElement,
+} from 'react';
+import styled from 'styled-components';
 import CSS from 'csstype';
 
-export interface FooterProps {
+export interface FooterProps extends PropsWithChildren {
   /**
    * Allows for applying a custom background color
    * @default "transparent"
    */
   background?: string;
-  /** Footer contents */
-  children?: ReactNode;
   /**
    * Pass in a custom value for justify-content
    * @default space-between
@@ -25,7 +26,7 @@ export interface FooterProps {
 /**
  * A full-width footer to be displayed at the bottom of the page
  */
-const Footer = styled.footer<FooterProps>`
+const Footer = styled.footer<PropsWithChildren<FooterProps>>`
   align-items: baseline;
   background: ${({ theme }) => theme.color.background.light};
   display: flex;
@@ -56,4 +57,4 @@ Footer.defaultProps = {
 
 declare type Footer = ReactElement<FooterProps>;
 
-export default withTheme(Footer);
+export default Footer;

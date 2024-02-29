@@ -32,7 +32,7 @@ VARIANT;
 
 function getRecursiveProp<T>(
   theme: T,
-  key: Extract<ValidThemeValues, keyof T>,
+  key: ValidThemeValues & keyof T,
   next?: ValidThemeValues[]
 ): string {
   const nextValue = theme[key];
@@ -79,10 +79,10 @@ function getRecursiveProp<T>(
 export function fromTheme
 <
   T extends DefaultTheme,
-  K extends Extract<ValidThemeValues, keyof T>,
-  N extends Extract<ValidThemeValues, keyof T[K]>,
-  M extends Extract<ValidThemeValues, keyof T[K][N]>,
-  L extends Extract<ValidThemeValues, keyof T[K][N][M]>,
+  K extends ValidThemeValues & keyof T,
+  N extends ValidThemeValues & keyof T[K],
+  M extends ValidThemeValues & keyof T[K][N],
+  L extends ValidThemeValues & keyof T[K][N][M],
 >(
   key: K,
   next: N,

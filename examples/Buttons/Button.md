@@ -3,6 +3,7 @@ The following is an example of a basic button in which the `variant` property de
 import { VARIANT } from 'mark-one';
 
 <Button
+  id="button-example-button-1"
   onClick={function() {
     alert('You clicked the button')
   }}
@@ -18,6 +19,7 @@ The following is an example of a primary button in which the `variant` property 
 import { VARIANT } from 'mark-one';
 
 <Button
+  id="button-example-button-2"
   onClick={function() {
     alert('You clicked the primary button')
   }}
@@ -33,6 +35,7 @@ The following is an example of a secondary button in which the `variant` propert
 import { VARIANT } from 'mark-one';
 
 <Button
+  id="button-example-button-3"
   onClick={function() {
     alert('You clicked the secondary button')
   }}
@@ -48,6 +51,7 @@ The following is an example of an info button in which the `variant` property is
 import { VARIANT } from 'mark-one';
 
 <Button
+  id="button-example-button-4"
   onClick={function() {
     alert('You clicked the info button')
   }}
@@ -63,6 +67,7 @@ The following is an example of a danger button in which the `variant` property i
 import { VARIANT } from 'mark-one';
 
 <Button
+  id="button-example-button-5"
   onClick={function() {
     alert('You clicked the danger button')
   }}
@@ -104,7 +109,8 @@ const SimpleForm = () => {
          />
       </form>
 
-      <Button 
+      <Button
+        id="button-example-button-6"
         variant={VARIANT.DEFAULT} 
         onClick={handleSubmit}
         form="simpleForm">Submit</Button>
@@ -134,6 +140,7 @@ const ButtonRefExample = () => {
     <>
     <div>
     <Button
+      id="button-example-button-7"
       onClick={onButtonClick}
       variant={VARIANT.PRIMARY}
     >
@@ -142,6 +149,7 @@ const ButtonRefExample = () => {
     </div>
     <div>
     <Button
+      id="button-example-button-8"
       onClick={function() {
         alert('You clicked the button in which variant equals VARIANT.DANGER')
       }}

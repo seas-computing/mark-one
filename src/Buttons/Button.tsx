@@ -4,6 +4,7 @@ import React, {
   useContext,
   ReactNode,
   MouseEventHandler,
+  Ref,
 } from 'react';
 import styled, { ThemeContext } from 'styled-components';
 import {
@@ -14,7 +15,7 @@ import {
 
 export interface ButtonProps extends MarkOneProps<HTMLButtonElement> {
   /** The id of the button */
-  id?: string;
+  id: string;
   /** Text or components to be displayed on the button */
   children?: ReactNode;
   /** Function to call on click event */
@@ -27,6 +28,8 @@ export interface ButtonProps extends MarkOneProps<HTMLButtonElement> {
   className?: string;
   /** Pass through the form to allow the button to bind with that form */
   form?: string;
+  /** Specifies the ref of the element */
+  forwardRef?: Ref<HTMLButtonElement>;
 }
 
 const StyledButton = styled.button<ButtonProps>`
@@ -85,6 +88,9 @@ const Button: FunctionComponent<ButtonProps> = (props): ReactElement => {
 Button.defaultProps = {
   children: '',
   className: null,
+  disabled: false,
+  form: '',
+  forwardRef: null,
 };
 
 export default Button;
