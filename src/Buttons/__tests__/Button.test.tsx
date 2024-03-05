@@ -7,7 +7,7 @@ import {
   fireEvent,
   BoundFunction,
   GetByText,
-  wait,
+  waitFor,
 } from 'test-utils';
 import {
   spy,
@@ -24,6 +24,7 @@ describe('Button', function () {
       clickSpy = spy();
       ({ getByText } = render(
         <Button
+          id="testButton"
           onClick={clickSpy}
           variant={VARIANT.BASE}
         >
@@ -47,6 +48,7 @@ describe('Button', function () {
       clickSpy = spy();
       ({ getByText } = render(
         <Button
+          id="testButton"
           onClick={clickSpy}
           variant={VARIANT.BASE}
           disabled
@@ -69,19 +71,21 @@ describe('Button', function () {
   context('when forwardRef prop is present', function () {
     beforeEach(function () {
       const ButtonRefExample = () => {
-        const ref = useRef<HTMLInputElement>(null);
+        const ref = useRef<HTMLButtonElement>(null);
         const onButtonClick = () => {
           ref.current.focus();
         };
         return (
           <>
             <Button
+              id="testButton1"
               onClick={onButtonClick}
               variant={VARIANT.PRIMARY}
             >
               Focus the Other Button
             </Button>
             <Button
+              id="testButton2"
               onClick={(): void => {}}
               variant={VARIANT.DANGER}
               forwardRef={ref}
@@ -99,7 +103,7 @@ describe('Button', function () {
       const initialButton = getByText('Focus the Other Button');
       initialButton.click();
       const basicButton = getByText('Basic Button');
-      await wait(() => document.activeElement === basicButton);
+      await waitFor(() => document.activeElement === basicButton);
       strictEqual(document.activeElement as HTMLElement, basicButton);
     });
   });

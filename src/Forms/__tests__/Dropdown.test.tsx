@@ -22,7 +22,6 @@ describe('Dropdown', function () {
   let getAllByRole: BoundFunction<AllByRole>;
   let queryByText: BoundFunction<QueryByText>;
   let changeSpy: SinonSpy;
-  let clickSpy: SinonSpy;
   const options = [
     {
       value: 'all',
@@ -487,7 +486,6 @@ describe('Dropdown', function () {
   context('when the disabled prop is true', function () {
     beforeEach(function () {
       changeSpy = spy();
-      clickSpy = spy();
       ({ getByText, getAllByRole } = render(
         <Dropdown
           id="semesters"
@@ -496,17 +494,12 @@ describe('Dropdown', function () {
           label="Semesters"
           name="semesters"
           onChange={changeSpy}
-          onClick={clickSpy}
           disabled
         />
       ));
     });
     it('renders', function () {
       getByText('Semesters');
-    });
-    it('does not call the click handler when clicked', function () {
-      fireEvent.change(getByText('Semesters'));
-      strictEqual(clickSpy.callCount, 0);
     });
     it('contains the expected elements', function () {
       const dropdownOptionsCount = getAllByRole('option').length;

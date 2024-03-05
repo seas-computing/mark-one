@@ -28,7 +28,7 @@ jobs:
           echo "NPM_TAG=$(if [[ -n `git branch --points-at HEAD | grep main` ]]; then echo latest; else echo next; fi)" >> $GITHUB_ENV
       - uses: actions/setup-node@v1
         with:
-          node-version: 10
+          node-version: 18
           registry-url: 'https://registry.npmjs.org'
       - run: npm ci
       - run: npm publish --tag ${{ env.NPM_TAG }}

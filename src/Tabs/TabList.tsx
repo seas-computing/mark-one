@@ -1,7 +1,7 @@
 import {
   ReactElement,
 } from 'react';
-import styled, { withTheme } from 'styled-components';
+import styled from 'styled-components';
 import { fromTheme } from '../Theme';
 import TabListItem from './TabListItem';
 
@@ -27,4 +27,4 @@ const TabList = styled.ul`
 
 declare type TabList = ReactElement<TabListProps>;
 
-export default withTheme(TabList);
+export default TabList;

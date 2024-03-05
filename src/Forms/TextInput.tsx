@@ -4,7 +4,6 @@ import React, {
   ChangeEventHandler,
   FunctionComponent,
   Ref,
-  MouseEventHandler,
 } from 'react';
 import styled, { ThemeContext } from 'styled-components';
 import { fromTheme } from '../Theme';
@@ -18,8 +17,6 @@ export interface TextInputProps {
   label: string;
   /** Function to call on change event */
   onChange: ChangeEventHandler;
-  /** Function to call on click event */
-  onClick?: MouseEventHandler;
   /** The name of the text input field */
   name: string;
   /** The placeholder value of the input field */
@@ -28,8 +25,6 @@ export interface TextInputProps {
   type?: string;
   /** The current value in the text input field */
   value: string;
-  /** Specifies the size of the font for the text in the input field */
-  fontSize?: string;
   /** The body of the error message, if applicable */
   errorMessage?: string;
   /** If true, text input field will be disabled */
@@ -62,7 +57,6 @@ const TextInput: FunctionComponent<TextInputProps> = (props): ReactElement => {
   const {
     id,
     onChange,
-    onClick,
     type,
     name,
     placeholder,
@@ -88,7 +82,6 @@ const TextInput: FunctionComponent<TextInputProps> = (props): ReactElement => {
     >
       <StyledTextInput
         onChange={onChange}
-        onClick={onClick}
         id={id}
         name={name}
         placeholder={placeholder}
@@ -119,6 +112,10 @@ TextInput.defaultProps = {
   labelPosition: POSITION.LEFT,
   isLabelVisible: true,
   hideError: false,
+  placeholder: '',
+  errorMessage: '',
+  isRequired: false,
+  forwardRef: null,
 };
 
 /** @component */

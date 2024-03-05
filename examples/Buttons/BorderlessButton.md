@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowUp } from '@fortawesome/free-solid-svg-icons';
 
 <BorderlessButton
+  id="borderlessButton-example-borderlessButton-1"
   onClick={function() {
     alert('You clicked the borderless button in which variant equals VARIANT.BASE')
   }}
@@ -23,6 +24,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
 <BorderlessButton
+  id="borderlessButton-example-borderlessButton-2"
   onClick={function() {
     alert('You clicked the borderless button in which variant equals VARIANT.PRIMARY')
   }}
@@ -40,6 +42,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
 <BorderlessButton
+  id="borderlessButton-example-borderlessButton-3"
   onClick={function() {
     alert('You clicked the borderless button in which variant equals VARIANT.SECONDARY')
   }}
@@ -57,6 +60,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faQuestion } from '@fortawesome/free-solid-svg-icons';
 
 <BorderlessButton
+  id="borderlessButton-example-borderlessButton-4"
   onClick={function() {
     alert('You clicked the borderless button in which variant equals VARIANT.INFO')
   }}
@@ -74,6 +78,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 
 <BorderlessButton
+  id="borderlessButton-example-borderlessButton-5"
   onClick={function() {
     alert('You clicked the borderless button in which variant equals VARIANT.DANGER')
   }}
@@ -106,12 +111,14 @@ const BorderlessButtonRefExample = () => {
   return (
     <>
     <Button
+      id="borderlessButton-example-button-1"
       onClick={onButtonClick}
       variant={VARIANT.PRIMARY}
     >
       Focus the Borderless Button
     </Button>
     <BorderlessButton
+      id="borderlessButton-example-borderlessButton-6"
       onClick={function() {
         alert('You clicked the borderless button in which variant equals VARIANT.DANGER')
       }}

@@ -16,7 +16,7 @@ import { DropdownList } from '../Lists';
 
 export interface ButtonDropdownProps {
   /** The id of the button */
-  id?: string;
+  id: string;
   /** Specifies the text or Font Awesome Icon displayed on the button */
   label: ReactNode;
   /** Specifies the alt text for screen readers */
@@ -85,7 +85,7 @@ const ButtonDropdownMenu: FunctionComponent<ButtonDropdownProps> = (props)
 };
 
 ButtonDropdownMenu.defaultProps = {
-  variant: VARIANT.BASE,
+  forwardRef: null,
 };
 
 export default ButtonDropdownMenu;

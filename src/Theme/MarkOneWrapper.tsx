@@ -60,7 +60,7 @@ const MarkOneWrapper: FunctionComponent<ThemeWrapperProps> = ({
 }): ReactElement => (
   <ThemeProvider theme={MarkOneTheme}>
     <>
-      <GlobalCSS />
+      <GlobalCSS theme={MarkOneTheme} />
       {children}
     </>
   </ThemeProvider>

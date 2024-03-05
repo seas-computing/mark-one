@@ -8,20 +8,23 @@ const [modalVisible, setModalVisible] = useState(false);
 
 <>
   <Button
-    id="testButton"
+    id="modalBody-example-button-1"
     onClick={() => {setModalVisible(true)}}
   >
     Open Modal
   </Button>
   <Modal
-    ariaLabelledBy="testButton"
+    ariaLabelledBy="modalBody-example-button-1"
     closeHandler={() => {setModalVisible(false)}}
     isVisible={modalVisible}
   >
     <ModalBody>
       <p>Any content can be placed inside the Modal Body</p>
-      <Button onClick={() => setModalVisible(false)}>
-        Close Modal
+      <Button
+        id="modalBody-example-button-2"
+        onClick={() => setModalVisible(false)}
+      >
+          Close Modal
       </Button>
     </ModalBody>
   </Modal>
@@ -47,17 +50,21 @@ const [checkedValue, setCheckedValue] = useState('');
 
 <>
   <Button
-    id="overflowTestButton"
+    id="modalBody-example-button-3"
     onClick={() => {setModalVisible(true)}}
   >
     Open Modal
   </Button>
   <Modal
-    ariaLabelledBy="overflowTestButton"
+    ariaLabelledBy="modalBody-example-button-3"
     closeHandler={() => {setModalVisible(false)}}
     isVisible={modalVisible}
   >
-    <ModalHeader>Overflow Example</ModalHeader>
+    <ModalHeader
+      closeButtonHandler={() => setModalVisible(false)}
+    >
+      Overflow Example
+    </ModalHeader>
     <ModalBody>
       <>
         <Fieldset
@@ -66,51 +73,61 @@ const [checkedValue, setCheckedValue] = useState('');
           isLegendVisible={false}
         >
           <Checkbox
+            id="modalBody-example-checkbox-1"
             label="Option 1"
             disabled
             checked
           />
           <Checkbox
+            id="modalBody-example-checkbox-2"
             label="Option 2"
             disabled
             checked
           />
           <Checkbox
+            id="modalBody-example-checkbox-3"
             label="Option 3"
             disabled
             checked
           />
           <Checkbox
+            id="modalBody-example-checkbox-4"
             label="Option 4"
             disabled
             checked
           />
           <Checkbox
+            id="modalBody-example-checkbox-5"
             label="Option 5"
             disabled
             checked
           />
           <Checkbox
+            id="modalBody-example-checkbox-6"
             label="Option 6"
             disabled
             checked
           />
           <Checkbox
+            id="modalBody-example-checkbox-7"
             label="Option 7"
             disabled
             checked
           />
           <Checkbox
+            id="modalBody-example-checkbox-8"
             label="Option 8"
             disabled
             checked
           />
           <Checkbox
+            id="modalBody-example-checkbox-9"
             label="Option 9"
             disabled
             checked
           />
           <Checkbox
+            id="modalBody-example-checkbox-10"
             label="Option 10"
             disabled
             checked
@@ -125,6 +142,7 @@ const [checkedValue, setCheckedValue] = useState('');
             onChange={() => {}}
           />
           <RadioButton
+            id="modalBody-example-radioButton-1"
             label="One"
             value="one"
             name="quantity"
@@ -132,6 +150,7 @@ const [checkedValue, setCheckedValue] = useState('');
             onChange={(event) => setCheckedValue(event.target.value)}
           />
           <RadioButton
+            id="modalBody-example-radioButton-2"
             label="Two"
             value="two"
             name="quantity"
@@ -140,12 +159,13 @@ const [checkedValue, setCheckedValue] = useState('');
           />
         </Fieldset>
       </>
-      <Button onClick={() => setModalVisible(false)}>
-        Close Modal
+      <Button
+        id="modalBody-example-button-4"
+        onClick={() => setModalVisible(false)}
+      >
+          Close Modal
       </Button>
     </ModalBody>
   </Modal>
 </>
 ```
-
-

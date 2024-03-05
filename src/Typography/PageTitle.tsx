@@ -38,8 +38,4 @@ ReactElement => {
   );
 };
 
-PageTitle.defaultProps = {
-  children: '',
-};
-
 export default PageTitle;

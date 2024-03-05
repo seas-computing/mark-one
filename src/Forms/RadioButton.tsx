@@ -12,7 +12,7 @@ import { POSITION } from './InputLabel';
 
 interface NativeRadioButtonProps {
   /** The id tied to the radio button */
-  id?: string;
+  id: string;
   /** The name of the radio button */
   name: string;
   /** The value of the radio button */
@@ -24,7 +24,7 @@ interface NativeRadioButtonProps {
   /** Specifies whether button is checked */
   checked?: boolean;
   /** Function to call on change event */
-  onChange?: ChangeEventHandler;
+  onChange: ChangeEventHandler;
 }
 
 export interface RadioButtonProps extends NativeRadioButtonProps {
@@ -167,6 +167,10 @@ ReactElement => {
 
 RadioButton.defaultProps = {
   labelPosition: POSITION.RIGHT,
+  disabled: false,
+  checked: false,
+  isRequired: false,
+  forwardRef: null,
 };
 
 /** @component */

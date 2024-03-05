@@ -45,29 +45,21 @@ describe('Modal Header', function () {
         strictEqual(cbHandler.callCount, callCountBefore + 1);
       });
     });
-    context('When no handler is passed in', function () {
-      it('Should not render the close button', function () {
-        const { queryByTitle } = render(
-          <Modal
-            ariaLabelledBy="facultyEditButton"
-            isVisible
-          >
-            displayed
-          </Modal>
-        );
-        const modal = queryByTitle('Close Modal');
-        strictEqual(modal === null, true);
-      });
-    });
   });
   describe('Title Text', function () {
+    let cbHandler: SinonSpy;
+    beforeEach(function () {
+      cbHandler = spy();
+    });
     it('Renders the title text in an h2', function () {
       const { getByText } = render(
         <Modal
           ariaLabelledBy="facultyEditButton"
           isVisible
         >
-          <ModalHeader>
+          <ModalHeader
+            closeButtonHandler={cbHandler}
+          >
             Title Text
           </ModalHeader>
         </Modal>

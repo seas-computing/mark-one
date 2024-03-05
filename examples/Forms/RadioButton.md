@@ -12,6 +12,7 @@ const [checkedValue, setCheckedValue] = useState('');
     isLegendVisible={false}
   >
     <RadioButton
+      id="radioButton-example-radioButton-1"
       label="Foo"
       value="foo"
       name="nonVisibleFieldsetTest"
@@ -19,6 +20,7 @@ const [checkedValue, setCheckedValue] = useState('');
       onChange={(event) => setCheckedValue(event.target.value)}
     />
     <RadioButton
+      id="radioButton-example-radioButton-2"
       label="Bar"
       value="bar"
       name="nonVisibleFieldsetTest"
@@ -26,6 +28,7 @@ const [checkedValue, setCheckedValue] = useState('');
       onChange={(event) => setCheckedValue(event.target.value)}
     />
     <RadioButton
+      id="radioButton-example-radioButton-3"
       label="Baz"
       value="baz"
       name="nonVisibleFieldsetTest"
@@ -50,6 +53,7 @@ const [checkedValue, setCheckedValue] = useState('');
     isLegendVisible
   >
     <RadioButton
+      id="radioButton-example-radioButton-4"
       label="Morning"
       value="morning"
       name="visibleFieldsetTest"
@@ -57,6 +61,7 @@ const [checkedValue, setCheckedValue] = useState('');
       onChange={(event) => setCheckedValue(event.target.value)}
     />
     <RadioButton
+      id="radioButton-example-radioButton-5"
       label="Noon"
       value="noon"
       name="visibleFieldsetTest"
@@ -64,6 +69,7 @@ const [checkedValue, setCheckedValue] = useState('');
       onChange={(event) => setCheckedValue(event.target.value)}
     />
     <RadioButton
+      id="radioButton-example-radioButton-6"
       label="Evening"
       value="evening"
       name="visibleFieldsetTest"
@@ -88,6 +94,7 @@ const [checkedValue, setCheckedValue] = useState('');
     isLegendVisible={false}
   >
     <RadioButton
+      id="radioButton-example-radioButton-7"
       label="One"
       value="one"
       name="quantity"
@@ -95,6 +102,7 @@ const [checkedValue, setCheckedValue] = useState('');
       onChange={(event) => setCheckedValue(event.target.value)}
     />
     <RadioButton
+      id="radioButton-example-radioButton-8"
       label="Two"
       value="two"
       name="quantity"
@@ -102,6 +110,7 @@ const [checkedValue, setCheckedValue] = useState('');
       onChange={(event) => setCheckedValue(event.target.value)}
     />
     <RadioButton
+      id="radioButton-example-radioButton-9"
       label="Three"
       value="three"
       name="quantity"
@@ -128,6 +137,7 @@ const [checkedValue, setCheckedValue] = useState('');
     legendDescription="Note: * denoted required information"
   >
     <RadioButton
+      id="radioButton-example-radioButton-10"
       label="I accept the terms and conditions."
       value="agree"
       name="terms"
@@ -136,6 +146,7 @@ const [checkedValue, setCheckedValue] = useState('');
       onChange={(event) => setCheckedValue(event.target.value)}
     />
     <RadioButton
+      id="radioButton-example-radioButton-11"
       label="I do not accept the terms and conditions."
       value="disagree"
       name="terms"
@@ -163,6 +174,7 @@ const [checkedValue, setCheckedValue] = useState('');
     errorMessage="Error: Please make a selection before proceeding."
   >
     <RadioButton
+      id="radioButton-example-radioButton-12"
       label="I accept the terms and conditions."
       value="accept"
       name="conditions"
@@ -171,6 +183,7 @@ const [checkedValue, setCheckedValue] = useState('');
       onChange={(event) => setCheckedValue(event.target.value)}
     />
     <RadioButton
+      id="radioButton-example-radioButton-13"
       label="I do not accept the terms and conditions."
       value="decline"
       name="conditions"

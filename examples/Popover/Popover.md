@@ -16,6 +16,7 @@ const [popoverVisible, setPopoverVisible] = useState(false);
     Additional Information
   </Popover>
   <Button
+    id="popover-example-button-1"
     type="button"
     onClick={() => { setPopoverVisible((current) => !current); }}
   >
@@ -39,6 +40,7 @@ const [popoverVisible, setPopoverVisible] = useState(false);
     Minimum viable popover 
   </Popover>
   <Button
+    id="popover-example-button-2"
     type="button"
     onClick={() => { setPopoverVisible((current) => !current); }}
   >

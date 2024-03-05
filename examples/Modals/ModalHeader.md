@@ -1,6 +1,4 @@
-This is a utility component for adding a header to the `<Modal>`. The text inside the header will be rendered inside an `<h2>` component, and if an optional `closeButtonHandler` prop is passed in, it will render an `X` button in the top-right corner.
-
-### Without the `closeButtonHandler`
+This is a utility component for adding a header to the `<Modal>`.
 
 ```jsx
 import { useState } from 'react';
@@ -15,65 +13,34 @@ const [modalVisible, setModalVisible] = useState(false);
 
 <>
   <Button
-    id="testButton"
+    id="modalHeader-example-button-1"
     onClick={() => {setModalVisible(true)}}
   >
     Open Modal
   </Button>
   <Modal
-    ariaLabelledBy="testButton"
-    closeHandler={() => {setModalVisible(false)}}
-    isVisible={modalVisible}
-  >
-    <ModalHeader>Modal Header without Close</ModalHeader>
-    <ModalBody>
-      <div>
-        This can be any arbitrary content
-      </div>
-    </ModalBody>
-    <ModalFooter>
-      <Button onClick={() => setModalVisible(false)}>
-        Close Modal
-      </Button>
-    </ModalFooter>
-  </Modal>
-</>
-```
-
-### With the `closeButtonHandler`
-
-```jsx
-import { useState } from 'react';
-import {
-  Button,
-  Modal,
-  ModalBody,
-} from 'mark-one';
-
-const [modalVisible, setModalVisible] = useState(false);
-
-<>
-  <Button
-    id="testButton"
-    onClick={() => {setModalVisible(true)}}
-  >
-    Open Modal
-  </Button>
-  <Modal
-    ariaLabelledBy="testButton"
+    ariaLabelledBy="modalHeader-example-button-1"
     closeHandler={() => {setModalVisible(false)}}
     isVisible={modalVisible}
   >
     <ModalHeader
       closeButtonHandler={() => {setModalVisible(false)}}
     >
-      Modal Header with Close Button →
+      Modal Header
     </ModalHeader>
     <ModalBody>
       <div>
         This can be any arbitrary content
       </div>
     </ModalBody>
+    <ModalFooter>
+      <Button
+        id="modalHeader-example-button-2"
+        onClick={() => setModalVisible(false)}
+      >
+        Close Modal
+      </Button>
+    </ModalFooter>
   </Modal>
 </>
 ```
@@ -104,13 +71,14 @@ const RefExample = () => {
   return (
     <>
       <Button
+        id="modalHeader-example-button-3"
         onClick={onButtonClick}
         variant={VARIANT.INFO}
       >
         Focus the Header
       </Button>
       <Modal
-        ariaLabelledBy="testButton"
+        ariaLabelledBy="modalHeader-example-button-3"
         closeHandler={() => {setModalVisible(false)}}
         isVisible={modalVisible}
       >
@@ -147,6 +115,7 @@ const RefExample = () => {
             label="Semester"
           />
           <Button
+            id="modalHeader-example-button-4"
             onClick={() => setModalVisible(false)}
             variant={VARIANT.BASE}
           >

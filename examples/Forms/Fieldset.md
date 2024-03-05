@@ -14,6 +14,7 @@ const [nonRequiredCheckbox, setNonRequiredCheckbox] = useState(false);
   isRequired
 >
   <Checkbox
+    id="fieldset-example-checkbox-1"
     checked={requiredCheckbox}
     label="Required Checkbox"
     onChange={(event) => {
@@ -23,6 +24,7 @@ const [nonRequiredCheckbox, setNonRequiredCheckbox] = useState(false);
     isRequired
   />
   <Checkbox
+    id="fieldset-example-checkbox-2"
     checked={anotherRequiredCheckbox}
     label="Another Required Checkbox"
     onChange={(event) => {
@@ -32,6 +34,7 @@ const [nonRequiredCheckbox, setNonRequiredCheckbox] = useState(false);
     isRequired
   />
   <Checkbox
+    id="fieldset-example-checkbox-3"
     checked={nonRequiredCheckbox}
     label="Non-Required Checkbox"
     onChange={(event) => {
@@ -56,6 +59,7 @@ const [nonRequiredCheckbox, setNonRequiredCheckbox] = useState(false);
   isRequired
 >
   <Checkbox
+    id="fieldset-example-checkbox-4"
     checked={requiredCheckbox}
     label="Required Checkbox"
     onChange={(event) => {
@@ -64,6 +68,7 @@ const [nonRequiredCheckbox, setNonRequiredCheckbox] = useState(false);
     isRequired
   />
   <Checkbox
+    id="fieldset-example-checkbox-5"
     checked={nonRequiredCheckbox}
     label="Non-Required Checkbox"
     onChange={(event) => {
@@ -89,6 +94,7 @@ const [nonRequiredCheckbox, setNonRequiredCheckbox] = useState(false);
   isRequired
 >
   <Checkbox
+    id="fieldset-example-checkbox-6"
     checked={requiredCheckbox}
     label="Required Checkbox"
     onChange={(event) => {
@@ -97,6 +103,7 @@ const [nonRequiredCheckbox, setNonRequiredCheckbox] = useState(false);
     isRequired
   />
   <Checkbox
+    id="fieldset-example-checkbox-7"
     checked={nonRequiredCheckbox}
     label="Non-Required Checkbox"
     onChange={(event) => {
@@ -121,6 +128,7 @@ const [nonRequiredCheckbox, setNonRequiredCheckbox] = useState(false);
   isRequired
 >
   <Checkbox
+    id="fieldset-example-checkbox-8"
     checked={requiredCheckbox}
     label="Required Checkbox"
     onChange={(event) => {
@@ -129,6 +137,7 @@ const [nonRequiredCheckbox, setNonRequiredCheckbox] = useState(false);
     isRequired
   />
   <Checkbox
+    id="fieldset-example-checkbox-9"
     checked={nonRequiredCheckbox}
     label="Non-Required Checkbox"
     onChange={(event) => {

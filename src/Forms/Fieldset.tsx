@@ -26,7 +26,7 @@ export interface FieldsetProps {
   /** Specifies the id of the associated form */
   form?: string;
   /** The form elements in the fieldset */
-  children?: ReactNode;
+  children: ReactNode;
   /** Text within the fieldset that describes symbol(s) (e.g. *) used to denote required fields */
   legendDescription?: string;
   /** The error message for the overall form */
@@ -124,7 +124,9 @@ const Fieldset: FunctionComponent<FieldsetProps> = (props): ReactElement => {
       { children }
       {errorMessage
         && (
-          <ValidationErrorMessage>
+          <ValidationErrorMessage
+            id={`${legend}-error`}
+          >
             {errorMessage}
           </ValidationErrorMessage>
         )}
@@ -135,6 +137,10 @@ const Fieldset: FunctionComponent<FieldsetProps> = (props): ReactElement => {
 Fieldset.defaultProps = {
   isBorderVisible: true,
   isLegendVisible: true,
+  form: '',
+  legendDescription: '',
+  errorMessage: '',
+  isRequired: false,
 };
 
 /** @component */

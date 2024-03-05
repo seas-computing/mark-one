@@ -28,9 +28,11 @@ describe('Fieldset', function () {
             errorMessage={errorMessage}
           >
             <Checkbox
+              id="testCheckbox"
               checked
               label="Non-Required Checkbox"
               disabled
+              onChange={() => {}}
             />
           </Fieldset>
         ));
@@ -47,9 +49,11 @@ describe('Fieldset', function () {
             legendDescription="Note: * denoted required information"
           >
             <Checkbox
+              id="testCheckbox"
               checked
               label="Non-Required Checkbox"
               disabled
+              onChange={() => {}}
             />
           </Fieldset>
         ));
@@ -70,9 +74,11 @@ describe('Fieldset', function () {
             isBorderVisible
           >
             <Checkbox
+              id="testCheckbox"
               checked
               label="Non-Required Checkbox"
               disabled
+              onChange={() => {}}
             />
           </Fieldset>
         );
@@ -97,9 +103,11 @@ describe('Fieldset', function () {
             isLegendVisible
           >
             <Checkbox
+              id="testCheckbox"
               checked
               label="Non-Required Checkbox"
               disabled
+              onChange={() => {}}
             />
           </Fieldset>
         ));
@@ -127,9 +135,11 @@ describe('Fieldset', function () {
             isLegendVisible={false}
           >
             <Checkbox
+              id="testCheckbox"
               checked
               label="Non-Required Checkbox"
               disabled
+              onChange={() => {}}
             />
           </Fieldset>
         ));
@@ -152,9 +162,11 @@ describe('Fieldset', function () {
             isLegendVisible
           >
             <Checkbox
+              id="testCheckbox"
               checked
               label="Non-Required Checkbox"
               disabled
+              onChange={() => {}}
             />
           </Fieldset>
         ));
@@ -178,9 +190,11 @@ describe('Fieldset', function () {
             isBorderVisible
           >
             <Checkbox
+              id="testCheckbox"
               checked
               label="Non-Required Checkbox"
               disabled
+              onChange={() => {}}
             />
           </Fieldset>
         ));
@@ -214,9 +228,11 @@ describe('Fieldset', function () {
             isRequired
           >
             <Checkbox
+              id="testCheckbox"
               checked
               label="Disabled Checkbox"
               disabled
+              onChange={() => {}}
             />
           </Fieldset>
         ));
@@ -233,9 +249,11 @@ describe('Fieldset', function () {
             isLegendVisible
           >
             <Checkbox
+              id="testCheckbox"
               checked
               label="Disabled Checkbox"
               disabled
+              onChange={() => {}}
             />
           </Fieldset>
         ));

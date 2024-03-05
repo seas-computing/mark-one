@@ -2,6 +2,7 @@ import React, {
   ReactElement,
   useContext,
   FunctionComponent,
+  ReactNode,
 } from 'react';
 import styled, { ThemeContext } from 'styled-components';
 import { POSITION, RequiredSymbol } from './InputLabel';
@@ -45,6 +46,8 @@ export interface LabelProps {
   disabled?: boolean;
   /** If true, hide the space allocated for the error message */
   hideError?: boolean;
+  /** The native and custom checkboxes associated with the label along with the error, if any */
+  children: ReactNode[];
 }
 
 const generateGrid = (
@@ -137,6 +140,7 @@ CheckLabel.defaultProps = {
   isLabelVisible: true,
   disabled: false,
   hideError: false,
+  isRequired: false,
 };
 
 StyledCheckLabel.defaultProps = {

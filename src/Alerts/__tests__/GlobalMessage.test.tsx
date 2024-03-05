@@ -23,6 +23,7 @@ describe('Global Message', function () {
     clickSpy = spy();
     ({ getByText, getByLabelText } = render(
       <GlobalMessage
+        id="negativeMessage"
         variant={VARIANT.NEGATIVE}
         onClick={clickSpy}
         buttonAlt={buttonAltText}

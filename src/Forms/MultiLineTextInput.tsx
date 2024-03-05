@@ -99,12 +99,12 @@ ReactElement => {
 };
 
 MultiLineTextInput.defaultProps = {
-  value: '',
   errorMessage: '',
   isRequired: false,
   isLabelVisible: true,
   isDisabled: false,
   labelPosition: POSITION.LEFT,
+  forwardRef: null,
 };
 
 /** @component */

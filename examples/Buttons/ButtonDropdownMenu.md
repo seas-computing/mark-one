@@ -39,6 +39,7 @@ const times = [
   ];
 
 <ButtonDropdownMenu
+  id="buttonDropdownMenu-example-buttonDropdownMenu-1"
   alt="Timeslot button dropdown"
   label={<FontAwesomeIcon icon={faClock} size="sm" />}
 >

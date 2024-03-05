@@ -25,7 +25,6 @@ describe('Text input', function () {
   let getByRole: BoundFunction<GetByRole>;
   let queryByText: BoundFunction<QueryByText>;
   let changeSpy: SinonSpy;
-  let clickSpy: SinonSpy;
   context('when errorMessage prop is present', function () {
     const inputId = 'semester';
     beforeEach(function () {
@@ -225,10 +224,6 @@ describe('Text input', function () {
       const inputField = document.getElementById('semester') as HTMLInputElement;
       const defaultValue = inputField.value;
       strictEqual(defaultValue, 'Spring');
-    });
-    it('set grid-template-rows styles accordingly', function () {
-      const style = window.getComputedStyle(getByText('semester').parentNode as HTMLElement);
-      strictEqual(style['grid-template-rows'], '1fr minmax(1em,max-content)');
     });
   });
   context('when isRequired prop is present', function () {
@@ -496,32 +491,6 @@ describe('Text input', function () {
       const testButton = document.getElementById('testButton') as HTMLButtonElement;
       testButton.click();
       strictEqual(document.activeElement.id, textInputId);
-    });
-  });
-  context('when onClick is present', function () {
-    beforeEach(function () {
-      changeSpy = spy();
-      clickSpy = spy();
-      ({ getByText } = render(
-        <TextInput
-          id="semester"
-          name="semester"
-          value="Spring"
-          label="semester"
-          errorMessage="Error: Please enter a valid ID"
-          hideError
-          onChange={changeSpy}
-          onClick={clickSpy}
-        />
-      ));
-    });
-    it('renders', function () {
-      const inputElement = getByText('semester') as HTMLInputElement;
-      strictEqual(!!inputElement, true);
-    });
-    it('calls the click handler when clicked', function () {
-      fireEvent.click(getByText('semester'));
-      strictEqual(clickSpy.callCount, 1);
     });
   });
 });
