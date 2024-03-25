@@ -5,6 +5,7 @@ import React, {
   ReactNode,
   MouseEventHandler,
   Ref,
+  ButtonHTMLAttributes,
 } from 'react';
 import styled, { ThemeContext } from 'styled-components';
 import {
@@ -30,6 +31,8 @@ export interface ButtonProps extends MarkOneProps<HTMLButtonElement> {
   form?: string;
   /** Specifies the ref of the element */
   forwardRef?: Ref<HTMLButtonElement>;
+  /** Specifies the button type */
+  type?: ButtonHTMLAttributes<HTMLButtonElement>['type'];
 }
 
 const StyledButton = styled.button<ButtonProps>`
@@ -66,6 +69,7 @@ const Button: FunctionComponent<ButtonProps> = (props): ReactElement => {
     alt,
     className,
     form,
+    type,
   } = props;
   const theme = useContext(ThemeContext);
   return (
@@ -79,6 +83,7 @@ const Button: FunctionComponent<ButtonProps> = (props): ReactElement => {
       aria-label={alt}
       className={className}
       form={form}
+      type={type}
     >
       { children }
     </StyledButton>
@@ -91,6 +96,7 @@ Button.defaultProps = {
   disabled: false,
   form: '',
   forwardRef: null,
+  type: 'button',
 };
 
 export default Button;
