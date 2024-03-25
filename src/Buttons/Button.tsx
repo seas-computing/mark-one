@@ -5,6 +5,7 @@ import React, {
   ReactNode,
   MouseEventHandler,
   Ref,
+  ButtonHTMLAttributes,
 } from 'react';
 import styled, { ThemeContext } from 'styled-components';
 import {
@@ -31,7 +32,7 @@ export interface ButtonProps extends MarkOneProps<HTMLButtonElement> {
   /** Specifies the ref of the element */
   forwardRef?: Ref<HTMLButtonElement>;
   /** Specifies the button type */
-  type?: string;
+  type?: ButtonHTMLAttributes<HTMLButtonElement>['type'];
 }
 
 const StyledButton = styled.button<ButtonProps>`
