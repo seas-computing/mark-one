@@ -12,7 +12,6 @@ import {
 describe('Form', function () {
   let form: HTMLFormElement;
   let submitStub: SinonStub;
-  let onChangeStub: SinonStub;
 
   beforeEach(function () {
     submitStub = stub();
@@ -21,22 +20,7 @@ describe('Form', function () {
         id="testForm"
         label="Test Form"
         submitHandler={submitStub}
-      >
-        <TextInput
-          id="testInput"
-          name="testInput"
-          label="Test Input"
-          value="Test Value"
-          onChange={onChangeStub}
-        />
-        <Button
-          id="testButton"
-          form="testForm"
-          type="submit"
-          variant={VARIANT.PRIMARY}
-          onClick={submitStub}
-        />
-      </Form>
+      />
     );
     form = renderResult.getByRole('form') as HTMLFormElement;
   });
