@@ -1,6 +1,4 @@
-import { Button } from 'Buttons';
-import { Form, TextInput } from 'Forms';
-import { VARIANT } from 'Theme';
+import { Form } from 'Forms';
 import { strictEqual } from 'assert';
 import React from 'react';
 import { SinonStub, stub } from 'sinon';
