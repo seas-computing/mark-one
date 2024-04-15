@@ -1,14 +1,7 @@
-import { ReactNode } from 'react';
+import { PropsWithChildren } from 'react';
 import styled, { withTheme } from 'styled-components';
 
-interface ModalBodyProps {
-  /**
-   * the content of the Modal Body
-   */
-  children: ReactNode;
-}
-
-const StyledModalBody = styled.div<ModalBodyProps>`
+const StyledModalBody = styled.div<PropsWithChildren>`
   padding: ${({ theme }): string => theme.ws.medium};
   overflow: auto;
 `;

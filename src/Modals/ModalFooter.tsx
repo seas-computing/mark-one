@@ -1,14 +1,7 @@
-import { ReactNode } from 'react';
+import { PropsWithChildren } from 'react';
 import styled, { withTheme } from 'styled-components';
 
-interface ModalFooterProps {
-  /**
-   * the content of the Modal Footer
-   */
-  children: ReactNode;
-}
-
-const styledModalFooter = styled.div<ModalFooterProps>`
+const styledModalFooter = styled.div<PropsWithChildren>`
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-between;
