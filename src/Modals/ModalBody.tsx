@@ -1,14 +1,17 @@
-import { PropsWithChildren } from 'react';
-import styled, { withTheme } from 'styled-components';
+import { PropsWithChildren, ReactElement } from 'react';
+import styled from 'styled-components';
+import { fromTheme } from '../Theme';
 
-const StyledModalBody = styled.div<PropsWithChildren>`
-  padding: ${({ theme }): string => theme.ws.medium};
+const ModalBody = styled.div<PropsWithChildren>`
+  padding: ${fromTheme('ws', 'medium')};
   overflow: auto;
 `;
+
+declare type ModalBody = ReactElement<PropsWithChildren>;
 
 /**
  * @component ModalBody
  * Used within the Modal component to provide appropriate spacing in line with
  * the ModalHeader and ModalFooter components.
  */
-export default withTheme(StyledModalBody);
+export default ModalBody;
