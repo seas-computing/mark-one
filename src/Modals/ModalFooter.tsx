@@ -2,7 +2,7 @@ import { PropsWithChildren, ReactElement } from 'react';
 import styled from 'styled-components';
 import { fromTheme } from '../Theme';
 
-const ModalFooter = styled.div`
+const ModalFooter = styled.div<PropsWithChildren>`
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-between;

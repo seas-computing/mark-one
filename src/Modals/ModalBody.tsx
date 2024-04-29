@@ -2,7 +2,7 @@ import { PropsWithChildren, ReactElement } from 'react';
 import styled from 'styled-components';
 import { fromTheme } from '../Theme';
 
-const ModalBody = styled.div`
+const ModalBody = styled.div<PropsWithChildren>`
   padding: ${fromTheme('ws', 'medium')};
   overflow: auto;
 `;
