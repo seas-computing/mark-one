@@ -107,6 +107,11 @@ const MarkOneTheme: DefaultTheme = {
       size: '1.33em',
       weight: WEIGHT.LIGHT,
     },
+    subheading: {
+      family: FONT.SANS,
+      size: '1.13em',
+      weight: WEIGHT.BOLD,
+    },
     error: {
       family: FONT.SANS,
       size: '0.7em',
