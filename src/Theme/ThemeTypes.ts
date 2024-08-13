@@ -40,6 +40,7 @@ export type FontCategory =
   | 'heading'
   | 'subheading'
   | 'error'
+  | 'callout'
   | 'footer';
 
 export type WhiteSpaceSize =
