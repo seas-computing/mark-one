@@ -2,12 +2,6 @@ import React, { ReactElement, FunctionComponent } from 'react';
 import styled from 'styled-components';
 import { fromTheme } from '../Theme';
 
-/**
- * The TextDisplay is a corollary to the TextInput, but intended for cases where we need to display a labeled piece of non-editable, informational text. In "shops.seas", this would be used to display the total number of sign-ins on our current attendance page.
-
-While this should borrow the label and box styling of our TextInput, we should not use a literal label element for the label portion, as that element is intended for use with form controls.
- */
-
 // An enum that represents the possible values for the label's positioning
 export enum POSITION {
   TOP = 'top',
