@@ -28,9 +28,7 @@ const StyledCallout = styled.p<StyledCalloutProps>`
   font-weight: ${({ theme }): string => theme.font.callout.weight};
   color: ${({ theme }): string => theme.color.text.dark};
   background: ${({ theme, variant }): string => theme.color.background[variant].light};
-  margin-left: ${({ theme }):string => theme.ws.large};
-  margin-top: ${({ theme }):string => theme.ws.medium};
-  margin-bottom: ${({ theme }):string => theme.ws.small};
+  margin: ${({ theme }):string => `${theme.ws.medium} ${theme.ws.large} ${theme.ws.small} ${theme.ws.large}`};
   padding: ${({ theme }):string => theme.ws.large};
 `;
 
