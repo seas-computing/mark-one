@@ -8,8 +8,10 @@ interface StatProps {
   children: ReactNode;
 }
 
-const StyledStat = styled.div<StatProps>`
+const StyledStat = styled.span<StatProps>`
   font-family: ${({ theme }): string => theme.font.data.family};
+  font-size: ${({ theme }): string => theme.font.data.size};
+  font-weight: ${({ theme }): string => theme.font.data.weight};
 `;
 
 /**
