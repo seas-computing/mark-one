@@ -1,4 +1,4 @@
-import React, { FunctionComponent, ReactNode } from 'react';
+import React, { FunctionComponent, ReactNode, AriaRole } from 'react';
 import styled from 'styled-components';
 import { VARIANT } from '../Theme';
 
@@ -14,7 +14,7 @@ export interface CalloutProps {
    * https://www.w3.org/TR/wai-aria-1.1/#live_region_roles
    * The default value role is 'note'.
    */
-  role?: string;
+  role?: AriaRole;
   children: ReactNode;
 }
 
