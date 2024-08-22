@@ -60,7 +60,6 @@ export const StyledDisplayLabel = styled.div<StyledDisplayLabelProps>`
   font-weight: bold;
   margin-bottom: ${({ labelPosition }) => (labelPosition === POSITION.TOP ? '0.5em' : '0')};
   margin-right: ${({ labelPosition }) => (labelPosition === POSITION.LEFT ? '0.5em' : '0')};
-  padding: ${fromTheme('ws', 'xsmall')};
 `;
 
 export const StyledContainer = styled.div<StyledDisplayLabelProps>`
@@ -75,8 +74,12 @@ const TextDisplay: FunctionComponent<TextDisplayProps> = (
   props
 ): ReactElement => {
   const {
-    id, label, name, value, isLabelVisible = true,
-    labelPosition = POSITION.LEFT,
+    id,
+    label,
+    name,
+    value,
+    isLabelVisible,
+    labelPosition,
   } = props;
   return (
     <StyledContainer labelPosition={labelPosition}>
