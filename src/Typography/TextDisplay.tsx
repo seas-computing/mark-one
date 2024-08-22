@@ -18,7 +18,7 @@ export interface TextDisplayProps {
   /** The current value in the text display field */
   value: string;
   /** Allows you to pass in a label position property from the POSITION enum
-   * @default LEFT
+   * @default POSITION.LEFT
    */
   labelPosition?: POSITION;
   /** If true, label will be visible
@@ -29,18 +29,7 @@ export interface TextDisplayProps {
 
 export interface StyledDisplayLabelProps {
   /** Allows you to pass in a label position property from the POSITION enum
-   * @default LEFT
-   */
-  labelPosition?: POSITION;
-}
-
-export interface StyledTextDisplayProps {
-  /** The id of the label tied to this text display field */
-  id: string;
-  /** The name of the text display field */
-  name: string;
-  /** Allows you to pass in a label position property from the POSITION enum
-   * @default LEFT
+   * @default POSITION.LEFT
    */
   labelPosition?: POSITION;
 }
