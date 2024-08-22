@@ -64,9 +64,9 @@ export const StyledDisplayLabel = styled.div<StyledDisplayLabelProps>`
 `;
 
 export const StyledContainer = styled.div<StyledDisplayLabelProps>`
-display: flex;
-flex-direction: ${({ labelPosition }) => (labelPosition === POSITION.LEFT ? 'row' : 'column')};
-align-items: ${({ labelPosition }) => (labelPosition === POSITION.LEFT ? 'center' : 'felx-start')};
+  display: flex;
+  flex-direction: ${({ labelPosition }) => (labelPosition === POSITION.LEFT ? 'row' : 'column')};
+  align-items: ${({ labelPosition }) => (labelPosition === POSITION.LEFT ? 'center' : 'flex-start')};
 `;
 
 /** A text display component that incorporates a styled label and styled label text */
