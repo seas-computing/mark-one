@@ -3,3 +3,4 @@ export { default as SectionHeading } from './SectionHeading';
 export { default as NoteText } from './NoteText';
 export { default as SectionSubHeading } from './SectionSubHeading';
 export { default as TextDisplay } from './TextDisplay';
+export { default as Stat } from './Stat';
