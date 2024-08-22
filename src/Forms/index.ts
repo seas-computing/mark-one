@@ -13,4 +13,3 @@ export { default as Fieldset } from './Fieldset';
 export { default as RadioButton } from './RadioButton';
 export { default as Form } from './Form';
 export { default as MultiLineTextInput } from './MultiLineTextInput';
-export { default as TextDisplay } from './TextDisplay';
