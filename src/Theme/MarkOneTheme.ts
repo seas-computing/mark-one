@@ -117,6 +117,11 @@ const MarkOneTheme: DefaultTheme = {
       size: '0.7em',
       weight: WEIGHT.BOLD,
     },
+    callout: {
+      family: FONT.SANS,
+      size: '1.13em',
+      weight: WEIGHT.BOLD,
+    },
     footer: {
       family: FONT.SANS,
       size: '0.9em',
