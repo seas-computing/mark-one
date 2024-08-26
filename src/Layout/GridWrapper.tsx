@@ -29,7 +29,7 @@ const GridWrapper = ({ children, gap }: GridWrapperProps): JSX.Element => (
 );
 
 GridWrapper.defaultProps = {
-  gap: 'small',
+  gap: null,
 };
 
 /**
