@@ -39,7 +39,7 @@ const getGridColumnStyles = (placement: Placement, width: Width) => {
   }
 };
 
-const StyledGridContainer = styled.div<GridContainerProps>`
+const StyledGridContainer = styled.div<Pick<GridContainerProps, 'placement' | 'width'>>`
   ${({ placement, width }) => getGridColumnStyles(placement, width)};
   
 `;
