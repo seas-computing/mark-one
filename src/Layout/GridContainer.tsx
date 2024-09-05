@@ -17,10 +17,6 @@ interface GridContainerProps {
    */
   placement: Placement;
   /**
-   * inline styles to apply to the GridContainer
-   */
-  style?: CSSProperties;
-  /**
    * The content to display inside the GridContainer
    */
   children: ReactNode;
@@ -51,16 +47,11 @@ const StyledGridContainer = styled.div<GridContainerProps>`
 const GridContainer = ({
   width,
   placement,
-  style,
   children,
 }: GridContainerProps): JSX.Element => (
-  <StyledGridContainer width={width} placement={placement} style={style}>
+  <StyledGridContainer width={width} placement={placement}>
     {children}
   </StyledGridContainer>
 );
-
-GridContainer.defaultProps = {
-  style: undefined,
-};
 
 export default GridContainer;
