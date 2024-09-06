@@ -25,17 +25,17 @@ interface GridContainerProps {
 const getGridColumnStyles = (placement: Placement, width: Width) => {
   switch (placement) {
     case 'left':
-      return `grid-column: span ${width};`;
+      return `span ${width}`;
     case 'center': {
       const startColumn = Math.floor((12 - width) / 2) + 1;
-      return `grid-column: ${startColumn} / span ${width};`;
+      return `${startColumn} / span ${width}`;
     }
     case 'right': {
       const endColumn = 13 - width;
-      return `grid-column: ${endColumn} / span ${width};`;
+      return `${endColumn} / span ${width}`;
     }
     default:
-      return `grid-column: ${placement} / span ${width};`;
+      return `${placement} / span ${width}`;
   }
 };
 
