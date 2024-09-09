@@ -1,16 +1,16 @@
 import React, {
   FunctionComponent,
-  useContext,
   ReactElement,
   MouseEventHandler,
   Ref,
 } from 'react';
-import styled, { ThemeContext } from 'styled-components';
+import styled from 'styled-components';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { VARIANT } from 'Theme';
 import { ARIA_LIVE_VARIANT } from '../const';
 import BorderlessButton from '../Buttons/BorderlessButton';
+import { fromTheme } from '../Theme';
 
 export interface ToastNotificationProps {
   /** The id of the notification */
@@ -41,9 +41,11 @@ const ButtonContainer = styled.div`
 `;
 
 const StyledToastNotification = styled.div`
+  border: ${fromTheme('border', 'hairline')};
   z-index: 1000;
   display: grid;
   grid-template: ". text button" / 1fr 2fr 1fr;
+  width: 20em;
 `;
 
 const ToastNotification: FunctionComponent<ToastNotificationProps> = (props)
