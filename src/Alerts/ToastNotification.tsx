@@ -32,6 +32,8 @@ export interface ToastNotificationProps {
 }
 
 const TextContainer = styled.div`
+  color: ${fromTheme('color', 'text', 'light')};
+  font-size: ${fromTheme('font', 'note', 'size')};
   grid-area: text;
 `;
 
@@ -45,9 +47,8 @@ const StyledToastNotification = styled.div`
   background: ${fromTheme('color', 'background', 'dark')};
   border: 1px solid ${fromTheme('color', 'background', 'dark')};
   display: grid;
-  color: ${fromTheme('color', 'text', 'light')};
   grid-template: "text button" / 3fr 1fr;
-  padding: 1em;
+  padding: 0.75em;
   width: 20em;
   z-index: 1000;
 `;
