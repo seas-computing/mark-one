@@ -36,16 +36,20 @@ const TextContainer = styled.div`
 `;
 
 const ButtonContainer = styled.div`
+  align-self: center;
   text-align: right;
   grid-area: button;
 `;
 
 const StyledToastNotification = styled.div`
-  border: ${fromTheme('border', 'hairline')};
-  z-index: 1000;
+  background: ${fromTheme('color', 'background', 'dark')};
+  border: 1px solid ${fromTheme('color', 'background', 'dark')};
   display: grid;
-  grid-template: ". text button" / 1fr 2fr 1fr;
+  color: ${fromTheme('color', 'text', 'light')};
+  grid-template: "text button" / 3fr 1fr;
+  padding: 1em;
   width: 20em;
+  z-index: 1000;
 `;
 
 const ToastNotification: FunctionComponent<ToastNotificationProps> = (props)
