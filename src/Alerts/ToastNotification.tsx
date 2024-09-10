@@ -74,6 +74,7 @@ const ToastNotification: FunctionComponent<ToastNotificationProps> = (props)
       <ButtonContainer>
         <BorderlessButton
           id={`${id} button`}
+          alt={`${id} close button`}
           onClick={onClick}
           variant={VARIANT.DANGER}
           forwardRef={forwardRef}
