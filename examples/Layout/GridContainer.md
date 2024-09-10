@@ -6,14 +6,20 @@ This example demonstrates how **different widths** affect the layout of the grid
 import { GridWrapper } from 'mark-one';
 
 <GridWrapper gap="large">
-  <GridContainer width={2} placement="left" style={{ backgroundColor: 'lightblue', padding: '10px' }}>
-    Width 2
+  <GridContainer width={2} placement="left">
+    <div style={{ backgroundColor: 'lightblue', padding: '10px' }}>
+      Width 2
+    </div>
   </GridContainer>
-  <GridContainer width={4} placement="left" style={{ backgroundColor: 'lightgreen', padding: '10px' }}>
-    Width 4
+  <GridContainer width={4} placement="left">
+    <div style={{ backgroundColor: 'lightgreen', padding: '10px' }}>
+      Width 4
+    </div>
   </GridContainer>
-  <GridContainer width={6} placement="left" style={{ backgroundColor: 'lightcoral', padding: '10px' }}>
-    Width 6
+  <GridContainer width={6} placement="left">
+    <div style={{ backgroundColor: 'lightcoral', padding: '10px' }}>
+      Width 6
+    </div>
   </GridContainer>
 </GridWrapper>
 ```
@@ -24,14 +30,20 @@ This example demonstrates how **different placements** affect the alignment of t
 import { GridWrapper } from 'mark-one';
 
 <GridWrapper gap="large">
-  <GridContainer width={4} placement="left" style={{ backgroundColor: 'lightblue', padding: '10px' }}>
-    Left Placement
+  <GridContainer width={4} placement="left">
+    <div style={{ backgroundColor: 'lightblue', padding: '10px' }}>
+      Left Placement
+    </div>
   </GridContainer>
-  <GridContainer width={4} placement="center" style={{ backgroundColor: 'lightgreen', padding: '10px' }}>
-    Center Placement
+  <GridContainer width={4} placement="center">
+    <div style={{ backgroundColor: 'lightgreen', padding: '10px' }}>
+      Center Placement
+    </div>
   </GridContainer>
-  <GridContainer width={4} placement="right" style={{ backgroundColor: 'lightcoral', padding: '10px' }}>
-    Right Placement
+  <GridContainer width={4} placement="right">
+    <div style={{ backgroundColor: 'lightcoral', padding: '10px' }}>
+      Right Placement
+    </div>
   </GridContainer>
 </GridWrapper>
 ```
@@ -42,14 +54,20 @@ This example demonstrates a combination of **different widths and placements**.
 import { GridWrapper } from 'mark-one';
 
 <GridWrapper gap="large">
-  <GridContainer width={3} placement="left" style={{ backgroundColor: 'lightblue', padding: '10px' }}>
-    Width 3, Left
+  <GridContainer width={3} placement="left">
+    <div style={{ backgroundColor: 'lightblue', padding: '10px' }}>
+      Width 3, Left
+    </div>
   </GridContainer>
-  <GridContainer width={6} placement="center" style={{ backgroundColor: 'lightgreen', padding: '10px' }}>
-    Width 6, Center
+  <GridContainer width={6} placement="center">
+    <div style={{ backgroundColor: 'lightgreen', padding: '10px' }}>
+      Width 6, Center
+    </div>
   </GridContainer>
-  <GridContainer width={3} placement="right" style={{ backgroundColor: 'lightcoral', padding: '10px' }}>
-    Width 3, Right
+  <GridContainer width={3} placement="right">
+    <div style={{ backgroundColor: 'lightcoral', padding: '10px' }}>
+      Width 3, Right
+    </div>
   </GridContainer>
 </GridWrapper>
 ```
@@ -60,14 +78,20 @@ This example demonstrates how to place items starting from **specific columns**.
 import { GridWrapper } from 'mark-one';
 
 <GridWrapper gap="small">
-  <GridContainer width={4} placement={2} style={{ backgroundColor: 'lightblue', padding: '10px' }}>
-    Start at Column 2
+  <GridContainer width={4} placement={2}>
+    <div style={{ backgroundColor: 'lightblue', padding: '10px' }}>
+      Start at Column 2
+    </div>
   </GridContainer>
-  <GridContainer width={4} placement={6} style={{ backgroundColor: 'lightgreen', padding: '10px' }}>
-    Start at Column 6
+  <GridContainer width={4} placement={6}>
+    <div style={{ backgroundColor: 'lightgreen', padding: '10px' }}>
+      Start at Column 6
+    </div>
   </GridContainer>
-  <GridContainer width={4} placement={10} style={{ backgroundColor: 'lightcoral', padding: '10px' }}>
-    Start at Column 10
+  <GridContainer width={4} placement={10}>
+    <div style={{ backgroundColor: 'lightcoral', padding: '10px' }}>
+      Start at Column 10
+    </div>
   </GridContainer>
 </GridWrapper>
 ```
