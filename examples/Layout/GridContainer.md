@@ -88,9 +88,33 @@ import { GridWrapper } from 'mark-one';
       Start at Column 6
     </div>
   </GridContainer>
-  <GridContainer width={4} placement={10}>
+  <GridContainer width={4} placement={8}>
     <div style={{ backgroundColor: 'lightcoral', padding: '10px' }}>
-      Start at Column 10
+      Start at Column 8
+    </div>
+  </GridContainer>
+</GridWrapper>
+```
+
+This example demonstrates how the Grid system handles multiple `GridContainers` with maximum widths. It may be helpful to use the Firefox DevTools to view the column layout of these components (in the DOM inspector click the `grid` button next to the `div` that surrounds these components).
+
+```jsx
+import { GridWrapper } from 'mark-one';
+
+<GridWrapper gap="small">
+  <GridContainer width={12} placement={1}>
+    <div style={{ backgroundColor: 'lightblue', padding: '10px' }}>
+      Start at Column 2
+    </div>
+  </GridContainer>
+  <GridContainer width={12} placement={6}>
+    <div style={{ backgroundColor: 'lightgreen', padding: '10px' }}>
+      Start at Column 6
+    </div>
+  </GridContainer>
+  <GridContainer width={12} placement={8}>
+    <div style={{ backgroundColor: 'lightcoral', padding: '10px' }}>
+      Start at Column 8
     </div>
   </GridContainer>
 </GridWrapper>
