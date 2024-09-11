@@ -1,8 +1,8 @@
 import styled from 'styled-components';
-import React, { ReactNode, CSSProperties } from 'react';
+import React, { ReactNode } from 'react';
 
 type Width = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
-type Placement = 'left' | 'center' | 'right' | Exclude<Width, 12>;
+type Placement = 'left' | 'center' | 'right' | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11;
 
 interface GridContainerProps {
   /**
@@ -22,7 +22,9 @@ interface GridContainerProps {
   children: ReactNode;
 }
 
-const getGridColumnStyles = (placement: Placement, width: Width) => {
+export const getGridColumnStyles = (
+  placement: Placement, width: Width
+): string => {
   switch (placement) {
     case 'left':
       return `span ${width}`;
@@ -39,9 +41,8 @@ const getGridColumnStyles = (placement: Placement, width: Width) => {
   }
 };
 
-const StyledGridContainer = styled.div<Pick<GridContainerProps, 'placement' | 'width'>>`
-  ${({ placement, width }) => getGridColumnStyles(placement, width)};
-  
+const StyledGridContainer = styled.div<Pick<GridContainerProps, 'placement' | 'width' >>`
+  grid-column: ${({ placement, width }) => getGridColumnStyles(placement, width)}; 
 `;
 
 const GridContainer = ({
@@ -49,7 +50,10 @@ const GridContainer = ({
   placement,
   children,
 }: GridContainerProps): JSX.Element => (
-  <StyledGridContainer width={width} placement={placement}>
+  <StyledGridContainer
+    width={width}
+    placement={placement}
+  >
     {children}
   </StyledGridContainer>
 );
