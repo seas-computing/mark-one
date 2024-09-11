@@ -48,6 +48,7 @@ const StyledToastNotification = styled.div`
   border: 1px solid ${fromTheme('color', 'background', 'dark')};
   display: grid;
   grid-template: "text button" / 3fr 1fr;
+  margin-bottom: 0.25em;
   padding: 0.75em;
   width: 20em;
   z-index: 1000;
