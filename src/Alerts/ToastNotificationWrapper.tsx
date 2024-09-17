@@ -10,7 +10,7 @@ const ToastNotificationWrapper = styled.div`
   flex-direction: column;
   height: 100%;
   overflow-y: auto;
-  position: absolute;
+  position: fixed;
   top: 5px;
   right: 5px;
 `;
