@@ -13,6 +13,7 @@ const ToastNotificationWrapper = styled.div`
   position: fixed;
   top: 5px;
   right: 5px;
+  z-index: 1000;
 `;
 
 export default ToastNotificationWrapper;
