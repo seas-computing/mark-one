@@ -1,9 +1,11 @@
 ```jsx
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import styled from 'styled-components';
 import { Button, VARIANT, ToastNotification } from 'mark-one';
 
 const ToastNotificationWrapperExample = () => {
+  const notificationRef = useRef(null);
+
   const [isExampleVisible, setIsExampleVisible] = useState(false);
   return (
     <>
@@ -21,6 +23,7 @@ const ToastNotificationWrapperExample = () => {
           <ToastNotificationWrapper>
             <ToastNotification
               id="toast-notification-wrapper-example-toast-1"
+              forwardRef={notificationRef}
               onClick={function() {
                 alert('You clicked the "Close" button.')
               }}
@@ -50,6 +53,7 @@ const ToastNotificationWrapperExample = () => {
           id="toast-notification-wrapper-example-button-1"
           variant={VARIANT.PRIMARY}
           onClick={() => {
+            setTimeout(() => { notificationRef.current.focus() }, 500);
             setIsExampleVisible(true);
           }}
         >

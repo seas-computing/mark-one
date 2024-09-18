@@ -26,7 +26,7 @@ export interface ToastNotificationProps {
   /** The value of the aria-live property */
   ariaLive?: ARIA_LIVE_VARIANT;
   /** Specifies the ref of the element */
-  forwardRef?: Ref<HTMLButtonElement>;
+  forwardRef?: Ref<HTMLDivElement>;
   /** Function to call on click event */
   onClick: MouseEventHandler;
 }
@@ -70,6 +70,8 @@ const ToastNotification: FunctionComponent<ToastNotificationProps> = (props)
       id={id}
       role={role}
       aria-live={ariaLive}
+      tabIndex={-1}
+      ref={forwardRef}
     >
       <TextContainer>{children}</TextContainer>
       <ButtonContainer>
@@ -78,7 +80,6 @@ const ToastNotification: FunctionComponent<ToastNotificationProps> = (props)
           alt={`${id} close button`}
           onClick={onClick}
           variant={VARIANT.DANGER}
-          forwardRef={forwardRef}
         >
           <FontAwesomeIcon icon={faTimes} size="lg" />
         </BorderlessButton>
