@@ -23,17 +23,18 @@ const ToastNotificationWrapperExample = () => {
           <ToastNotificationWrapper>
             <ToastNotification
               id="toast-notification-wrapper-example-toast-1"
-              header="Test Notification"
+              header="Upcoming Maintenance"
               forwardRef={notificationRef}
               onClick={function() {
                 alert('You clicked the "Close" button.')
               }}
             >
-              Unauthorized user Jane H. tried to log in (9/9/24 3:30PM ET).
+              System maintenance will occur on 9/22/24 between 8-10PM ET. (9/9/24 3:30PM ET).
             </ToastNotification>
             <ToastNotification
               id="toast-notification-wrapper-example-toast-2"
-              header="Test Notification"
+              header="Unauthorized Login Attempt"
+              variant={VARIANT.DANGER}
               onClick={function() {
                 alert('You clicked the "Close" button.')
               }}
@@ -42,19 +43,19 @@ const ToastNotificationWrapperExample = () => {
             </ToastNotification>
             <ToastNotification
               id="toast-notification-wrapper-example-toast-3"
-              header="Test Notification"
+              header="System Update"
+              variant={VARIANT.PRIMARY}
               onClick={function() {
                 alert('You clicked the "Close" button.')
               }}
             >
-              Unauthorized user John H. tried to log in (9/9/24 2:09PM ET).
+              The system update has completed successfully (9/9/24 2:09PM ET).
             </ToastNotification>
           </ToastNotificationWrapper>
         </>
       :
         <Button
           id="toast-notification-wrapper-example-button-1"
-          variant={VARIANT.PRIMARY}
           onClick={() => {
             setTimeout(() => { notificationRef.current.focus() }, 500);
             setIsExampleVisible(true);

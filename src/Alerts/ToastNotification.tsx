@@ -3,14 +3,12 @@ import React, {
   ReactElement,
   MouseEventHandler,
   Ref,
+  useContext,
 } from 'react';
-import styled from 'styled-components';
-import { faTimes } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { VARIANT } from 'Theme';
+import styled, { ThemeContext } from 'styled-components';
 import { ARIA_LIVE_VARIANT } from '../const';
-import BorderlessButton from '../Buttons/BorderlessButton';
-import { fromTheme } from '../Theme';
+import { fromTheme, VARIANT } from '../Theme';
+import { Button } from '../Buttons';
 
 export interface ToastNotificationProps {
   /** The id of the notification */
@@ -21,6 +19,8 @@ export interface ToastNotificationProps {
   header?: string;
   /** Text to be displayed */
   children: string;
+  /** Allows you to pass in a variant property from the VARIANT enum */
+  variant?: VARIANT;
   /** The aria role of the message displayed. A list of the different role
    * values that should be used can be found in the w3 docs:
    * https://www.w3.org/TR/wai-aria-1.1/#live_region_roles
@@ -33,6 +33,11 @@ export interface ToastNotificationProps {
   forwardRef?: Ref<HTMLDivElement>;
   /** Function to call on click event */
   onClick: MouseEventHandler;
+}
+
+interface StyledToastNotificationProps {
+  /** Allows you to pass in a variant property from the VARIANT enum */
+  variant: VARIANT;
 }
 
 const Header = styled.h2`
@@ -52,8 +57,11 @@ const ButtonContainer = styled.div`
   grid-area: button;
 `;
 
-const StyledToastNotification = styled.div`
-  background: ${fromTheme('color', 'background', 'dark')};
+const StyledToastNotification = styled.div<StyledToastNotificationProps>`
+  background: ${({ theme, variant }) => theme.color.background[variant].dark};
+  color: ${({ theme, variant }) => (
+    theme.color.text[variant === VARIANT.BASE ? 'dark' : 'light']
+  )};
   border: 1px solid ${fromTheme('color', 'background', 'dark')};
   display: grid;
   grid-template: "text button" / 3fr 1fr;
@@ -69,15 +77,20 @@ const ToastNotification: FunctionComponent<ToastNotificationProps> = (props)
     id,
     header,
     children,
+    variant,
     role,
     ariaLive,
     forwardRef,
     onClick,
   } = props;
 
+  const theme = useContext(ThemeContext);
+
   return (
     <StyledToastNotification
       id={id}
+      variant={variant}
+      theme={theme}
       role={role}
       aria-live={ariaLive}
       tabIndex={-1}
@@ -92,14 +105,14 @@ const ToastNotification: FunctionComponent<ToastNotificationProps> = (props)
         {children}
       </TextContainer>
       <ButtonContainer>
-        <BorderlessButton
+        <Button
           id={`${id} button`}
           alt={`${id} close button`}
           onClick={onClick}
-          variant={VARIANT.DANGER}
+          variant={VARIANT.BASE}
         >
-          <FontAwesomeIcon icon={faTimes} size="lg" />
-        </BorderlessButton>
+          Close
+        </Button>
       </ButtonContainer>
     </StyledToastNotification>
   );
@@ -107,6 +120,7 @@ const ToastNotification: FunctionComponent<ToastNotificationProps> = (props)
 
 ToastNotification.defaultProps = {
   header: '',
+  variant: VARIANT.INFO,
   role: 'alert',
   ariaLive: ARIA_LIVE_VARIANT.ASSERTIVE,
   forwardRef: null,
