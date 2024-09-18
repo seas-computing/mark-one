@@ -15,6 +15,10 @@ import { fromTheme } from '../Theme';
 export interface ToastNotificationProps {
   /** The id of the notification */
   id: string;
+  /**
+   * Displays the overall purpose of the notification
+   */
+  header?: string;
   /** Text to be displayed */
   children: string;
   /** The aria role of the message displayed. A list of the different role
@@ -30,6 +34,11 @@ export interface ToastNotificationProps {
   /** Function to call on click event */
   onClick: MouseEventHandler;
 }
+
+const Header = styled.h2`
+  color: ${fromTheme('color', 'text', 'light')};
+  font-size: ${fromTheme('font', 'bold', 'size')};
+`;
 
 const TextContainer = styled.div`
   color: ${fromTheme('color', 'text', 'light')};
@@ -58,6 +67,7 @@ const ToastNotification: FunctionComponent<ToastNotificationProps> = (props)
 : ReactElement => {
   const {
     id,
+    header,
     children,
     role,
     ariaLive,
@@ -73,7 +83,14 @@ const ToastNotification: FunctionComponent<ToastNotificationProps> = (props)
       tabIndex={-1}
       ref={forwardRef}
     >
-      <TextContainer>{children}</TextContainer>
+      <TextContainer>
+        {header && (
+          <Header>
+            {header}
+          </Header>
+        )}
+        {children}
+      </TextContainer>
       <ButtonContainer>
         <BorderlessButton
           id={`${id} button`}
@@ -89,6 +106,7 @@ const ToastNotification: FunctionComponent<ToastNotificationProps> = (props)
 };
 
 ToastNotification.defaultProps = {
+  header: '',
   role: 'alert',
   ariaLive: ARIA_LIVE_VARIANT.ASSERTIVE,
   forwardRef: null,

@@ -9,11 +9,12 @@ const ToastNotificationExample = () => {
       {isVisible ?
         <ToastNotification
           id="test"
+          header="Test Notification"
           onClick={() => {
             setIsVisible(false);
           }}
         >
-          Test Notification: Unauthorized user Jane H. tried to log in (9/9/24 3:30PM ET).
+          Unauthorized user Jane H. tried to log in (9/9/24 3:30PM ET).
         </ToastNotification>
       :
         <Button

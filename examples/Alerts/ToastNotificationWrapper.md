@@ -23,28 +23,31 @@ const ToastNotificationWrapperExample = () => {
           <ToastNotificationWrapper>
             <ToastNotification
               id="toast-notification-wrapper-example-toast-1"
+              header="Test Notification"
               forwardRef={notificationRef}
               onClick={function() {
                 alert('You clicked the "Close" button.')
               }}
             >
-              Test Notification: Unauthorized user Jane H. tried to log in (9/9/24 3:30PM ET).
+              Unauthorized user Jane H. tried to log in (9/9/24 3:30PM ET).
             </ToastNotification>
             <ToastNotification
               id="toast-notification-wrapper-example-toast-2"
+              header="Test Notification"
               onClick={function() {
                 alert('You clicked the "Close" button.')
               }}
             >
-              Test Notification: Unauthorized user John H. tried to log in (9/9/24 2:11PM ET).
+              Unauthorized user John H. tried to log in (9/9/24 2:11PM ET).
             </ToastNotification>
             <ToastNotification
               id="toast-notification-wrapper-example-toast-3"
+              header="Test Notification"
               onClick={function() {
                 alert('You clicked the "Close" button.')
               }}
             >
-              Test Notification: Unauthorized user John H. tried to log in (9/9/24 2:09PM ET).
+              Unauthorized user John H. tried to log in (9/9/24 2:09PM ET).
             </ToastNotification>
           </ToastNotificationWrapper>
         </>
