@@ -41,12 +41,12 @@ interface StyledToastNotificationProps {
 }
 
 const Header = styled.h2`
-  color: ${fromTheme('color', 'text', 'light')};
+  color: ${fromTheme('color', 'text', 'dark')};
   font-size: ${fromTheme('font', 'bold', 'size')};
 `;
 
 const TextContainer = styled.div`
-  color: ${fromTheme('color', 'text', 'light')};
+  color: ${fromTheme('color', 'text', 'dark')};
   font-size: ${fromTheme('font', 'note', 'size')};
   grid-area: text;
 `;
@@ -58,11 +58,8 @@ const ButtonContainer = styled.div`
 `;
 
 const StyledToastNotification = styled.div<StyledToastNotificationProps>`
-  background: ${({ theme, variant }) => theme.color.background[variant].dark};
-  color: ${({ theme, variant }) => (
-    theme.color.text[variant === VARIANT.BASE ? 'dark' : 'light']
-  )};
-  border: 1px solid ${fromTheme('color', 'background', 'dark')};
+  background: ${fromTheme('color', 'background', 'light')};
+  border: 3px solid ${({ theme, variant }) => theme.color.background[variant].dark};
   display: grid;
   grid-template: "text button" / 3fr 1fr;
   margin-bottom: 0.25em;
