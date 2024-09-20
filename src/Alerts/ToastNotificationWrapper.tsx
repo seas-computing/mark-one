@@ -8,11 +8,12 @@ const ToastNotificationWrapper = styled.div`
   display: flex;
   align-self: flex-end;
   flex-direction: column;
-  height: 100%;
-  overflow-y: auto;
+  height: 100vh;
+  overflow-y: scroll;
   position: fixed;
   top: 5px;
   right: 5px;
+  scrollbar-gutter: stable;
   z-index: 1000;
 `;
 
