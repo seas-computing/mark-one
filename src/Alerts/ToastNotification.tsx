@@ -63,7 +63,7 @@ const StyledToastNotification = styled.div<StyledToastNotificationProps>`
   display: grid;
   grid-template: "text button" / 3fr 1fr;
   margin-bottom: 0.25em;
-  padding: 0.75em;
+  padding: 1em;
   width: 20em;
   z-index: 1000;
 `;
