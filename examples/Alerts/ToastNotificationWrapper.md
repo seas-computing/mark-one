@@ -18,6 +18,19 @@ const [isDangerToast8Visible, setIsDangerToast8Visible] = useState(false);
 const [isPrimaryToastVisible, setIsPrimaryToastVisible] = useState(false);
 const [userStartedInteracting, setUserStartedInteracting] = useState(false);
 
+const closeAllNotifications = () => {
+  setIsInfoToastVisible(false);
+  setIsDangerToast1Visible(false);
+  setIsPrimaryToastVisible(false);
+  setIsDangerToast2Visible(false);
+  setIsDangerToast3Visible(false);
+  setIsDangerToast4Visible(false);
+  setIsDangerToast5Visible(false);
+  setIsDangerToast6Visible(false);
+  setIsDangerToast7Visible(false);
+  setIsDangerToast8Visible(false);
+};
+
 <>
   {!isExampleVisible || (!isInfoToastVisible && !isPrimaryToastVisible && !isDangerToast1Visible && !isDangerToast2Visible && !isDangerToast3Visible && !isDangerToast4Visible && !isDangerToast5Visible && !isDangerToast6Visible && !isDangerToast7Visible && !isDangerToast8Visible && userStartedInteracting) ?
     <Button
@@ -47,21 +60,17 @@ const [userStartedInteracting, setUserStartedInteracting] = useState(false);
         variant={VARIANT.PRIMARY}
         onClick={() => {
           setIsExampleVisible(false);
-          setIsInfoToastVisible(false);
-          setIsDangerToast1Visible(false);
-          setIsPrimaryToastVisible(false);
-          setIsDangerToast2Visible(false);
-          setIsDangerToast3Visible(false);
-          setIsDangerToast4Visible(false);
-          setIsDangerToast5Visible(false);
-          setIsDangerToast6Visible(false);
-          setIsDangerToast7Visible(false);
-          setIsDangerToast8Visible(false);
+          closeAllNotifications();
         }}
       >
         Hide Toast Notifications
       </Button>
-      <ToastNotificationWrapper>
+      <ToastNotificationWrapper
+        onClick={() => {
+          setIsExampleVisible(false);
+          closeAllNotifications();
+        }}
+      >
         {isInfoToastVisible &&
           <ToastNotification
             id="toast-notification-wrapper-example-toast-1"
