@@ -6,13 +6,15 @@ import React, {
 } from 'react';
 import styled from 'styled-components';
 import { Button } from '../Buttons';
-import { VARIANT } from '../Theme';
+import { VARIANT, fromTheme } from '../Theme';
 
 export interface ToastNotificationWrapperProps {
   /** Elements to be displayed within the wrapper */
   children: ReactNode;
   /** Function to call on click event */
   onClick: MouseEventHandler;
+  /** Indicates how many notifications there are within the wrapper */
+  numNotifications?: number;
 }
 
 const StyledToastNotificationWrapper = styled.div`
@@ -31,9 +33,22 @@ const StyledToastNotificationWrapper = styled.div`
 
 // A wrapper component to horizontally center content
 const CenterContainer = styled.div`
+  color: ${fromTheme('color', 'text', 'dark')};
+  font-size: ${fromTheme('font', 'note', 'size')};
   justify-content: center;
   display: flex;
 `;
+
+// A helper function to determine the message related to the
+// total number of notifications
+const renderNotificationMessage = (numNotifications: number) => {
+  if (numNotifications === 0) {
+    return '';
+  } if (numNotifications === 1) {
+    return `${numNotifications} notification to review`;
+  }
+  return `${numNotifications} notifications to review`;
+};
 
 /**
  * A wrapper for the ToastNotification component to position them at the top
@@ -44,10 +59,14 @@ const ToastNotificationWrapper
   const {
     children,
     onClick,
+    numNotifications,
   } = props;
 
   return (
     <StyledToastNotificationWrapper>
+      <CenterContainer>
+        {renderNotificationMessage(numNotifications)}
+      </CenterContainer>
       {children}
       <CenterContainer>
         <Button
@@ -60,6 +79,10 @@ const ToastNotificationWrapper
       </CenterContainer>
     </StyledToastNotificationWrapper>
   );
+};
+
+ToastNotificationWrapper.defaultProps = {
+  numNotifications: 0,
 };
 
 export default ToastNotificationWrapper;
