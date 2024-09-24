@@ -22,8 +22,10 @@ describe('getGridColumnStyles function', function () {
     strictEqual(getGridColumnStyles(7, 6), '7 / span 6');
     strictEqual(getGridColumnStyles(9, 5), '9 / span 5');
   });
-  it('should return the correct grid-column value for numbered placements', function () {
-    const result = getGridColumnStyles(7, 6);
-    strictEqual(result, '7 / span 6');
+  it('should return the correct grid-column value for the maximum width (e.g. 12) at any placement', function () {
+    strictEqual(getGridColumnStyles(1, 12), '1 / span 12');
+    strictEqual(getGridColumnStyles(5, 12), '5 / span 12');
+    strictEqual(getGridColumnStyles(7, 12), '7 / span 12');
+    strictEqual(getGridColumnStyles(11, 12), '11 / span 12');
   });
 });
