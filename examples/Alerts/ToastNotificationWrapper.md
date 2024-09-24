@@ -1,5 +1,5 @@
 ```jsx
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import styled from 'styled-components';
 import { Button, VARIANT, ToastNotification } from 'mark-one';
 
@@ -16,7 +16,35 @@ const [isDangerToast6Visible, setIsDangerToast6Visible] = useState(false);
 const [isDangerToast7Visible, setIsDangerToast7Visible] = useState(false);
 const [isDangerToast8Visible, setIsDangerToast8Visible] = useState(false);
 const [isPrimaryToastVisible, setIsPrimaryToastVisible] = useState(false);
+const [visibleToastCount, setVisibleToastCount] = useState(0);
 const [userStartedInteracting, setUserStartedInteracting] = useState(false);
+
+useEffect(() => {
+    const count = [
+      isInfoToastVisible,
+      isDangerToast1Visible,
+      isDangerToast2Visible,
+      isDangerToast3Visible,
+      isDangerToast4Visible,
+      isDangerToast5Visible,
+      isDangerToast6Visible,
+      isDangerToast7Visible,
+      isDangerToast8Visible,
+      isPrimaryToastVisible,
+    ].filter(Boolean).length;
+    setVisibleToastCount(count);
+  }, [
+    isInfoToastVisible,
+    isDangerToast1Visible,
+    isDangerToast2Visible,
+    isDangerToast3Visible,
+    isDangerToast4Visible,
+    isDangerToast5Visible,
+    isDangerToast6Visible,
+    isDangerToast7Visible,
+    isDangerToast8Visible,
+    isPrimaryToastVisible,
+  ]);
 
 const closeAllNotifications = () => {
   setIsInfoToastVisible(false);
@@ -66,6 +94,7 @@ const closeAllNotifications = () => {
         Hide Toast Notifications
       </Button>
       <ToastNotificationWrapper
+        numNotifications={visibleToastCount}
         onClick={() => {
           setIsExampleVisible(false);
           closeAllNotifications();
