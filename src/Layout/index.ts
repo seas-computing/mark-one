@@ -6,3 +6,4 @@ export { default as Paragraph } from './Paragraph';
 export { default as MenuFlex } from './MenuFlex';
 export { default as Callout } from './Callout';
 export { default as GridWrapper } from './GridWrapper';
+export { default as GridContainer } from './GridContainer';
