@@ -1,4 +1,4 @@
-The `GridContainer` is a low-level piece of the layout grid. It represents a sub-component of a larger grid, intended for use with multiple child components, and may itself contain another grid layout. It should be placed inside a `GridWrapper` and can contain `GridItem` components.
+The `GridContainer` is a low-level piece of the layout grid. It represents a sub-component of a larger grid, intended for use with multiple child components, and may itself contain another grid layout. It should be placed inside a `GridWrapper`.
 
 This example demonstrates how **different widths** affect the layout of the grid items.
 
