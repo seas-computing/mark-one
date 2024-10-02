@@ -11,7 +11,6 @@
   ],
   "scripts": {
     "build": "styleguidist build",
-    "codecov": "nyc report --reporter=text-lcov > coverage.lcov && codecov",
     "lint": "eslint --ext=ts,tsx,js ./src",
     "prepublishOnly": "tsc --project tsconfig.publish.json",
     "start": "styleguidist server",
@@ -53,7 +52,6 @@
     "@typescript-eslint/parser": "^3.0.0",
     "acorn": "^6.3.0",
     "acorn-jsx": "^5.1.0",
-    "codecov": "^3.8.3",
     "color-convert": "^2.0.1",
     "css-loader": "^3.2.0",
     "eslint": "^6.5.1",
