@@ -14,46 +14,52 @@ export type FontSpec = {
   color?: string;
 };
 
-export type AcademicArea = 'acs' |
-'am' |
-'ap' |
-'be' |
-'cs' |
-'ee' |
-'ese' |
-'general' |
-'mat & me' |
-'mde' |
-'msmba' |
-'sem';
+export type AcademicArea =
+  | 'acs'
+  | 'am'
+  | 'ap'
+  | 'be'
+  | 'cs'
+  | 'ee'
+  | 'ese'
+  | 'general'
+  | 'mat & me'
+  | 'mde'
+  | 'msmba'
+  | 'sem';
 
 export type ColorCategory = 'background' | 'text' | 'area';
 
-export type FontCategory = 'base' |
-'body' |
-'data' |
-'note' |
-'bold' |
-'title' |
-'heading' |
-'error' |
-'footer';
+export type FontCategory =
+  | 'base'
+  | 'body'
+  | 'data'
+  | 'note'
+  | 'bold'
+  | 'title'
+  | 'heading'
+  | 'subheading'
+  | 'error'
+  | 'callout'
+  | 'footer';
 
-export type WhiteSpaceSize = 'zero' |
-'xsmall' |
-'small' |
-'medium' |
-'large' |
-'xlarge';
+export type WhiteSpaceSize =
+  | 'zero'
+  | 'xsmall'
+  | 'small'
+  | 'medium'
+  | 'large'
+  | 'xlarge';
 
 export type BorderWeight = 'hairline' | 'light' | 'heavy';
 
 export type ShadowWeight = 'xlight' | 'light' | 'medium';
 
-export type TextColors = 'base' |
-'light' |
-'medium' |
-'dark' |
-'info' |
-'positive' |
-'negative';
+export type TextColors =
+  | 'base'
+  | 'light'
+  | 'medium'
+  | 'dark'
+  | 'info'
+  | 'positive'
+  | 'negative';

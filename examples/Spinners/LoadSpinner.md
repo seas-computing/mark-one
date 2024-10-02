@@ -10,6 +10,7 @@ To style the text to have a light color. Note that a dark background is used to 
 
 ```jsx
 import { SPINNER_TEXT } from 'mark-one';
+import styled from 'styled-components';
 
 const DarkBackground = styled.div`
   background: ${({ theme }) => theme.color.background.darker };

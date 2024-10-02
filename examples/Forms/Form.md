@@ -134,6 +134,7 @@ const submitHandler = () => {
 }
 
 <Form
+  id="groceryListForm"
   label="Grocery List"
   submitHandler={submitHandler}
 >
@@ -151,7 +152,9 @@ const submitHandler = () => {
   </ul>
   <Button
     id="form-example-button-2"
+    form="groceryListForm"
     variant={VARIANT.PRIMARY}
+    type="submit"
   >
     Submit
   </Button>
