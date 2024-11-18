@@ -26,7 +26,7 @@ const [storedValue, setStoredValue] = useStoredState('academicYear', '');
       id="useStoredState-example-button-1"
       onClick={() => {
         setStoredValue(text);
-        setText('')
+        setText('');
       }}
     >
       Submit
