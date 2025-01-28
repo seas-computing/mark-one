@@ -1,4 +1,4 @@
-Provides a flexible layout container for arranging child elements. All CSS values associated with the `flex-direction`, `justify-content` and `align-items` attributes are optionally available.
+Provides a flexible layout container for arranging child elements. All CSS values associated with the `flexDirection`, `justifyContent` and `alignItems` attributes are optionally available.
 
 In this example, two FlexWrappers are being used. A FlexWrapper is surrounding both the TextDisplay and the Table, with `alignItems` set to `flex-end` so that both hug the right side of the display area. The `gap` property is set to 'medium' to provide sufficient spacing between items. The second FlexWrapper is being used to arrange the 'Confirm' and 'Cancel' buttons in the second row of the Table. In this FlexWrapper, the `justifyContent` prop is set to 'space-evenly' while the other props use the default settings.
 
@@ -48,7 +48,7 @@ import { ALIGN, Button, Stat, Table, TableBody, TableCell, TableHead, TableHeadi
 </FlexWrapper>
 ```
 
-This example demonstrates a column orientation and nested FlexWrappers with different values for some of the props. The nested FlexWrapper around the buttons also makes use of the gap property, which is necessary for providing spacing when flex items are in column orientation.
+In this example an outer `FlexWrapper` centers the items in a column `flexDirection`. The nested FlexWrapper uses 'row' `flexDirection` to arrange the Comboboxes side by side. Both FlexWrappers make use of the `gap` property to provide adequate spacing.
 
 ```jsx
 import { useState } from 'react';
