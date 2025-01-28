@@ -12,11 +12,11 @@ export interface FlexWrapperProps {
    */
   flexDirection?: CSS.Property.FlexDirection;
   /**
-   * Control alignment of flex items on the main axis (optional)
+   * Controls alignment of flex items on the main axis (optional)
    */
   justifyContent?: CSS.Property.JustifyContent;
   /**
-   * Control alignment of flex items on the cross axis (optional)
+   * Controls alignment of flex items on the cross axis (optional)
    */
   alignItems?: CSS.Property.AlignItems;
   /**
