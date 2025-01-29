@@ -55,7 +55,7 @@ FlexWrapper.defaultProps = {
   flexDirection: 'row',
   justifyContent: 'flex-start',
   alignItems: 'baseline',
-  gap: null,
+  gap: 'zero',
 };
 
 /**
