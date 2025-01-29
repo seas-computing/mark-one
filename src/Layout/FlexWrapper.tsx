@@ -30,16 +30,19 @@ export interface FlexWrapperProps {
 }
 
 const StyledFlexWrapper = styled.div<FlexWrapperProps>`
-display: flex;
-flex-direction: ${({ flexDirection }) => flexDirection};
-justify-content: ${({ justifyContent }) => justifyContent};
-align-items: ${({ alignItems }) => alignItems};
-gap: ${({ theme, gap }) => theme.ws[gap]};
-
+  display: flex;
+  flex-direction: ${({ flexDirection }) => flexDirection};
+  justify-content: ${({ justifyContent }) => justifyContent};
+  align-items: ${({ alignItems }) => alignItems};
+  gap: ${({ theme, gap }) => theme.ws[gap]};
 `;
 
 const FlexWrapper = ({
-  flexDirection, justifyContent, alignItems, gap, children,
+  flexDirection,
+  justifyContent,
+  alignItems,
+  gap,
+  children,
 }: FlexWrapperProps): JSX.Element => (
   <StyledFlexWrapper
     flexDirection={flexDirection}
