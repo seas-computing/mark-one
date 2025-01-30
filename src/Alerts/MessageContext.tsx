@@ -53,7 +53,7 @@ export class AppMessage {
  */
 export interface MessageReducerState {
   queue: AppMessage[];
-  currentMessage: AppMessage;
+  currentMessage?: AppMessage | null;
 }
 
 /**
