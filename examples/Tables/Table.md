@@ -242,6 +242,39 @@ const TableWrapper = styled.div`
 </TableWrapper>
 ```
 
+The following example demonstrates the use of `TableMessage` to indicate to the user that the table will be populated when data is available. The `TableMessage` can also be used to prompt the user to take actions that will result in table data populating.
+
+```jsx
+import {
+  Table,
+  TableBody,
+  TableHead,
+  TableHeadingCell,
+  TableMessage,
+  TableRow,
+} from 'mark-one';
+
+<Table>
+  <TableHead isSticky>
+    <TableRow>
+      <TableHeadingCell scope='col'>Name</TableHeadingCell>
+      <TableHeadingCell scope='col'>Sign In Time</TableHeadingCell>
+      <TableHeadingCell scope='col'>Active Certifications</TableHeadingCell>
+    </TableRow>
+  </TableHead>
+  <TableBody>
+    <TableRow>
+      <TableMessage colSpan={3}>
+      No sign ins yet.
+      <br/>
+      Attendance stats will 
+      be shown once users sign in through an active kiosk.
+      </TableMessage>
+    </TableRow>
+  </TableBody>
+</Table>
+```
+
 ### More Complex Layouts
 
 Some tables may require more complex layouts, such as cells that span multiple columns/rows, or layered headers. For example:
