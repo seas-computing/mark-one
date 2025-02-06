@@ -264,11 +264,11 @@ import {
   </TableHead>
   <TableBody>
     <TableRow>
-      <TableMessage colSpan={3}>
-      No sign ins yet.
-      <br/>
-      Attendance stats will 
-      be shown once users sign in through an active kiosk.
+      <TableMessage colSpan={3} role='info'>
+        No sign ins yet.
+        <br/>
+        Attendance stats will 
+        be shown once users sign in through an active kiosk.
       </TableMessage>
     </TableRow>
   </TableBody>
