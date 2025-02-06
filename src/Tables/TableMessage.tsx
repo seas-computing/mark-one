@@ -1,7 +1,18 @@
+import { ReactNode } from 'react';
 import styled from 'styled-components';
-import { fromTheme } from 'mark-one';
 
-const TableMessage = styled.td`
+export interface TableMessageProps {
+  /**
+   * The number of columns the TableMessage should span
+   */
+  colSpan: number;
+  /**
+   * The text or other children to display within the TableMessage.
+   */
+  children: ReactNode;
+}
+
+const TableMessage = styled.td<TableMessageProps>`
   border: ${fromTheme('border', 'light')};
   border-top: none;
   text-align: center;
