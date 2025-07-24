@@ -50,7 +50,7 @@ const MarkOneTheme: DefaultTheme = {
       light: lighten(0.9, BLACK),
       medium: '#575757',
       dark: BLACK,
-      info: '#4e88c7',
+      info: '#2C5A8C',
       positive: '#4db848',
       negative: '#bd0f24',
     },
