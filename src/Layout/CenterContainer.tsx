@@ -12,7 +12,7 @@ const CenterContainer = styled.div`
 
   button {
     display: block;
-    }
+  }
 `;
 
 export default CenterContainer;
