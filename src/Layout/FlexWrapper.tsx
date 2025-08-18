@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import { ReactNode } from 'react';
 import styled, { DefaultTheme } from 'styled-components';
 import CSS from 'csstype';
 
@@ -29,30 +29,17 @@ export interface FlexWrapperProps {
   children: ReactNode;
 }
 
-const StyledFlexWrapper = styled.div<FlexWrapperProps>`
+/**
+ * @component FlexWrapper
+ * A flexible layout container for arranging child elements.
+ */
+const FlexWrapper = styled.div<FlexWrapperProps>`
   display: flex;
   flex-direction: ${({ flexDirection }) => flexDirection};
   justify-content: ${({ justifyContent }) => justifyContent};
   align-items: ${({ alignItems }) => alignItems};
   gap: ${({ theme, gap }) => theme.ws[gap]};
 `;
-
-const FlexWrapper = ({
-  flexDirection,
-  justifyContent,
-  alignItems,
-  gap,
-  children,
-}: FlexWrapperProps): JSX.Element => (
-  <StyledFlexWrapper
-    flexDirection={flexDirection}
-    justifyContent={justifyContent}
-    alignItems={alignItems}
-    gap={gap}
-  >
-    {children}
-  </StyledFlexWrapper>
-);
 
 FlexWrapper.defaultProps = {
   flexDirection: 'row',
@@ -61,8 +48,4 @@ FlexWrapper.defaultProps = {
   gap: 'zero',
 };
 
-/**
- * @component FlexWrapper
- * A flexible layout container for arranging child elements.
- */
 export default FlexWrapper;
