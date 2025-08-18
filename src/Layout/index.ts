@@ -9,3 +9,4 @@ export { default as GridWrapper } from './GridWrapper';
 export { default as GridContainer } from './GridContainer';
 export { default as FlexWrapper } from './FlexWrapper';
 export { default as VerticalSpace } from './VerticalSpace';
+export { default as CenterContainer } from './CenterContainer';
