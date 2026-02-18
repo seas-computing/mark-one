@@ -46,7 +46,8 @@ const Footer = styled.footer<PropsWithChildren<FooterProps>>`
       &:last-of-type {
         border: 0px;
       }
-  };
+    }
+  }
 `;
 
 Footer.defaultProps = {
