@@ -55,7 +55,7 @@ const Footer = styled.footer<PropsWithChildren<FooterProps>>`
 Footer.defaultProps = {
   background: 'transparent',
   justify: 'space-between',
-  position: 'fixed',
+  position: 'sticky',
 };
 
 declare type Footer = ReactElement<FooterProps>;
