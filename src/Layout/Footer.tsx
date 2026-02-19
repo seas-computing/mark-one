@@ -35,6 +35,8 @@ const Footer = styled.footer<PropsWithChildren<FooterProps>>`
   width: 100%;
   position: ${({ position }) => position};
   bottom: 0;
+  left: 0;
+  right: 0;
   font-size: ${({ theme }) => `${theme.font.footer.size}`};
   font-weight: ${({ theme }) => `${theme.font.footer.weight}`};
   ul {
@@ -46,7 +48,8 @@ const Footer = styled.footer<PropsWithChildren<FooterProps>>`
       &:last-of-type {
         border: 0px;
       }
-  };
+    }
+  }
 `;
 
 Footer.defaultProps = {
