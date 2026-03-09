@@ -1,13 +1,11 @@
 import React, {
-  FunctionComponent, ReactElement, useContext, MouseEventHandler,
+  FunctionComponent, ReactElement, useContext,
 } from 'react';
 import styled, { ThemeContext } from 'styled-components';
 import { FontAwesomeIconProps } from '@fortawesome/react-fontawesome';
 import { fromTheme } from '../Theme';
 
 export interface IconLinkProps {
-  /** Function to call on click event */
-  clickHandler: MouseEventHandler;
   /** Specifies the URL the user will be directed to when the link is clicked */
   href?: string;
   /** Specifies the tooltip text */
@@ -30,7 +28,6 @@ const StyledIconLink = styled.a`
 
 const IconLink: FunctionComponent<IconLinkProps> = (props): ReactElement => {
   const {
-    clickHandler,
     href,
     title,
     alt,
@@ -39,7 +36,6 @@ const IconLink: FunctionComponent<IconLinkProps> = (props): ReactElement => {
   const theme = useContext(ThemeContext);
   return (
     <StyledIconLink
-      onClick={clickHandler}
       href={href}
       title={title}
       theme={theme}
