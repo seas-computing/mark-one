@@ -3,7 +3,7 @@ import React, {
 } from 'react';
 import styled, { ThemeContext } from 'styled-components';
 import { FontAwesomeIconProps } from '@fortawesome/react-fontawesome';
-import { fromTheme } from '../Theme';
+import { VARIANT } from '../Theme';
 
 export interface IconLinkProps {
   /** Specifies the URL the user will be directed to when the link is clicked */
@@ -12,15 +12,21 @@ export interface IconLinkProps {
   title: string;
   /** Specifies the alt text for screen readers */
   alt: string;
+  /** Allows you to pass in a variant property from the VARIANT enum */
+  variant?: VARIANT;
   /** Specifies the Font Awesome Icon(s) */
   children: ReactElement<FontAwesomeIconProps>;
 }
 
-const StyledIconLink = styled.a`
+interface StyledIconLinkProps {
+  variant?: VARIANT;
+}
+
+const StyledIconLink = styled.a<StyledIconLinkProps>`
   background: transparent;
-  color: ${fromTheme('color', 'background', 'medium')};
+    color: ${({ variant = VARIANT.BASE, theme }) => theme.color.background[variant].medium};
   &:hover {
-    color: ${fromTheme('color', 'background', 'dark')};
+    color: ${({ variant = VARIANT.BASE, theme }) => theme.color.background[variant].dark};
     cursor: pointer;
   }
   display: inline-block;
@@ -32,6 +38,7 @@ const IconLink: FunctionComponent<IconLinkProps> = (props): ReactElement => {
     title,
     alt,
     children,
+    variant,
   } = props;
   const theme = useContext(ThemeContext);
   return (
@@ -41,6 +48,7 @@ const IconLink: FunctionComponent<IconLinkProps> = (props): ReactElement => {
       theme={theme}
       aria-label={alt}
       role="link"
+      variant={variant}
     >
       { children }
     </StyledIconLink>
@@ -49,6 +57,7 @@ const IconLink: FunctionComponent<IconLinkProps> = (props): ReactElement => {
 
 IconLink.defaultProps = {
   href: '',
+  variant: VARIANT.INFO,
 };
 
 export default IconLink;
