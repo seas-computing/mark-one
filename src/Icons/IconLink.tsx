@@ -24,7 +24,7 @@ interface StyledIconLinkProps {
 
 const StyledIconLink = styled.a<StyledIconLinkProps>`
   background: transparent;
-    color: ${({ variant = VARIANT.BASE, theme }) => theme.color.background[variant].medium};
+  color: ${({ variant = VARIANT.BASE, theme }) => theme.color.background[variant].medium};
   &:hover {
     color: ${({ variant = VARIANT.BASE, theme }) => theme.color.background[variant].dark};
     cursor: pointer;
