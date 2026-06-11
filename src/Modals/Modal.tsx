@@ -117,6 +117,18 @@ const StyledModal = styled.div`
 `;
 
 /**
+ * Invisible element to manage keyboard tabbing.
+ * Placing FocusSentinels before and after the modal
+ * content keeps focus trapped within the modal.
+ */
+const FocusSentinel = styled.div`
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  outline: none;
+`;
+
+/**
  * @component Modal
  * A dialog style popup that can be used to alert the user to new information,
  * or to display additional editing fields/content. While open, the background
@@ -142,34 +154,18 @@ const Modal: FunctionComponent<ModalProps> = ({
             + ' [tabindex]:not([tabindex="-1"])';
 
   /**
-   * Watch the isVisible prop, and set the background overflow style when it
-   * is opened. We're returning a cleanup function that will reset the style
-   * when the modal unmounts.
-   * */
+   * Disable background scrolling while the modal is visible and restore the
+   * body's overflow style when the modal closes or unmounts.
+   */
   useEffect(() => {
-    const listener = (event: Event): void => {
-      // If the modal is not visible, the ref will not be set
-      if (!finalForwardRef.current) return;
-      const modal: HTMLElement = finalForwardRef.current;
-      if (!modal.contains(event.target as Node)) {
-        const firstFocusable: HTMLElement = modal.querySelector(focusables);
-        if (firstFocusable != null) {
-          firstFocusable.focus();
-        }
-      }
-    };
     if (isVisible) {
-      // prevents the background from scrolling
       document.body.style.overflow = 'hidden';
-      // Redirects the focus to the first focusable element in the modal when
-      // modal is visible
-      document.body.addEventListener('focus', listener, true);
     }
+
     return (): void => {
       document.body.style.overflow = '';
-      document.body.removeEventListener('focus', listener);
     };
-  }, [finalForwardRef, focusables, isVisible]);
+  }, [isVisible]);
 
   const [mouseDownOnModal, setMouseDownOnModal] = useState(false);
 
@@ -203,7 +199,43 @@ const Modal: FunctionComponent<ModalProps> = ({
             theme={theme}
             ref={finalForwardRef}
           >
+            <FocusSentinel
+              data-focus-sentinel="true"
+              tabIndex={0}
+              aria-hidden="true"
+              onFocus={(): void => {
+                const modal = finalForwardRef.current;
+                if (!modal) return;
+                const focusableElements = Array.from(
+                  modal.querySelectorAll<HTMLElement>(focusables)
+                ).filter((element) => !element.hasAttribute('disabled')
+                  && element.dataset.focusSentinel !== 'true');
+                const lastFocusable = focusableElements[
+                  focusableElements.length - 1
+                ];
+                if (lastFocusable) {
+                  lastFocusable.focus();
+                }
+              }}
+            />
             { children }
+            <FocusSentinel
+              data-focus-sentinel="true"
+              tabIndex={0}
+              aria-hidden="true"
+              onFocus={(): void => {
+                const modal = finalForwardRef.current;
+                if (!modal) return;
+                const focusableElements = Array.from(
+                  modal.querySelectorAll<HTMLElement>(focusables)
+                ).filter((element) => !element.hasAttribute('disabled')
+                  && element.dataset.focusSentinel !== 'true');
+                const firstFocusable = focusableElements[0];
+                if (firstFocusable) {
+                  firstFocusable.focus();
+                }
+              }}
+            />
           </StyledModal>
         )}
       </ModalBackdrop>
