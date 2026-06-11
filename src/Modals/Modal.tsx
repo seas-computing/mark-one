@@ -148,6 +148,10 @@ const Modal: FunctionComponent<ModalProps> = ({
   const backupRef: React.RefObject<HTMLDivElement> = useRef(null);
   const finalForwardRef = forwardRef != null ? forwardRef : backupRef;
 
+  // Tracks the element that was focused before the modal opened so focus
+  // can be restored when the modal closes
+  const previousFocusRef = useRef<HTMLElement | null>(null);
+
   // Encompasses all of the elements that can be focused on by the user
   // If you set the index of an element to -1, that element can also be focused
   const focusables = 'button, [href], input, select, textarea,'
@@ -167,6 +171,22 @@ const Modal: FunctionComponent<ModalProps> = ({
     };
   }, [isVisible]);
 
+  /**
+   * On open, save the currently focused element so it can be restored when
+   * the modal closes. Actual focus-into-modal happens in onEntered below,
+   * after the CSS transition has made the elements visible and focusable.
+   * On close, restore focus to the element that was focused before opening.
+   */
+  useEffect(() => {
+    if (!isVisible) return undefined;
+
+    previousFocusRef.current = document.activeElement as HTMLElement | null;
+
+    return (): void => {
+      previousFocusRef.current?.focus();
+    };
+  }, [isVisible]);
+
   const [mouseDownOnModal, setMouseDownOnModal] = useState(false);
 
   return createPortal((
@@ -175,13 +195,29 @@ const Modal: FunctionComponent<ModalProps> = ({
       classNames="modal-fade"
       in={isVisible}
       timeout={FADE_TIME}
+      onEntered={(): void => {
+        const modal = finalForwardRef.current;
+        if (!modal) return;
+        const firstFocusable = modal.querySelector<HTMLElement>(
+          `${focusables}:not([data-focus-sentinel="true"])`
+        );
+        // focusVisible: true forces the browser to show the :focus-visible
+        // ring even though focus is being set programmatically (which would
+        // otherwise keep the browser in "pointer" mode and suppress the ring).
+        const focusOptions = { focusVisible: true } as FocusOptions;
+        if (firstFocusable) {
+          firstFocusable.focus(focusOptions);
+        } else {
+          modal.focus(focusOptions);
+        }
+      }}
     >
       <ModalBackdrop
         key="modal-backdrop"
         onClick={(evt): void => {
           // Don't close modal if user pressed down inside modal but released outside
           if (!mouseDownOnModal) {
-            closeHandler();
+            closeHandler?.();
           }
           evt.stopPropagation();
           setMouseDownOnModal(false);
@@ -192,8 +228,12 @@ const Modal: FunctionComponent<ModalProps> = ({
             role="dialog"
             aria-labelledby={ariaLabelledBy}
             aria-modal="true"
+            tabIndex={-1}
             onMouseDown={(): void => {
               setMouseDownOnModal(true);
+            }}
+            onMouseUp={(): void => {
+              setMouseDownOnModal(false);
             }}
             onClick={(evt): void => { evt.stopPropagation(); }}
             theme={theme}
