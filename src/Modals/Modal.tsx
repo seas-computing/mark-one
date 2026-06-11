@@ -14,6 +14,30 @@ import styled, { ThemeContext } from 'styled-components';
 
 const FADE_TIME = 250;
 
+export interface ModalProps {
+  /**
+   * The content to be displayed within the modal
+   */
+  children: ReactNode;
+  /**
+   * Identifies the element that provides the modal
+   */
+  ariaLabelledBy: string;
+  /**
+   * Function that closes the modal by flipping the isVisible value to false
+   * This is passed to our background component to be called when the user
+   * clicks away
+   */
+  closeHandler?: () => void;
+  /**
+   * Whether or not the modal should be visible on the package
+   * This will be controlled by the parent component, likely via useState
+   */
+  isVisible: boolean;
+  /** Specifies the ref of the Modal */
+  forwardRef?: RefObject<HTMLDivElement>;
+}
+
 /**
  * A translucent background that will appear behind the modal, obscuring the
  * regular content of the page. Clicking this background will invoke the
@@ -75,37 +99,12 @@ const ModalBackdrop = styled.div`
   }
 `;
 
-export interface ModalProps {
-  /**
-   * The content to be displayed within the modal
-   */
-  children: ReactNode;
-  /**
-   * Identifies the element that provides the modal
-   */
-  ariaLabelledBy: string;
-  /**
-   * Function that closes the modal by flipping the isVisible value to false
-   * This is passed to our background component to be called when the user
-   * clicks away
-   */
-  closeHandler?: () => void;
-  /**
-   * Whether or not the modal should be visible on the package
-   * This will be controlled by the parent component, likely via useState
-   */
-  isVisible: boolean;
-  /** Specifies the ref of the Modal */
-  forwardRef?: RefObject<HTMLDivElement>;
-}
-
 /**
  * Defines the modal's basic styles. We're intentionally being minimal with the
  * styling so that the Modal component can primarily be concerned with the
  * behavior of the component, and most of the look and feel can be left up to
  * the children.
  */
-
 const StyledModal = styled.div`
   background-color: ${({ theme }): string => theme.color.background.light};
   border: ${({ theme }): string => theme.border.light};
