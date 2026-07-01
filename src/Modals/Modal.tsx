@@ -246,10 +246,14 @@ const Modal: FunctionComponent<ModalProps> = ({
               onFocus={(): void => {
                 const modal = finalForwardRef.current;
                 if (!modal) return;
+                // Gather all tabbable elements in the modal so we can wrap
+                // focus from the top sentinel to the end of the dialog.
                 const focusableElements = Array.from(
                   modal.querySelectorAll<HTMLElement>(focusables)
                 ).filter((element) => !element.hasAttribute('disabled')
                   && element.dataset.focusSentinel !== 'true');
+                // If Shift+Tab lands on the top sentinel, send focus to the
+                // last real focus target to keep tabbing constrained.
                 const lastFocusable = focusableElements[
                   focusableElements.length - 1
                 ];
@@ -266,10 +270,14 @@ const Modal: FunctionComponent<ModalProps> = ({
               onFocus={(): void => {
                 const modal = finalForwardRef.current;
                 if (!modal) return;
+                // Gather all tabbable elements in the modal so we can wrap
+                // focus from the bottom sentinel back to the start.
                 const focusableElements = Array.from(
                   modal.querySelectorAll<HTMLElement>(focusables)
                 ).filter((element) => !element.hasAttribute('disabled')
                   && element.dataset.focusSentinel !== 'true');
+                // If Tab lands on the bottom sentinel, move focus to the
+                // first real focus target to preserve the focus trap.
                 const firstFocusable = focusableElements[0];
                 if (firstFocusable) {
                   firstFocusable.focus();
