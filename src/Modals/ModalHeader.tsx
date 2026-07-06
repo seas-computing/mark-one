@@ -58,10 +58,11 @@ const ModalHeader: FunctionComponent<ModalHeaderProps> = ({
   return (
     <StyledModalHeader
       theme={markOneTheme}
-      ref={forwardRef}
-      tabIndex={tabIndex}
     >
       <ModalTitle>
+        ref={forwardRef}
+        tabIndex={tabIndex}
+      >
         {children}
       </ModalTitle>
       <BorderlessButton
