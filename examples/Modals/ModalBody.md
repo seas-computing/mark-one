@@ -47,6 +47,7 @@ import {
 
 const [modalVisible, setModalVisible] = useState(false);
 const [checkedValue, setCheckedValue] = useState('');
+const modalTitleId = 'modalBody-example-title';
 
 <>
   <Button
@@ -56,11 +57,12 @@ const [checkedValue, setCheckedValue] = useState('');
     Open Modal
   </Button>
   <Modal
-    ariaLabelledBy="modalBody-example-button-3"
+    ariaLabelledBy={modalTitleId}
     closeHandler={() => {setModalVisible(false)}}
     isVisible={modalVisible}
   >
     <ModalHeader
+      id={modalTitleId}
       closeButtonHandler={() => setModalVisible(false)}
     >
       Overflow Example

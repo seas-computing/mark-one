@@ -14,6 +14,7 @@ import {
 } from 'mark-one';
 
 const [modalVisible, setModalVisible] = useState(false);
+const modalTitleId = 'modal-example-title-1';
 
 <>
   <Button
@@ -23,11 +24,12 @@ const [modalVisible, setModalVisible] = useState(false);
     Open Modal
   </Button>
   <Modal
-    ariaLabelledBy="modal-example-button-1"
+    ariaLabelledBy={modalTitleId}
     closeHandler={() => {setModalVisible(false)}}
     isVisible={modalVisible}
   >
     <ModalHeader
+      id={modalTitleId}
       closeButtonHandler={() => setModalVisible(false)}
     >
       Modal Example 1
@@ -64,6 +66,7 @@ import {
 const inputRef = useRef(null);
 const [modalVisible, setModalVisible] = useState(false);
 const [formValue, setFormValue] = useState('');
+const modalTitleId = 'modal-example-title-2';
 
 const switchModal = (isOpen) => {
   setModalVisible(isOpen);
@@ -82,11 +85,12 @@ const switchModal = (isOpen) => {
     Open Modal
   </Button>
   <Modal
-    ariaLabelledBy="modal-example-button-3"
+    ariaLabelledBy={modalTitleId}
     closeHandler={() => { switchModal(false) }}
     isVisible={modalVisible}
   >
     <ModalHeader
+      id={modalTitleId}
       closeButtonHandler={() => { switchModal(false) }}
     >
       Modal Example 2
@@ -137,6 +141,7 @@ const inputRef = useRef(null);
 const [modalVisible, setModalVisible] = useState(false);
 const [formValue, setFormValue] = useState('');
 const { markAsChanged, confirmDiscard } = useConfirm();
+const modalTitleId = "modal-example-title-3"
 
 const switchModal = (isOpen) => {
   setModalVisible(isOpen);
@@ -155,7 +160,7 @@ const switchModal = (isOpen) => {
     Open Modal
   </Button>
   <Modal
-    ariaLabelledBy="modal-example-button-5"
+    ariaLabelledBy={modalTitleId}
     closeHandler={() => { 
       if (confirmDiscard()) {
         switchModal(false)
@@ -164,6 +169,7 @@ const switchModal = (isOpen) => {
     isVisible={modalVisible}
   >
     <ModalHeader
+      id={modalTitleId}
       closeButtonHandler={() => { 
         if (confirmDiscard()) {
           switchModal(false)
