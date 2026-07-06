@@ -18,6 +18,10 @@ interface ModalHeaderProps {
    */
   children: ReactNode;
   /**
+   * Takes the ariaLabelledBy prop in the Modal component
+   */
+  id: string;
+  /**
    * A handler to pass to the close button. If omitted, no close button will be
    * rendered
    */
@@ -53,13 +57,15 @@ const ModalHeader: FunctionComponent<ModalHeaderProps> = ({
   children,
   forwardRef,
   tabIndex,
+  id,
 }): ReactElement<ModalHeaderProps> => {
   const markOneTheme = useContext(ThemeContext);
   return (
     <StyledModalHeader
       theme={markOneTheme}
     >
-      <ModalTitle>
+      <ModalTitle
+        id={id}
         ref={forwardRef}
         tabIndex={tabIndex}
       >
