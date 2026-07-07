@@ -10,6 +10,7 @@ import {
 } from 'mark-one';
 
 const [modalVisible, setModalVisible] = useState(false);
+const modalTitleId = "modal-header-example-1"
 
 <>
   <Button
@@ -19,11 +20,12 @@ const [modalVisible, setModalVisible] = useState(false);
     Open Modal
   </Button>
   <Modal
-    ariaLabelledBy="modalHeader-example-button-1"
+    ariaLabelledBy={modalTitleId}
     closeHandler={() => {setModalVisible(false)}}
     isVisible={modalVisible}
   >
     <ModalHeader
+      id={modalTitleId}
       closeButtonHandler={() => {setModalVisible(false)}}
     >
       Modal Header
@@ -68,6 +70,8 @@ const RefExample = () => {
     rendered by letting next task of event queue run first */
     setTimeout(() => ref.current.focus());
   }
+  const modalTitleId = "modal-header-example-2"
+
   return (
     <>
       <Button
@@ -78,11 +82,12 @@ const RefExample = () => {
         Focus the Header
       </Button>
       <Modal
-        ariaLabelledBy="modalHeader-example-button-3"
+        ariaLabelledBy={modalTitleId}
         closeHandler={() => {setModalVisible(false)}}
         isVisible={modalVisible}
       >
         <ModalHeader
+          id={modalTitleId}
           closeButtonHandler={() => {setModalVisible(false)}}
           tabIndex={0}
           forwardRef={ref}

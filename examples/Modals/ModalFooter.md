@@ -10,6 +10,7 @@ import {
 } from 'mark-one';
 
 const [modalVisible, setModalVisible] = useState(false);
+const modalTitleId = 'modalFooter-example-title';
 
 <>
   <Button
@@ -19,11 +20,12 @@ const [modalVisible, setModalVisible] = useState(false);
     Open Modal
   </Button>
   <Modal
-    ariaLabelledBy="modalFooter-example-button-1"
+    ariaLabelledBy={modalTitleId}
     closeHandler={() => {setModalVisible(false)}}
     isVisible={modalVisible}
   >
     <ModalHeader
+      id={modalTitleId}
       closeButtonHandler={() => setModalVisible(false)}
     >
       Modal Footer Example
