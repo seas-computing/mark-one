@@ -62,7 +62,8 @@ describe('Modal', function () {
     context('when forwardRef prop is present', function () {
       beforeEach(function () {
         const RefExample = () => {
-          const testRef = useRef<HTMLDivElement>(null);
+          const modalTitleId = 'modal-header-test-title';
+          const testRef = useRef<HTMLHeadingElement>(null);
           const [modalVisible, setModalVisible] = useState(false);
           const onButtonClick = () => {
             setModalVisible(true);
@@ -82,11 +83,12 @@ describe('Modal', function () {
                 Focus the Modal Header
               </Button>
               <Modal
-                ariaLabelledBy="testButton"
+                ariaLabelledBy={modalTitleId}
                 closeHandler={() => { setModalVisible(false); }}
                 isVisible={modalVisible}
               >
                 <ModalHeader
+                  id={modalTitleId}
                   closeButtonHandler={() => { setModalVisible(false); }}
                   tabIndex={0}
                   forwardRef={modalVisible ? testRef : null}
