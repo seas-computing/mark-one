@@ -18,7 +18,9 @@ interface ModalHeaderProps {
    */
   children: ReactNode;
   /**
-   * Takes the ariaLabelledBy prop in the Modal component
+   * id for the header title element used as the accessible label
+   * target for the parent Modal's aria-labelledby attribute.
+   * Ensures the modal is correctly labelled for accessibility devices.
    */
   id: string;
   /**
